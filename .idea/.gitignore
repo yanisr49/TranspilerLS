@@ -11,3 +11,4 @@
 !/src/editor/globaux/*
 /src/editor/globaux/enums.ts
 /src/editor/globaux/main.ts
+.env
