@@ -36,9 +36,6 @@ Transformation du constructeur de Map `new Map<xxx, xxx>` en `[:]`;
 ### Interval
 Transforme la syntax `[...Array(612).keys()]` en `[0..612]`
 
-### Suppression de mots-clés
-Suppression du mot-clé : `abstract`
-
 ### Mapping de mots-clés
 Mapping des mots-clés :
  - `abstract ` en ` `
