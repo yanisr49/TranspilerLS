@@ -3,5 +3,4 @@
 !/src/editor/globaux/
 !/src/editor/globaux/*
 src/editor/globaux/enums.ts
-src/editor/main.ts
 .env
