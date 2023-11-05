@@ -4,7 +4,7 @@ Le point d'entrée est le fichier [src/editor/main.ts](https://github.com/yanisr
 le langage a utiliser est Typescript et il est possible de créer autant de fichier que l'on souhaite, ils seront tous 
 concaténés lors de la transpilation en se basant sur les imports dans chaque fichier.
 
-Une fois votre code écrit, utiliser la commande `pm run start:dev`
+Une fois votre code écrit, utiliser la commande `npm run start:dev`
 
 ## Informations générales
 Tous les fichiers créer dans le dossier [src/editor/globaux/](https://github.com/yanisr49/TranspilerLS/tree/master/src/editor/globaux) 
