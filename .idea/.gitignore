@@ -6,3 +6,6 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+/src/editor/
+!/src/editor/globaux/
+!/src/editor/globaux/*
