@@ -1,6 +1,8 @@
 /node_modules/
-/src/editor/*
-!/src/editor/globaux/
-!/src/editor/globaux/*
-src/editor/globaux/enums.ts
+/src/editor2/*
+!/src/editor2/globaux/
+!/src/editor2/globaux/*
+src/editor2/globaux/enums.ts
 .env
+/src/editor/editor.iml
+/src/editor/.idea/
