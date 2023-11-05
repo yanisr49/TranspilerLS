@@ -3,7 +3,6 @@ import fs from "fs";
 export default (code: string) => {
     code = refactoType(code);
     code = refactoInterval(code);
-    code = deleteKeywords(code);
     code = mapKeywords(code);
     code = refactoForInLoop(code);
     code = refactoPush(code);
@@ -13,18 +12,9 @@ export default (code: string) => {
     return code;
 }
 
-const keywordsToRemove = [
-    "abstract "
-];
-const deleteKeywords = (code: string) => {
-    keywordsToRemove.forEach(keyword => {
-        code = code.replaceAll(keyword, "");
-    });
-    return code;
-};
-
 
 const keywordsToMap = [
+    ["abstract ", ""],
     ["const ", "var "],
     ["let ", "var "],
     ["export var ", "global "],

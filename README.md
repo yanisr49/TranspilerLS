@@ -28,7 +28,7 @@ de la transpilation dans la console
 ## Transpilation
 ### Types
 Le typage en Typescript s'effectue de la manière suivante `const var: number;` en `const var;` ce typage est transformé en prenant 
-tout ce qui correspond à `x: xxxxxx` en `x` : le dernier caractère du nom de la variable collé au `:` est prise en compte pour
+tout ce qui correspond à `x: xxxxxx` en `x` : le dernier caractère du nom de la variable collé au `:` est pris en compte pour
 ignorer une ternaire qui aurait la même syntaxe mais avec un espace avant le `:`.
 
 Transformation du constructeur de Map `new Map<xxx, xxx>` en `[:]`;
