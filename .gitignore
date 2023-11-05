@@ -1,2 +1,3 @@
 /node_modules/
+/src/editor/*
 !/src/editor/globaux/
