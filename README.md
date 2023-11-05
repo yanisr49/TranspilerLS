@@ -41,12 +41,13 @@ Suppression du mot-clé : `abstract`
 
 ### Mapping de mots-clés
 Mapping des mots-clés :
+ - `abstract ` en ` `
  - `const ` en `var `
-- `let ` en `var `
+ - `let ` en `var `
 - `export var ` en `global `
-- `export ` en ` `
-- `===` en `==`
-- `!==` en `!=`
+ - `export ` en ` `
+ - `===` en `==`
+ - `!==` en `!=`
 
 ### Mapping de la boucle for..in
 Transforme la snytaxe `for (var i of xxx) {` en `for (var i in xxx) {`
