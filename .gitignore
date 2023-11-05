@@ -6,3 +6,5 @@ src/editor2/globaux/enums.ts
 .env
 /src/editor/editor.iml
 /src/editor/.idea/
+/src/EditorSave/.idea/workspace.xml
+/src/EditorSave/.idea/vcs.xml
