@@ -9,3 +9,5 @@
 /src/editor/*
 !/src/editor/globaux/
 !/src/editor/globaux/*
+/src/editor/globaux/enums.ts
+/src/editor/globaux/main.ts
