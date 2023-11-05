@@ -15,6 +15,8 @@ export default (code: string) => {
 
 const keywordsToMap = [
     ["abstract ", ""],
+    ["FONCTION.", ""],
+    ["CONSTANT.", ""],
     ["const ", "var "],
     ["let ", "var "],
     ["export var ", "global "],

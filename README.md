@@ -1,7 +1,7 @@
 # TranspilerLS
 ## Comment écrire son code LeekScript
 Le point d'entrée est le fichier [src/editor/main.ts](https://github.com/yanisr49/TranspilerLS/blob/master/src/editor/main.ts), 
-le langage a utiliser est Typescript et il est possible de créer autant de fichier que l'on souhaite, ils seront tous 
+le langage à utiliser est Typescript et il est possible de créer autant de fichier que l'on souhaite, ils seront tous 
 concaténés lors de la transpilation en se basant sur les imports dans chaque fichier.
 
 Une fois votre code écrit, utiliser la commande `npm run start:dev`
@@ -12,9 +12,12 @@ seront ignorés lors de la transpilation.A l'exception du fichier
 [src/editor/enums.ts](https://github.com/yanisr49/TranspilerLS/blob/master/src/editor/globaux/enums.ts) qui est un fichier 
 où on doit écrire toutes les énumérations que le souhaite utiliser.
 
-Les constants et les fonctions propre à LeekWars sont toutes référencées dans le dossier 
+Les constants et les fonctions propres à LeekWars sont toutes référencées dans le dossier 
 [globaux](https://github.com/yanisr49/TranspilerLS/tree/master/src/editor/globaux), il est donc possible de les 
-utiliser, vous pouvez les voir en utilisant la compléation automatique de votre IDE préféré. (IDE conseillé : intelliJ).
+utiliser, vous pouvez les voir en utilisant la complétion automatique de votre IDE préféré. (IDE conseillé : intelliJ).
+
+Pour utiliser une fonction : `Fonction.abs(1)`.
+Pour utiliser une fonction : `Constant.AREA_CIRCLE_1`.
 
 
 ## Variables d'environment
@@ -39,6 +42,8 @@ Transforme la syntax `[...Array(612).keys()]` en `[0..612]`
 ### Mapping de mots-clés
 Mapping des mots-clés :
  - `abstract ` en ` `
+ - `FONCTION.` en ` `
+ - `CONSTANT.` en ` `
  - `const ` en `var `
  - `let ` en `var `
  - `export var ` en `global `
@@ -53,16 +58,15 @@ Transforme la snytaxe `for (var i of xxx) {` en `for (var i in xxx) {`
 Transforme la snytaxe `xxx.push(` en `push(xxx`
 
 ### Template literals
-Transforme la snytaxe `` `xxx` `` en ` "xxx" `
-Transforme la syntaxe `${xxx}` en `" + xxx + "` dans un template literals
+Transforme la snytaxe `` `xxx` `` en ` "xxx" `.
 
+Transforme la syntaxe `${xxx}` en `" + xxx + "` dans un template literals.
 *NB : ne fonctionne que pour les Template literals sur une seule ligne*
 
 Ce qui donnerais par exemple : `` `bar ${foo}` `` en `"bar " + foo + ""`
 
 ### Console.log
 Tranforme la syntaxe `console.log(xxx, xxx, xxx)` en `debug(xxx + ", " + xxx + ", " + xxx)`
-
 *NB : ne fonctionne que pour les `console.log` sur une seule ligne*
 
 ### Enumérations
