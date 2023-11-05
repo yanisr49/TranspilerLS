@@ -2,6 +2,6 @@
 /src/editor/*
 !/src/editor/globaux/
 !/src/editor/globaux/*
-/src/editor/globaux/enums.ts
-/src/editor/globaux/main.ts
+src/editor/globaux/enums.ts
+src/editor/main.ts
 .env
