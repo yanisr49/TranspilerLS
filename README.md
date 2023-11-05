@@ -44,7 +44,7 @@ Mapping des mots-clés :
  - `abstract ` en ` `
  - `const ` en `var `
  - `let ` en `var `
-- `export var ` en `global `
+ - `export var ` en `global `
  - `export ` en ` `
  - `===` en `==`
  - `!==` en `!=`
