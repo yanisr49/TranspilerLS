@@ -1,7 +1,5 @@
 // noinspection JSUnusedGlobalSymbols
 
-export class FONCTION {
-
     /**
      * <p><b>id : </b>1</p>
      * <p><b>name : </b>abs</p>
@@ -9,7 +7,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static abs = (_number: number): number => { };
+    export const abs = (_number: number): number => { };
 
     /**
      * <p><b>id : </b>7</p>
@@ -18,7 +16,7 @@ export class FONCTION {
      * <p><b>operations : </b>12</p>
      */
         // @ts-ignore
-    static acos = (_argument: number): number => { };
+    export const acos = (_argument: number): number => { };
 
     /**
      * <p><b>id : </b>400</p>
@@ -29,7 +27,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayChunk = <T>(_array: T[], _chunkSize?: number): T[][] => { };
+    export const arrayChunk = <T>(_array: T[], _chunkSize?: number): T[][] => { };
 
     /**
      * <p><b>id : </b>396</p>
@@ -38,7 +36,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static arrayClear = <T>(_array: T[]): void => { };
+    export const arrayClear = <T>(_array: T[]): void => { };
 
     /**
      * <p><b>id : </b>287</p>
@@ -49,7 +47,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayConcat = <T>(_array1: T[], _array2: T[]): T[] => { };
+    export const arrayConcat = <T>(_array1: T[], _array2: T[]): T[] => { };
 
     /**
      * <p><b>id : </b>395</p>
@@ -58,7 +56,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayEvery = <T>(_array: T[], _callback: (arg: T) => boolean): boolean => { };
+    export const arrayEvery = <T>(_array: T[], _callback: (arg: T) => boolean): boolean => { };
 
     /**
      * <p><b>id : </b>280</p>
@@ -67,7 +65,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayFilter = <T>(_array: T[], _callback: (arg: T) => boolean): T[] => { };
+    export const arrayFilter = <T>(_array: T[], _callback: (arg: T) => boolean): T[] => { };
 
     /**
      * <p><b>id : </b>282</p>
@@ -76,7 +74,7 @@ export class FONCTION {
      * <p><b>complexity : </b>∞</p>
      */
         // @ts-ignore
-    static arrayFlatten = <T>(_array: T[], _depth?: number): T[] => { };
+    export const arrayFlatten = <T>(_array: T[], _depth?: number): T[] => { };
 
     /**
      * <p><b>id : </b>283</p>
@@ -85,7 +83,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayFoldLeft = (_array: T[], _f: (arg1: T, arg2: T, arg3: number) => T, _v0: T): T => { };
+    export const arrayFoldLeft = (_array: T[], _f: (arg1: T, arg2: T, arg3: number) => T, _v0: T): T => { };
 
     /**
      * <p><b>id : </b>284</p>
@@ -94,7 +92,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayFoldRight = <T>(_array: T[], _f: (arg1: T, arg2: T, arg3: number) => T, _v0: T): T => { };
+    export const arrayFoldRight = <T>(_array: T[], _f: (arg1: T, arg2: T, arg3: number) => T, _v0: T): T => { };
 
     /**
      * <p><b>id : </b>402</p>
@@ -103,7 +101,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayFrequencies = <T>(_array: T[]): Map<T, _number> => { };
+    export const arrayFrequencies = <T>(_array: T[]): Map<T, _number> => { };
 
     /**
      * <p><b>id : </b>406</p>
@@ -112,7 +110,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static arrayGet = <T>(_array: T[], _index: number, _defaultValue?: T): T => { };
+    export const arrayGet = <T>(_array: T[], _index: number, _defaultValue?: T): T => { };
 
     /**
      * <p><b>id : </b>286</p>
@@ -121,7 +119,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayIter = <T>(_array: T[], _callback: (arg: T) => void): void => { };
+    export const arrayIter = <T>(_array: T[], _callback: (arg: T) => void): void => { };
 
     /**
      * <p><b>id : </b>279</p>
@@ -130,7 +128,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayMap = <T, U>(_array: T[], _callback: (arg: T) => U): U[] => { };
+    export const arrayMap = <T, U>(_array: T[], _callback: (arg: T) => U): U[] => { };
 
     /**
      * <p><b>id : </b>57</p>
@@ -139,7 +137,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayMax = <T>(_array: T[]): T => { };
+    export const arrayMax = <T>(_array: T[]): T => { };
 
     /**
      * <p><b>id : </b>56</p>
@@ -148,7 +146,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayMin = <T>(_array: T[]): T => { };
+    export const arrayMin = <T>(_array: T[]): T => { };
 
     /**
      * <p><b>id : </b>285</p>
@@ -157,7 +155,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayPartition = <T>(_array: T[], _callback: (arg1: T, arg2: number, arg3: T[]) => boolean): T[][] => { };
+    export const arrayPartition = <T>(_array: T[], _callback: (arg1: T, arg2: number, arg3: T[]) => boolean): T[][] => { };
 
     /**
      * <p><b>id : </b>398</p>
@@ -166,7 +164,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayRandom = <T>(_array: T[], _count: number): T[] => { };
+    export const arrayRandom = <T>(_array: T[], _count: number): T[] => { };
 
     /**
      * <p><b>id : </b>404</p>
@@ -175,7 +173,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arrayRemoveAll = <T>(_array: T[], _element: T): void => { };
+    export const arrayRemoveAll = <T>(_array: T[], _element: T): void => { };
 
     /**
      * <p><b>id : </b>405</p>
@@ -184,7 +182,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arraySlice = <T>(_array: T[], _start: number, _end?: number, _stride?: number): T[] => { };
+    export const arraySlice = <T>(_array: T[], _start: number, _end?: number, _stride?: number): T[] => { };
 
     /**
      * <p><b>id : </b>394</p>
@@ -193,7 +191,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static arraySome = <T>(_array: T[], _callback: (arg: T) => boolean): boolean => { };
+    export const arraySome = <T>(_array: T[], _callback: (arg: T) => boolean): boolean => { };
 
     /**
      * <p><b>id : </b>288</p>
@@ -202,7 +200,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(nlog(n))</p>
      */
         // @ts-ignore
-    static arraySort = <T>(_array: T[], _callback?: (arg1: T, arg2: T) => number): T[] => { };
+    export const arraySort = <T>(_array: T[], _callback?: (arg1: T, arg2: T) => number): T[] => { };
 
     /**
      * <p><b>id : </b>401</p>
@@ -211,7 +209,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n²)</p>
      */
         // @ts-ignore
-    static arrayUnique = <T>(_array: T[]): T[] => { };
+    export const arrayUnique = <T>(_array: T[]): T[] => { };
 
     /**
      * <p><b>id : </b>8</p>
@@ -220,7 +218,7 @@ export class FONCTION {
      * <p><b>operations : </b>12</p>
      */
         // @ts-ignore
-    static asin = (_argument: number): number => { };
+    export const asin = (_argument: number): number => { };
 
     /**
      * <p><b>id : </b>9</p>
@@ -229,7 +227,7 @@ export class FONCTION {
      * <p><b>operations : </b>25</p>
      */
         // @ts-ignore
-    static atan = (_argument: number): number => { };
+    export const atan = (_argument: number): number => { };
 
     /**
      * <p><b>id : </b>12</p>
@@ -238,7 +236,7 @@ export class FONCTION {
      * <p><b>operations : </b>35</p>
      */
         // @ts-ignore
-    static atan2 = (_y: number, _x: number): number => { };
+    export const atan2 = (_y: number, _x: number): number => { };
 
     /**
      * <p><b>id : </b>59</p>
@@ -247,7 +245,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static average = (_array: number[]): number => { };
+    export const average = (_array: number[]): number => { };
 
     /**
      * <p><b>id : </b>416</p>
@@ -256,7 +254,7 @@ export class FONCTION {
      * <p><b>operations : </b>10</p>
      */
         // @ts-ignore
-    static binString = (_x: number): string => { };
+    export const binString = (_x: number): string => { };
 
     /**
      * <p><b>id : </b>409</p>
@@ -265,7 +263,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static bitCount = (_x: number): number => { };
+    export const bitCount = (_x: number): number => { };
 
     /**
      * <p><b>id : </b>412</p>
@@ -274,7 +272,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static bitReverse = (_x: number): number => { };
+    export const bitReverse = (_x: number): number => { };
 
     /**
      * <p><b>id : </b>419</p>
@@ -283,7 +281,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static bitsToReal = (_x: number): number => { };
+    export const bitsToReal = (_x: number): number => { };
 
     /**
      * <p><b>id : </b>413</p>
@@ -292,7 +290,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static byteReverse = (_x: number): number => { };
+    export const byteReverse = (_x: number): number => { };
 
     /**
      * <p><b>id : </b>190</p>
@@ -301,7 +299,7 @@ export class FONCTION {
      * <p><b>operations : </b>45</p>
      */
         // @ts-ignore
-    static canUseChip = (_chip: number, _entity: number): boolean => { };
+    export const canUseChip = (_chip: number, _entity: number): boolean => { };
 
     /**
      * <p><b>id : </b>191</p>
@@ -310,7 +308,7 @@ export class FONCTION {
      * <p><b>operations : </b>45</p>
      */
         // @ts-ignore
-    static canUseChipOnCell = (_chip: number, _cell: number): boolean => { };
+    export const canUseChipOnCell = (_chip: number, _cell: number): boolean => { };
 
     /**
      * <p><b>id : </b>241</p>
@@ -319,7 +317,7 @@ export class FONCTION {
      * <p><b>operations : </b>45</p>
      */
         // @ts-ignore
-    static canUseWeapon = (_weapon?: number, _entity: number): boolean => { };
+    export const canUseWeapon = (_weapon?: number, _entity: number): boolean => { };
 
     /**
      * <p><b>id : </b>242</p>
@@ -328,7 +326,7 @@ export class FONCTION {
      * <p><b>operations : </b>45</p>
      */
         // @ts-ignore
-    static canUseWeaponOnCell = (_weapon?: number, _cell: number): boolean => { };
+    export const canUseWeaponOnCell = (_weapon?: number, _cell: number): boolean => { };
 
     /**
      * <p><b>id : </b>17</p>
@@ -337,7 +335,7 @@ export class FONCTION {
      * <p><b>operations : </b>62</p>
      */
         // @ts-ignore
-    static cbrt = (_number: number): number => { };
+    export const cbrt = (_number: number): number => { };
 
     /**
      * <p><b>id : </b>13</p>
@@ -346,7 +344,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static ceil = (_number: number): number => { };
+    export const ceil = (_number: number): number => { };
 
     /**
      * <p><b>id : </b>27</p>
@@ -355,7 +353,7 @@ export class FONCTION {
      * <p><b>operations : </b>8</p>
      */
         // @ts-ignore
-    static charAt = (_string: string, _position: number): string => { };
+    export const charAt = (_string: string, _position: number): string => { };
 
     /**
      * <p><b>id : </b>313</p>
@@ -364,7 +362,7 @@ export class FONCTION {
      * <p><b>operations : </b>10</p>
      */
         // @ts-ignore
-    static chipNeedLos = (_chip: number): boolean => { };
+    export const chipNeedLos = (_chip: number): boolean => { };
 
     /**
      * <p><b>id : </b>359</p>
@@ -373,7 +371,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static clearMarks = (): void => { };
+    export const clearMarks = (): void => { };
 
     /**
      * <p><b>id : </b>363</p>
@@ -382,7 +380,7 @@ export class FONCTION {
      * <p><b>complexity : </b>∞</p>
      */
         // @ts-ignore
-    static clone = <T>(_value: T, _level?: number): T => { };
+    export const clone = <T>(_value: T, _level?: number): T => { };
 
     /**
      * <p><b>id : </b>424</p>
@@ -391,7 +389,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static codePointAt = (_string: string, _index?: number): number => { };
+    export const codePointAt = (_string: string, _index?: number): number => { };
 
     /**
      * <p><b>id : </b>40</p>
@@ -400,7 +398,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static contains = (_string: string, _search: string): boolean => { };
+    export const contains = (_string: string, _search: string): boolean => { };
 
     /**
      * <p><b>id : </b>4</p>
@@ -409,7 +407,7 @@ export class FONCTION {
      * <p><b>operations : </b>30</p>
      */
         // @ts-ignore
-    static cos = (_angle: number): number => { };
+    export const cos = (_angle: number): number => { };
 
     /**
      * <p><b>id : </b>41</p>
@@ -418,7 +416,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static count = <T>(_array: T[]): number => { };
+    export const count = <T>(_array: T[]): number => { };
 
     /**
      * <p><b>id : </b>161</p>
@@ -427,7 +425,7 @@ export class FONCTION {
      * <p><b>operations : </b>100</p>
      */
         // @ts-ignore
-    static debug = <T>(_object: T): void => { };
+    export const debug = <T>(_object: T): void => { };
 
     /**
      * <p><b>id : </b>324</p>
@@ -436,7 +434,7 @@ export class FONCTION {
      * <p><b>operations : </b>100</p>
      */
         // @ts-ignore
-    static debugC = <T>(_object: T, _color: number): void => { };
+    export const debugC = <T>(_object: T, _color: number): void => { };
 
     /**
      * <p><b>id : </b>166</p>
@@ -445,7 +443,7 @@ export class FONCTION {
      * <p><b>operations : </b>100</p>
      */
         // @ts-ignore
-    static debugE = <T>(_object: T): void => { };
+    export const debugE = <T>(_object: T): void => { };
 
     /**
      * <p><b>id : </b>165</p>
@@ -454,7 +452,7 @@ export class FONCTION {
      * <p><b>operations : </b>100</p>
      */
         // @ts-ignore
-    static debugW = <T>(_object: T): void => { };
+    export const debugW = <T>(_object: T): void => { };
 
     /**
      * <p><b>id : </b>277</p>
@@ -463,7 +461,7 @@ export class FONCTION {
      * <p><b>operations : </b>16</p>
      */
         // @ts-ignore
-    static deleteRegister = (_key: string): void => { };
+    export const deleteRegister = (_key: string): void => { };
 
     /**
      * <p><b>id : </b>39</p>
@@ -472,7 +470,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static endsWith = (_string: string, _suffix: string): boolean => { };
+    export const endsWith = (_string: string, _suffix: string): boolean => { };
 
     /**
      * <p><b>id : </b>20</p>
@@ -481,7 +479,7 @@ export class FONCTION {
      * <p><b>operations : </b>40</p>
      */
         // @ts-ignore
-    static exp = (_number: number): number => { };
+    export const exp = (_number: number): number => { };
 
     /**
      * <p><b>id : </b>61</p>
@@ -490,7 +488,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static fill = <T>(_array: T[], _value: T, _size?: number): void => { };
+    export const fill = <T>(_array: T[], _value: T, _size?: number): void => { };
 
     /**
      * <p><b>id : </b>14</p>
@@ -499,7 +497,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static floor = (_number: number): number => { };
+    export const floor = (_number: number): number => { };
 
     /**
      * <p><b>id : </b>181</p>
@@ -508,7 +506,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getAbsoluteShield = (_entity?: number): number => { };
+    export const getAbsoluteShield = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>70</p>
@@ -517,7 +515,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getAgility = (_entity?: number): number => { };
+    export const getAgility = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>258</p>
@@ -526,7 +524,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getAIID = (_entity?: number): number => { };
+    export const getAIID = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>260</p>
@@ -535,7 +533,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getAIName = (_entity?: number): string => { };
+    export const getAIName = (_entity?: number): string => { };
 
     /**
      * <p><b>id : </b>130</p>
@@ -544,7 +542,7 @@ export class FONCTION {
      * <p><b>operations : </b>100</p>
      */
         // @ts-ignore
-    static getAliveAllies = (): number[] => { };
+    export const getAliveAllies = (): number[] => { };
 
     /**
      * <p><b>id : </b>122</p>
@@ -553,7 +551,7 @@ export class FONCTION {
      * <p><b>operations : </b>100</p>
      */
         // @ts-ignore
-    static getAliveEnemies = (): number[] => { };
+    export const getAliveEnemies = (): number[] => { };
 
     /**
      * <p><b>id : </b>123</p>
@@ -562,7 +560,7 @@ export class FONCTION {
      * <p><b>operations : </b>25</p>
      */
         // @ts-ignore
-    static getAliveEnemiesCount = (): number => { };
+    export const getAliveEnemiesCount = (): number => { };
 
     /**
      * <p><b>id : </b>348</p>
@@ -571,7 +569,7 @@ export class FONCTION {
      * <p><b>operations : </b>200</p>
      */
         // @ts-ignore
-    static getAllChips = (): number[] => { };
+    export const getAllChips = (): number[] => { };
 
     /**
      * <p><b>id : </b>350</p>
@@ -580,7 +578,7 @@ export class FONCTION {
      * <p><b>operations : </b>200</p>
      */
         // @ts-ignore
-    static getAllEffects = (): number[] => { };
+    export const getAllEffects = (): number[] => { };
 
     /**
      * <p><b>id : </b>345</p>
@@ -589,7 +587,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getAlliedTurret = (): number => { };
+    export const getAlliedTurret = (): number => { };
 
     /**
      * <p><b>id : </b>193</p>
@@ -598,7 +596,7 @@ export class FONCTION {
      * <p><b>operations : </b>100</p>
      */
         // @ts-ignore
-    static getAllies = (): number[] => { };
+    export const getAllies = (): number[] => { };
 
     /**
      * <p><b>id : </b>132</p>
@@ -607,7 +605,7 @@ export class FONCTION {
      * <p><b>operations : </b>25</p>
      */
         // @ts-ignore
-    static getAlliesCount = (): number => { };
+    export const getAlliesCount = (): number => { };
 
     /**
      * <p><b>id : </b>140</p>
@@ -616,7 +614,7 @@ export class FONCTION {
      * <p><b>operations : </b>50</p>
      */
         // @ts-ignore
-    static getAlliesLife = (): number => { };
+    export const getAlliesLife = (): number => { };
 
     /**
      * <p><b>id : </b>349</p>
@@ -625,7 +623,7 @@ export class FONCTION {
      * <p><b>operations : </b>200</p>
      */
         // @ts-ignore
-    static getAllWeapons = (): number[] => { };
+    export const getAllWeapons = (): number[] => { };
 
     /**
      * <p><b>id : </b>296</p>
@@ -634,7 +632,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getBirthTurn = (_entity?: number): number => { };
+    export const getBirthTurn = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>229</p>
@@ -643,7 +641,7 @@ export class FONCTION {
      * <p><b>operations : </b>10</p>
      */
         // @ts-ignore
-    static getBlue = (_color: number): number => { };
+    export const getBlue = (_color: number): number => { };
 
     /**
      * <p><b>id : </b>343</p>
@@ -652,7 +650,7 @@ export class FONCTION {
      * <p><b>operations : </b>40</p>
      */
         // @ts-ignore
-    static getBulbChips = (_bulbChip: number): number[] => { };
+    export const getBulbChips = (_bulbChip: number): number[] => { };
 
     /**
      * <p><b>id : </b>72</p>
@@ -661,7 +659,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static getCell = (_entity?: number): number => { };
+    export const getCell = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>113</p>
@@ -670,7 +668,7 @@ export class FONCTION {
      * <p><b>operations : </b>6</p>
      */
         // @ts-ignore
-    static getCellContent = (_cell: number): number => { };
+    export const getCellContent = (_cell: number): number => { };
 
     /**
      * <p><b>id : </b>108</p>
@@ -679,7 +677,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getCellDistance = (_cell1: number, _cell2: number): number => { };
+    export const getCellDistance = (_cell1: number, _cell2: number): number => { };
 
     /**
      * <p><b>id : </b>169</p>
@@ -688,7 +686,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static getCellFromXY = (_x: number, _y: number): number => { };
+    export const getCellFromXY = (_x: number, _y: number): number => { };
 
     /**
      * <p><b>id : </b>270</p>
@@ -697,7 +695,7 @@ export class FONCTION {
      * <p><b>operations : </b>25834</p>
      */
         // @ts-ignore
-    static getCellsToUseChip = (_chip: number, _entity: number, _ignoredCells?: number[]): number[] => { };
+    export const getCellsToUseChip = (_chip: number, _entity: number, _ignoredCells?: number[]): number[] => { };
 
     /**
      * <p><b>id : </b>269</p>
@@ -706,7 +704,7 @@ export class FONCTION {
      * <p><b>operations : </b>25834</p>
      */
         // @ts-ignore
-    static getCellsToUseChipOnCell = (_chip: number, _cell: number, _ignoredCells?: number[]): number[] => { };
+    export const getCellsToUseChipOnCell = (_chip: number, _cell: number, _ignoredCells?: number[]): number[] => { };
 
     /**
      * <p><b>id : </b>216</p>
@@ -715,7 +713,7 @@ export class FONCTION {
      * <p><b>operations : </b>25834</p>
      */
         // @ts-ignore
-    static getCellsToUseWeapon = (_weapon?: number, _entity: number, _ignoredCells?: number[]): number[] => {};
+    export const getCellsToUseWeapon = (_weapon?: number, _entity: number, _ignoredCells?: number[]): number[] => {};
 
     /**
      * <p><b>id : </b>267</p>
@@ -724,7 +722,7 @@ export class FONCTION {
      * <p><b>operations : </b>25834</p>
      */
         // @ts-ignore
-    static getCellsToUseWeaponOnCell = (_weapon?: number, _cell: number, _ignoredCells?: number[]): number[] => { };
+    export const getCellsToUseWeaponOnCell = (_weapon?: number, _cell: number, _ignoredCells?: number[]): number[] => { };
 
     /**
      * <p><b>id : </b>266</p>
@@ -733,7 +731,7 @@ export class FONCTION {
      * <p><b>operations : </b>38080</p>
      */
         // @ts-ignore
-    static getCellToUseChip = (_chip: number, _entity: number, _ignoredCells?: number[]): number => { };
+    export const getCellToUseChip = (_chip: number, _entity: number, _ignoredCells?: number[]): number => { };
 
     /**
      * <p><b>id : </b>265</p>
@@ -742,7 +740,7 @@ export class FONCTION {
      * <p><b>operations : </b>38080</p>
      */
         // @ts-ignore
-    static getCellToUseChipOnCell = (_chip: number, _cell: number, _ignoredCells?: number[]): number => { };
+    export const getCellToUseChipOnCell = (_chip: number, _cell: number, _ignoredCells?: number[]): number => { };
 
     /**
      * <p><b>id : </b>264</p>
@@ -751,7 +749,7 @@ export class FONCTION {
      * <p><b>operations : </b>38080</p>
      */
         // @ts-ignore
-    static getCellToUseWeapon = (_weapon?: number, _entity: number, _ignoredCells?: number[]): number => { };
+    export const getCellToUseWeapon = (_weapon?: number, _entity: number, _ignoredCells?: number[]): number => { };
 
     /**
      * <p><b>id : </b>263</p>
@@ -760,7 +758,7 @@ export class FONCTION {
      * <p><b>operations : </b>38080</p>
      */
         // @ts-ignore
-    static getCellToUseWeaponOnCell = (_weapon?: number, _cell: number, _ignoredCells?: number[]): number => { };
+    export const getCellToUseWeaponOnCell = (_weapon?: number, _cell: number, _ignoredCells?: number[]): number => { };
 
     /**
      * <p><b>id : </b>117</p>
@@ -769,7 +767,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static getCellX = (_cell: number): number => { };
+    export const getCellX = (_cell: number): number => { };
 
     /**
      * <p><b>id : </b>118</p>
@@ -778,7 +776,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static getCellY = (_cell: number): number => { };
+    export const getCellY = (_cell: number): number => { };
 
     /**
      * <p><b>id : </b>273</p>
@@ -787,7 +785,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getChipArea = (_chip: number): number => { };
+    export const getChipArea = (_chip: number): number => { };
 
     /**
      * <p><b>id : </b>186</p>
@@ -796,7 +794,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getChipCooldown = (_chip: number): number => { };
+    export const getChipCooldown = (_chip: number): number => { };
 
     /**
      * <p><b>id : </b>104</p>
@@ -805,7 +803,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getChipCost = (_chip: number): number => { };
+    export const getChipCost = (_chip: number): number => { };
 
     /**
      * <p><b>id : </b>248</p>
@@ -814,7 +812,7 @@ export class FONCTION {
      * <p><b>operations : </b>78</p>
      */
         // @ts-ignore
-    static getChipEffectiveArea = (_chip: number, _cell: number, _from?: number): number[] => { };
+    export const getChipEffectiveArea = (_chip: number, _cell: number, _from?: number): number[] => { };
 
     /**
      * <p><b>id : </b>105</p>
@@ -823,7 +821,7 @@ export class FONCTION {
      * <p><b>operations : </b>125</p>
      */
         // @ts-ignore
-    static getChipEffects = (_chip: number): any[][] => { };
+    export const getChipEffects = (_chip: number): any[][] => { };
 
     /**
      * <p><b>id : </b>364</p>
@@ -832,7 +830,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getChipLaunchType = (_chip: number): number => { };
+    export const getChipLaunchType = (_chip: number): number => { };
 
     /**
      * <p><b>id : </b>327</p>
@@ -841,7 +839,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getChipMaxRange = (_chip: number): number => { };
+    export const getChipMaxRange = (_chip: number): number => { };
 
     /**
      * <p><b>id : </b>328</p>
@@ -850,7 +848,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getChipMinRange = (_chip: number): number => { };
+    export const getChipMinRange = (_chip: number): number => { };
 
     /**
      * <p><b>id : </b>101</p>
@@ -859,7 +857,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getChipName = (_chip: number): string => { };
+    export const getChipName = (_chip: number): string => { };
 
     /**
      * <p><b>id : </b>170</p>
@@ -868,7 +866,7 @@ export class FONCTION {
      * <p><b>operations : </b>40</p>
      */
         // @ts-ignore
-    static getChips = (_entity?: number): number[] => { };
+    export const getChips = (_entity?: number): number[] => { };
 
     /**
      * <p><b>id : </b>160</p>
@@ -877,7 +875,7 @@ export class FONCTION {
      * <p><b>operations : </b>40</p>
      */
         // @ts-ignore
-    static getChipTargets = (_chip: number, _cell: number): number[] => { };
+    export const getChipTargets = (_chip: number, _cell: number): number[] => { };
 
     /**
      * <p><b>id : </b>224</p>
@@ -886,7 +884,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getColor = (_red: number, _green: number, _blue: number): number => { };
+    export const getColor = (_red: number, _green: number, _blue: number): number => { };
 
     /**
      * <p><b>id : </b>272</p>
@@ -895,7 +893,7 @@ export class FONCTION {
      * <p><b>operations : </b>30</p>
      */
         // @ts-ignore
-    static getCooldown = (_chip: number, _entity?: number): number => { };
+    export const getCooldown = (_chip: number, _entity?: number): number => { };
 
     /**
      * <p><b>id : </b>323</p>
@@ -904,7 +902,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getDamageReturn = (_entity?: number): number => { };
+    export const getDamageReturn = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>353</p>
@@ -913,7 +911,7 @@ export class FONCTION {
      * <p><b>operations : </b>50</p>
      */
         // @ts-ignore
-    static getDate = (): string => { };
+    export const getDate = (): string => { };
 
     /**
      * <p><b>id : </b>131</p>
@@ -922,7 +920,7 @@ export class FONCTION {
      * <p><b>operations : </b>100</p>
      */
         // @ts-ignore
-    static getDeadAllies = (): number[] => { };
+    export const getDeadAllies = (): number[] => { };
 
     /**
      * <p><b>id : </b>124</p>
@@ -931,7 +929,7 @@ export class FONCTION {
      * <p><b>operations : </b>100</p>
      */
         // @ts-ignore
-    static getDeadEnemies = (): number[] => { };
+    export const getDeadEnemies = (): number[] => { };
 
     /**
      * <p><b>id : </b>125</p>
@@ -940,7 +938,7 @@ export class FONCTION {
      * <p><b>operations : </b>25</p>
      */
         // @ts-ignore
-    static getDeadEnemiesCount = (): number => { };
+    export const getDeadEnemiesCount = (): number => { };
 
     /**
      * <p><b>id : </b>185</p>
@@ -949,7 +947,7 @@ export class FONCTION {
      * <p><b>operations : </b>25</p>
      */
         // @ts-ignore
-    static getEffects = (_entity?: number): any[][] => { };
+    export const getEffects = (_entity?: number): any[][] => { };
 
     /**
      * <p><b>id : </b>126</p>
@@ -958,7 +956,7 @@ export class FONCTION {
      * <p><b>operations : </b>100</p>
      */
         // @ts-ignore
-    static getEnemies = (): number[] => { };
+    export const getEnemies = (): number[] => { };
 
     /**
      * <p><b>id : </b>127</p>
@@ -967,7 +965,7 @@ export class FONCTION {
      * <p><b>operations : </b>25</p>
      */
         // @ts-ignore
-    static getEnemiesCount = (): number => { };
+    export const getEnemiesCount = (): number => { };
 
     /**
      * <p><b>id : </b>139</p>
@@ -976,7 +974,7 @@ export class FONCTION {
      * <p><b>operations : </b>50</p>
      */
         // @ts-ignore
-    static getEnemiesLife = (): number => { };
+    export const getEnemiesLife = (): number => { };
 
     /**
      * <p><b>id : </b>346</p>
@@ -985,7 +983,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getEnemyTurret = (): number => { };
+    export const getEnemyTurret = (): number => { };
 
     /**
      * <p><b>id : </b>220</p>
@@ -994,7 +992,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static getEntity = (): number => { };
+    export const getEntity = (): number => { };
 
     /**
      * <p><b>id : </b>354</p>
@@ -1003,7 +1001,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getEntityOnCell = (_cell: number): number => { };
+    export const getEntityOnCell = (_cell: number): number => { };
 
     /**
      * <p><b>id : </b>298</p>
@@ -1012,7 +1010,7 @@ export class FONCTION {
      * <p><b>operations : </b>30</p>
      */
         // @ts-ignore
-    static getEntityTurnOrder = (_entity?: number): number => { };
+    export const getEntityTurnOrder = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>332</p>
@@ -1021,7 +1019,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getFarmerCountry = (_entity?: number): string => { };
+    export const getFarmerCountry = (_entity?: number): string => { };
 
     /**
      * <p><b>id : </b>250</p>
@@ -1030,7 +1028,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getFarmerID = (_entity?: number): number => { };
+    export const getFarmerID = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>252</p>
@@ -1039,7 +1037,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getFarmerName = (_entity?: number): string => { };
+    export const getFarmerName = (_entity?: number): string => { };
 
     /**
      * <p><b>id : </b>129</p>
@@ -1048,7 +1046,7 @@ export class FONCTION {
      * <p><b>operations : </b>31</p>
      */
         // @ts-ignore
-    static getFarthestAlly = (): number => { };
+    export const getFarthestAlly = (): number => { };
 
     /**
      * <p><b>id : </b>120</p>
@@ -1057,7 +1055,7 @@ export class FONCTION {
      * <p><b>operations : </b>31</p>
      */
         // @ts-ignore
-    static getFarthestEnemy = (): number => { };
+    export const getFarthestEnemy = (): number => { };
 
     /**
      * <p><b>id : </b>194</p>
@@ -1066,7 +1064,7 @@ export class FONCTION {
      * <p><b>operations : </b>10</p>
      */
         // @ts-ignore
-    static getFightContext = (): number => { };
+    export const getFightContext = (): number => { };
 
     /**
      * <p><b>id : </b>347</p>
@@ -1075,7 +1073,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static getFightID = (): number => { };
+    export const getFightID = (): number => { };
 
     /**
      * <p><b>id : </b>195</p>
@@ -1084,7 +1082,7 @@ export class FONCTION {
      * <p><b>operations : </b>10</p>
      */
         // @ts-ignore
-    static getFightType = (): number => { };
+    export const getFightType = (): number => { };
 
     /**
      * <p><b>id : </b>199</p>
@@ -1093,7 +1091,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getFrequency = (_entity?: number): number => { };
+    export const getFrequency = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>228</p>
@@ -1102,7 +1100,7 @@ export class FONCTION {
      * <p><b>operations : </b>10</p>
      */
         // @ts-ignore
-    static getGreen = (_color: number): number => { };
+    export const getGreen = (_color: number): number => { };
 
     /**
      * <p><b>id : </b>321</p>
@@ -1111,7 +1109,7 @@ export class FONCTION {
      * <p><b>operations : </b>25</p>
      */
         // @ts-ignore
-    static getLaunchedEffects = (_entity?: number): any[][] => { };
+    export const getLaunchedEffects = (_entity?: number): any[][] => { };
 
     /**
      * <p><b>id : </b>233</p>
@@ -1120,7 +1118,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getLeekID = (_entity?: number): number => { };
+    export const getLeekID = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>179</p>
@@ -1129,7 +1127,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getLevel = (_entity?: number): number => { };
+    export const getLevel = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>66</p>
@@ -1138,7 +1136,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getLife = (_entity?: number): number => { };
+    export const getLife = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>306</p>
@@ -1147,7 +1145,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getMagic = (_entity?: number): number => { };
+    export const getMagic = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>304</p>
@@ -1156,7 +1154,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static getMapType = (): number => { };
+    export const getMapType = (): number => { };
 
     /**
      * <p><b>id : </b>408</p>
@@ -1165,7 +1163,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static getMaxRAM = (): number => { };
+    export const getMaxRAM = (): number => { };
 
     /**
      * <p><b>id : </b>175</p>
@@ -1174,7 +1172,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static getMessageAuthor = (_message: any[]): number => { };
+    export const getMessageAuthor = (_message: any[]): number => { };
 
     /**
      * <p><b>id : </b>177</p>
@@ -1183,7 +1181,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static getMessageParams = (_message: any[]): any => { };
+    export const getMessageParams = (_message: any[]): any => { };
 
     /**
      * <p><b>id : </b>174</p>
@@ -1192,7 +1190,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static getMessages = (_entity?: number): any[][] => { };
+    export const getMessages = (_entity?: number): any[][] => { };
 
     /**
      * <p><b>id : </b>176</p>
@@ -1201,7 +1199,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static getMessageType = (_message: any[]): number => { };
+    export const getMessageType = (_message: any[]): number => { };
 
     /**
      * <p><b>id : </b>78</p>
@@ -1210,7 +1208,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getMP = (_entity?: number): number => { };
+    export const getMP = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>76</p>
@@ -1219,7 +1217,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getName = (_entity?: number): string => { };
+    export const getName = (_entity?: number): string => { };
 
     /**
      * <p><b>id : </b>128</p>
@@ -1228,7 +1226,7 @@ export class FONCTION {
      * <p><b>operations : </b>25</p>
      */
         // @ts-ignore
-    static getNearestAlly = (): number => { };
+    export const getNearestAlly = (): number => { };
 
     /**
      * <p><b>id : </b>209</p>
@@ -1237,7 +1235,7 @@ export class FONCTION {
      * <p><b>operations : </b>35</p>
      */
         // @ts-ignore
-    static getNearestAllyTo = (_entity: number): number => { };
+    export const getNearestAllyTo = (_entity: number): number => { };
 
     /**
      * <p><b>id : </b>210</p>
@@ -1246,7 +1244,7 @@ export class FONCTION {
      * <p><b>operations : </b>35</p>
      */
         // @ts-ignore
-    static getNearestAllyToCell = (_cell: number): number => { };
+    export const getNearestAllyToCell = (_cell: number): number => { };
 
     /**
      * <p><b>id : </b>119</p>
@@ -1255,7 +1253,7 @@ export class FONCTION {
      * <p><b>operations : </b>25</p>
      */
         // @ts-ignore
-    static getNearestEnemy = (): number => { };
+    export const getNearestEnemy = (): number => { };
 
     /**
      * <p><b>id : </b>211</p>
@@ -1264,7 +1262,7 @@ export class FONCTION {
      * <p><b>operations : </b>35</p>
      */
         // @ts-ignore
-    static getNearestEnemyTo = (_entity: number): number => { };
+    export const getNearestEnemyTo = (_entity: number): number => { };
 
     /**
      * <p><b>id : </b>212</p>
@@ -1273,7 +1271,7 @@ export class FONCTION {
      * <p><b>operations : </b>35</p>
      */
         // @ts-ignore
-    static getNearestEnemyToCell = (_cell: number): number => { };
+    export const getNearestEnemyToCell = (_cell: number): number => { };
 
     /**
      * <p><b>id : </b>133</p>
@@ -1282,7 +1280,7 @@ export class FONCTION {
      * <p><b>operations : </b>20</p>
      */
         // @ts-ignore
-    static getNextPlayer = (): number => { };
+    export const getNextPlayer = (): number => { };
 
     /**
      * <p><b>id : </b>271</p>
@@ -1291,7 +1289,7 @@ export class FONCTION {
      * <p><b>operations : </b>85</p>
      */
         // @ts-ignore
-    static getObstacles = (): number[] => { };
+    export const getObstacles = (): number[] => { };
 
     /**
      * <p><b>id : </b>301</p>
@@ -1300,7 +1298,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static getOperations = (): number => { };
+    export const getOperations = (): number => { };
 
     /**
      * <p><b>id : </b>337</p>
@@ -1309,7 +1307,7 @@ export class FONCTION {
      * <p><b>operations : </b>125</p>
      */
         // @ts-ignore
-    static getPassiveEffects = (_entity?: number): any[][] => { };
+    export const getPassiveEffects = (_entity?: number): any[][] => { };
 
     /**
      * <p><b>id : </b>236</p>
@@ -1318,7 +1316,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n²)</p>
      */
         // @ts-ignore
-    static getPath = (_start: number, _end: number, _ignoredCells?: number[]): number[] => { };
+    export const getPath = (_start: number, _end: number, _ignoredCells?: number[]): number[] => { };
 
     /**
      * <p><b>id : </b>261</p>
@@ -1327,7 +1325,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n²)</p>
      */
         // @ts-ignore
-    static getPathLength = (_cell1: number, _cell2: number, _ignoredCells?: number[]): number => { };
+    export const getPathLength = (_cell1: number, _cell2: number, _ignoredCells?: number[]): number => { };
 
     /**
      * <p><b>id : </b>365</p>
@@ -1336,7 +1334,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getPower = (_entity?: number): number => { };
+    export const getPower = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>134</p>
@@ -1345,7 +1343,7 @@ export class FONCTION {
      * <p><b>operations : </b>20</p>
      */
         // @ts-ignore
-    static getPreviousPlayer = (): number => { };
+    export const getPreviousPlayer = (): number => { };
 
     /**
      * <p><b>id : </b>227</p>
@@ -1354,7 +1352,7 @@ export class FONCTION {
      * <p><b>operations : </b>10</p>
      */
         // @ts-ignore
-    static getRed = (_color: number): number => { };
+    export const getRed = (_color: number): number => { };
 
     /**
      * <p><b>id : </b>275</p>
@@ -1363,7 +1361,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getRegister = (_key: string): string => { };
+    export const getRegister = (_key: string): string => { };
 
     /**
      * <p><b>id : </b>276</p>
@@ -1372,7 +1370,7 @@ export class FONCTION {
      * <p><b>operations : </b>25</p>
      */
         // @ts-ignore
-    static getRegisters = (): string[] => { };
+    export const getRegisters = (): string[] => { };
 
     /**
      * <p><b>id : </b>183</p>
@@ -1381,7 +1379,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getRelativeShield = (_entity?: number): number => { };
+    export const getRelativeShield = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>308</p>
@@ -1390,7 +1388,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getResistance = (_entity?: number): number => { };
+    export const getResistance = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>310</p>
@@ -1399,7 +1397,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getScience = (_entity?: number): number => { };
+    export const getScience = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>303</p>
@@ -1408,7 +1406,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getStrength = (_entity?: number): number => { };
+    export const getStrength = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>294</p>
@@ -1417,7 +1415,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getSummoner = (_entity?: number): number => { };
+    export const getSummoner = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>335</p>
@@ -1426,7 +1424,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getSummons = (_entity?: number): number[] => { };
+    export const getSummons = (_entity?: number): number[] => { };
 
     /**
      * <p><b>id : </b>254</p>
@@ -1435,7 +1433,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getTeamID = (_entity?: number): number => { };
+    export const getTeamID = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>256</p>
@@ -1444,7 +1442,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getTeamName = (_entity?: number): string => { };
+    export const getTeamName = (_entity?: number): string => { };
 
     /**
      * <p><b>id : </b>352</p>
@@ -1453,7 +1451,7 @@ export class FONCTION {
      * <p><b>operations : </b>50</p>
      */
         // @ts-ignore
-    static getTime = (): string => { };
+    export const getTime = (): string => { };
 
     /**
      * <p><b>id : </b>351</p>
@@ -1462,7 +1460,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static getTimestamp = (): number => { };
+    export const getTimestamp = (): number => { };
 
     /**
      * <p><b>id : </b>82</p>
@@ -1471,7 +1469,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getTotalLife = (_entity?: number): number => { };
+    export const getTotalLife = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>317</p>
@@ -1480,7 +1478,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getTotalMP = (_entity?: number): number => { };
+    export const getTotalMP = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>319</p>
@@ -1489,7 +1487,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getTotalTP = (_entity?: number): number => { };
+    export const getTotalTP = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>80</p>
@@ -1498,7 +1496,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getTP = (_entity?: number): number => { };
+    export const getTP = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>121</p>
@@ -1507,7 +1505,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getTurn = (): number => { };
+    export const getTurn = (): number => { };
 
     /**
      * <p><b>id : </b>290</p>
@@ -1516,7 +1514,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getType = (_entity?: number): number => { };
+    export const getType = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>407</p>
@@ -1525,7 +1523,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static getUsedRAM = (): number => { };
+    export const getUsedRAM = (): number => { };
 
     /**
      * <p><b>id : </b>74</p>
@@ -1534,7 +1532,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getWeapon = (_entity?: number): number => { };
+    export const getWeapon = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>274</p>
@@ -1543,7 +1541,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getWeaponArea = (_weapon: number): number => { };
+    export const getWeaponArea = (_weapon: number): number => { };
 
     /**
      * <p><b>id : </b>96</p>
@@ -1552,7 +1550,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getWeaponCost = (_weapon: number): number => { };
+    export const getWeaponCost = (_weapon: number): number => { };
 
     /**
      * <p><b>id : </b>247</p>
@@ -1561,7 +1559,7 @@ export class FONCTION {
      * <p><b>operations : </b>78</p>
      */
         // @ts-ignore
-    static getWeaponEffectiveArea = (_weapon?: number, _cell: number, _from?: number): number[] => { };
+    export const getWeaponEffectiveArea = (_weapon?: number, _cell: number, _from?: number): number[] => { };
 
     /**
      * <p><b>id : </b>97</p>
@@ -1570,7 +1568,7 @@ export class FONCTION {
      * <p><b>operations : </b>125</p>
      */
         // @ts-ignore
-    static getWeaponEffects = (_weapon?: number): any[][] => { };
+    export const getWeaponEffects = (_weapon?: number): any[][] => { };
 
     /**
      * <p><b>id : </b>362</p>
@@ -1579,7 +1577,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getWeaponLaunchType = (_weapon?: number): number => { };
+    export const getWeaponLaunchType = (_weapon?: number): number => { };
 
     /**
      * <p><b>id : </b>329</p>
@@ -1588,7 +1586,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getWeaponMaxRange = (_weapon: number): number => { };
+    export const getWeaponMaxRange = (_weapon: number): number => { };
 
     /**
      * <p><b>id : </b>330</p>
@@ -1597,7 +1595,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getWeaponMinRange = (_weapon: number): number => { };
+    export const getWeaponMinRange = (_weapon: number): number => { };
 
     /**
      * <p><b>id : </b>93</p>
@@ -1606,7 +1604,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getWeaponName = (_weapon: number): string => { };
+    export const getWeaponName = (_weapon: number): string => { };
 
     /**
      * <p><b>id : </b>338</p>
@@ -1615,7 +1613,7 @@ export class FONCTION {
      * <p><b>operations : </b>125</p>
      */
         // @ts-ignore
-    static getWeaponPassiveEffects = (_weapon: number): any[][] => { };
+    export const getWeaponPassiveEffects = (_weapon: number): any[][] => { };
 
     /**
      * <p><b>id : </b>86</p>
@@ -1624,7 +1622,7 @@ export class FONCTION {
      * <p><b>operations : </b>50</p>
      */
         // @ts-ignore
-    static getWeapons = (_entity?: number): number[] => { };
+    export const getWeapons = (_entity?: number): number[] => { };
 
     /**
      * <p><b>id : </b>239</p>
@@ -1633,7 +1631,7 @@ export class FONCTION {
      * <p><b>operations : </b>40</p>
      */
         // @ts-ignore
-    static getWeaponTargets = (_weapon?: number, _cell: number): number[] => { };
+    export const getWeaponTargets = (_weapon?: number, _cell: number): number[] => { };
 
     /**
      * <p><b>id : </b>312</p>
@@ -1642,7 +1640,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static getWisdom = (_entity?: number): number => { };
+    export const getWisdom = (_entity?: number): number => { };
 
     /**
      * <p><b>id : </b>417</p>
@@ -1651,7 +1649,7 @@ export class FONCTION {
      * <p><b>operations : </b>10</p>
      */
         // @ts-ignore
-    static hexString = (_x: number): string => { };
+    export const hexString = (_x: number): string => { };
 
     /**
      * <p><b>id : </b>25</p>
@@ -1660,7 +1658,7 @@ export class FONCTION {
      * <p><b>operations : </b>187</p>
      */
         // @ts-ignore
-    static hypot = (_x: number, _y: number): number => { };
+    export const hypot = (_x: number, _y: number): number => { };
 
     /**
      * <p><b>id : </b>54</p>
@@ -1669,7 +1667,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static inArray = <T>(_array: T[], _element: T): boolean => { };
+    export const inArray = <T>(_array: T[], _element: T): boolean => { };
 
     /**
      * <p><b>id : </b>200</p>
@@ -1678,7 +1676,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static include = (_ai: string): void => { };
+    export const include = (_ai: string): void => { };
 
     /**
      * <p><b>id : </b>33</p>
@@ -1687,7 +1685,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static indexOf = (_string: string, _search: string, _start?: number): number => { };
+    export const indexOf = (_string: string, _search: string, _start?: number): number => { };
 
     /**
      * <p><b>id : </b>47</p>
@@ -1696,7 +1694,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static insert = <T>(_array: T[], _element: T, _position: number): void => { };
+    export const insert = <T>(_array: T[], _element: T, _position: number): void => { };
 
     /**
      * <p><b>id : </b>443</p>
@@ -1705,7 +1703,7 @@ export class FONCTION {
      * <p><b>operations : </b>3</p>
      */
         // @ts-ignore
-    static intervalAverage = (_interval: number[]): number => { };
+    export const intervalAverage = (_interval: number[]): number => { };
 
     /**
      * <p><b>id : </b>446</p>
@@ -1714,7 +1712,7 @@ export class FONCTION {
      * <p><b>operations : </b>3</p>
      */
         // @ts-ignore
-    static intervalCombine = (_interval1: number[], _interval2: number[]): number[] => { };
+    export const intervalCombine = (_interval1: number[], _interval2: number[]): number[] => { };
 
     /**
      * <p><b>id : </b>445</p>
@@ -1723,7 +1721,7 @@ export class FONCTION {
      * <p><b>operations : </b>3</p>
      */
         // @ts-ignore
-    static intervalIntersection = (_interval1: number[], _interval2: number[]): number[] => { };
+    export const intervalIntersection = (_interval1: number[], _interval2: number[]): number[] => { };
 
     /**
      * <p><b>id : </b>440</p>
@@ -1732,7 +1730,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static intervalIsBounded = (_interval: number[]): boolean => { };
+    export const intervalIsBounded = (_interval: number[]): boolean => { };
 
     /**
      * <p><b>id : </b>450</p>
@@ -1741,7 +1739,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static intervalIsClosed = (_interval: number[]): boolean => { };
+    export const intervalIsClosed = (_interval: number[]): boolean => { };
 
     /**
      * <p><b>id : </b>439</p>
@@ -1750,7 +1748,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static intervalIsEmpty = (_interval: number[]): boolean => { };
+    export const intervalIsEmpty = (_interval: number[]): boolean => { };
 
     /**
      * <p><b>id : </b>442</p>
@@ -1759,7 +1757,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static intervalIsLeftBounded = (_interval: number[]): boolean => { };
+    export const intervalIsLeftBounded = (_interval: number[]): boolean => { };
 
     /**
      * <p><b>id : </b>449</p>
@@ -1768,7 +1766,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static intervalIsLeftClosed = (_interval: number[]): boolean => { };
+    export const intervalIsLeftClosed = (_interval: number[]): boolean => { };
 
     /**
      * <p><b>id : </b>441</p>
@@ -1777,7 +1775,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static intervalIsRightBounded = (_interval: number[]): boolean => { };
+    export const intervalIsRightBounded = (_interval: number[]): boolean => { };
 
     /**
      * <p><b>id : </b>448</p>
@@ -1786,7 +1784,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static intervalIsRightClosed = (_interval: number[]): boolean => { };
+    export const intervalIsRightClosed = (_interval: number[]): boolean => { };
 
     /**
      * <p><b>id : </b>428</p>
@@ -1795,7 +1793,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static intervalMax = (_interval: number[]): number => { };
+    export const intervalMax = (_interval: number[]): number => { };
 
     /**
      * <p><b>id : </b>427</p>
@@ -1804,7 +1802,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static intervalMin = (_interval: number[]): number => { };
+    export const intervalMin = (_interval: number[]): number => { };
 
     /**
      * <p><b>id : </b>444</p>
@@ -1813,7 +1811,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static intervalSize = (_interval: number[]): number => { };
+    export const intervalSize = (_interval: number[]): number => { };
 
     /**
      * <p><b>id : </b>447</p>
@@ -1822,7 +1820,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static intervalToArray = (_interval: number[], _step?: number): number[] => { };
+    export const intervalToArray = (_interval: number[], _step?: number): number[] => { };
 
     /**
      * <p><b>id : </b>90</p>
@@ -1831,7 +1829,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static isAlive = (_entity: number): boolean => { };
+    export const isAlive = (_entity: number): boolean => { };
 
     /**
      * <p><b>id : </b>88</p>
@@ -1840,7 +1838,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static isAlly = (_entity: number): boolean => { };
+    export const isAlly = (_entity: number): boolean => { };
 
     /**
      * <p><b>id : </b>232</p>
@@ -1849,7 +1847,7 @@ export class FONCTION {
      * <p><b>operations : </b>10</p>
      */
         // @ts-ignore
-    static isChip = (_value: number): boolean => { };
+    export const isChip = (_value: number): boolean => { };
 
     /**
      * <p><b>id : </b>89</p>
@@ -1858,7 +1856,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static isDead = (_entity: number): boolean => { };
+    export const isDead = (_entity: number): boolean => { };
 
     /**
      * <p><b>id : </b>62</p>
@@ -1867,7 +1865,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static isEmpty = <T>(_array: T[]): boolean => { };
+    export const isEmpty = <T>(_array: T[]): boolean => { };
 
     /**
      * <p><b>id : </b>114</p>
@@ -1876,7 +1874,7 @@ export class FONCTION {
      * <p><b>operations : </b>10</p>
      */
         // @ts-ignore
-    static isEmptyCell = (_cell: number): boolean => { };
+    export const isEmptyCell = (_cell: number): boolean => { };
 
     /**
      * <p><b>id : </b>87</p>
@@ -1885,7 +1883,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static isEnemy = (_entity: number): boolean => { };
+    export const isEnemy = (_entity: number): boolean => { };
 
     /**
      * <p><b>id : </b>344</p>
@@ -1894,7 +1892,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static isEntity = (_cell: number): boolean => { };
+    export const isEntity = (_cell: number): boolean => { };
 
     /**
      * <p><b>id : </b>420</p>
@@ -1903,7 +1901,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static isFinite = (_x: number): boolean => { };
+    export const isFinite = (_x: number): boolean => { };
 
     /**
      * <p><b>id : </b>421</p>
@@ -1912,7 +1910,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static isInfinite = (_x: number): boolean => { };
+    export const isInfinite = (_x: number): boolean => { };
 
     /**
      * <p><b>id : </b>422</p>
@@ -1921,7 +1919,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static isNaN = (_x: number): boolean => { };
+    export const isNaN = (_x: number): boolean => { };
 
     /**
      * <p><b>id : </b>115</p>
@@ -1930,7 +1928,7 @@ export class FONCTION {
      * <p><b>operations : </b>10</p>
      */
         // @ts-ignore
-    static isObstacle = (_cell: number): boolean => { };
+    export const isObstacle = (_cell: number): boolean => { };
 
     /**
      * <p><b>id : </b>112</p>
@@ -1939,7 +1937,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static isOnSameLine = (_cell1: number, _cell2: number): boolean => { };
+    export const isOnSameLine = (_cell1: number, _cell2: number): boolean => { };
 
     /**
      * <p><b>id : </b>423</p>
@@ -1948,7 +1946,7 @@ export class FONCTION {
      * <p><b>operations : </b>50</p>
      */
         // @ts-ignore
-    static isPermutation = (_x: number, _y: number): boolean => { };
+    export const isPermutation = (_x: number, _y: number): boolean => { };
 
     /**
      * <p><b>id : </b>333</p>
@@ -1957,7 +1955,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static isStatic = (_entity?: number): boolean => { };
+    export const isStatic = (_entity?: number): boolean => { };
 
     /**
      * <p><b>id : </b>292</p>
@@ -1966,7 +1964,7 @@ export class FONCTION {
      * <p><b>operations : </b>10</p>
      */
         // @ts-ignore
-    static isSummon = (_entity?: number): boolean => { };
+    export const isSummon = (_entity?: number): boolean => { };
 
     /**
      * <p><b>id : </b>231</p>
@@ -1975,7 +1973,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static isWeapon = (_value: number): boolean => { };
+    export const isWeapon = (_value: number): boolean => { };
 
     /**
      * <p><b>id : </b>42</p>
@@ -1984,7 +1982,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static join = <T>(_array: T[], _glue: string): string => { };
+    export const join = <T>(_array: T[], _glue: string): string => { };
 
     /**
      * <p><b>id : </b>326</p>
@@ -1993,7 +1991,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static jsonDecode = (_json: string): any => { };
+    export const jsonDecode = (_json: string): any => { };
 
     /**
      * <p><b>id : </b>325</p>
@@ -2002,7 +2000,7 @@ export class FONCTION {
      * <p><b>complexity : </b>∞</p>
      */
         // @ts-ignore
-    static jsonEncode = (_object: string): string => { };
+    export const jsonEncode = (_object: string): string => { };
 
     /**
      * <p><b>id : </b>206</p>
@@ -2011,7 +2009,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(nlog(n))</p>
      */
         // @ts-ignore
-    static keySort = <T>(_array: T[], _order?: number): void => { };
+    export const keySort = <T>(_array: T[], _order?: number): void => { };
 
     /**
      * <p><b>id : </b>411</p>
@@ -2020,7 +2018,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static leadingZeros = (_x: number): number => { };
+    export const leadingZeros = (_x: number): number => { };
 
     /**
      * <p><b>id : </b>28</p>
@@ -2029,7 +2027,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static length = (_string: string): number => { };
+    export const length = (_string: string): number => { };
 
     /**
      * <p><b>id : </b>235</p>
@@ -2038,7 +2036,7 @@ export class FONCTION {
      * <p><b>operations : </b>31</p>
      */
         // @ts-ignore
-    static lineOfSight = (_start: number, _end: number, _entityToIgnore?: number): boolean => { };
+    export const lineOfSight = (_start: number, _end: number, _entityToIgnore?: number): boolean => { };
 
     /**
      * <p><b>id : </b>230</p>
@@ -2047,7 +2045,7 @@ export class FONCTION {
      * <p><b>operations : </b>78</p>
      */
         // @ts-ignore
-    static listen = (): any[] => { };
+    export const listen = (): any[] => { };
 
     /**
      * <p><b>id : </b>18</p>
@@ -2056,7 +2054,7 @@ export class FONCTION {
      * <p><b>operations : </b>39</p>
      */
         // @ts-ignore
-    static log = (_number: number): number => { };
+    export const log = (_number: number): number => { };
 
     /**
      * <p><b>id : </b>19</p>
@@ -2065,7 +2063,7 @@ export class FONCTION {
      * <p><b>operations : </b>23</p>
      */
         // @ts-ignore
-    static log10 = (_number: number): number => { };
+    export const log10 = (_number: number): number => { };
 
     /**
      * <p><b>id : </b>382</p>
@@ -2074,7 +2072,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static log2 = (_number: number): number => { };
+    export const log2 = (_number: number): number => { };
 
     /**
      * <p><b>id : </b>370</p>
@@ -2083,7 +2081,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapAverage = <T, U>(_map: Map<T, U>): number => { };
+    export const mapAverage = <T, U>(_map: Map<T, U>): number => { };
 
     /**
      * <p><b>id : </b>397</p>
@@ -2092,7 +2090,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static mapClear = <T, U>(_map: Map<T, U>): void => { };
+    export const mapClear = <T, U>(_map: Map<T, U>): void => { };
 
     /**
      * <p><b>id : </b>374</p>
@@ -2101,7 +2099,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapContains = <T, U>(_map: Map<T, U>, _value: U): boolean => { };
+    export const mapContains = <T, U>(_map: Map<T, U>, _value: U): boolean => { };
 
     /**
      * <p><b>id : </b>375</p>
@@ -2110,7 +2108,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static mapContainsKey = <T, U>(_map: Map<T, U>, _key: T): boolean => { };
+    export const mapContainsKey = <T, U>(_map: Map<T, U>, _key: T): boolean => { };
 
     /**
      * <p><b>id : </b>393</p>
@@ -2119,7 +2117,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapEvery = <T, U>(_map: Map<T, U>, _callback: (arg: T) => boolean): boolean => { };
+    export const mapEvery = <T, U>(_map: Map<T, U>, _callback: (arg: T) => boolean): boolean => { };
 
     /**
      * <p><b>id : </b>390</p>
@@ -2128,7 +2126,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapFill = <T, U>(_map: Map<T, U>, _value: U): void => { };
+    export const mapFill = <T, U>(_map: Map<T, U>, _value: U): void => { };
 
     /**
      * <p><b>id : </b>389</p>
@@ -2137,7 +2135,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapFilter = <T, U>(_map: Map<T, U>, _callback: (arg: T) => boolean): Map<T, U> => { };
+    export const mapFilter = <T, U>(_map: Map<T, U>, _callback: (arg: T) => boolean): Map<T, U> => { };
 
     /**
      * <p><b>id : </b>391</p>
@@ -2146,7 +2144,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapFold = <T, U>(_map: Map<T, U>, _f: (arg1: U, arg2: U, arg3: T, arg4: Map<T, U>[]) => boolean, _v: U): U => { };
+    export const mapFold = <T, U>(_map: Map<T, U>, _f: (arg1: U, arg2: U, arg3: T, arg4: Map<T, U>[]) => boolean, _v: U): U => { };
 
     /**
      * <p><b>id : </b>378</p>
@@ -2155,7 +2153,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static mapGet = <T, U>(_map: Map<T, U>, _key: T, _defaut?: U): U | undefined => { };
+    export const mapGet = <T, U>(_map: Map<T, U>, _key: T, _defaut?: U): U | undefined => { };
 
     /**
      * <p><b>id : </b>399</p>
@@ -2164,7 +2162,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static mapIsEmpty = <T, U>(_map: Map<T, U>): boolean => { };
+    export const mapIsEmpty = <T, U>(_map: Map<T, U>): boolean => { };
 
     /**
      * <p><b>id : </b>381</p>
@@ -2173,7 +2171,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapIter = <T, U>(_map: Map<T, U>, _callback: (arg1: U, arg2: T, arg3: Map<T, U>) => void): void => { };
+    export const mapIter = <T, U>(_map: Map<T, U>, _callback: (arg1: U, arg2: T, arg3: Map<T, U>) => void): void => { };
 
     /**
      * <p><b>id : </b>380</p>
@@ -2182,7 +2180,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapKeys = <T, U>(_map: Map<T, U>): T[] => { };
+    export const mapKeys = <T, U>(_map: Map<T, U>): T[] => { };
 
     /**
      * <p><b>id : </b>368</p>
@@ -2191,7 +2189,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapMap = <T, U, V>(_map: Map<T, U>, _callback: (arg1: U, arg2: T, arg3: Map<T, U>) => V): Map<T, V> => { };
+    export const mapMap = <T, U, V>(_map: Map<T, U>, _callback: (arg1: U, arg2: T, arg3: Map<T, U>) => V): Map<T, V> => { };
 
     /**
      * <p><b>id : </b>372</p>
@@ -2200,7 +2198,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapMax = <T, U>(_map: Map<T, U>): number => { };
+    export const mapMax = <T, U>(_map: Map<T, U>): number => { };
 
     /**
      * <p><b>id : </b>388</p>
@@ -2209,7 +2207,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapMerge = <T, U>(_map1: Map<T, U>, _map2: Map<T, U>): Map<T, U> => { };
+    export const mapMerge = <T, U>(_map1: Map<T, U>, _map2: Map<T, U>): Map<T, U> => { };
 
     /**
      * <p><b>id : </b>371</p>
@@ -2218,7 +2216,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapMin = <T>(_map: Map<T, number>): number => { };
+    export const mapMin = <T>(_map: Map<T, number>): number => { };
 
     /**
      * <p><b>id : </b>383</p>
@@ -2227,7 +2225,7 @@ export class FONCTION {
      * <p><b>operations : </b>3</p>
      */
         // @ts-ignore
-    static mapPut = <T, U>(_map: Map<T, U>, _key: T, _value: U): U | undefined => { };
+    export const mapPut = <T, U>(_map: Map<T, U>, _key: T, _value: U): U | undefined => { };
 
     /**
      * <p><b>id : </b>384</p>
@@ -2236,7 +2234,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapPutAll = <T, U>(_map: Map<T, U>, _elements: Map<T, U>): void => { };
+    export const mapPutAll = <T, U>(_map: Map<T, U>, _elements: Map<T, U>): void => { };
 
     /**
      * <p><b>id : </b>366</p>
@@ -2245,7 +2243,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static mapRemove = <T, U>(_map: Map<T, U>, _key: T): U | undefined => { };
+    export const mapRemove = <T, U>(_map: Map<T, U>, _key: T): U | undefined => { };
 
     /**
      * <p><b>id : </b>387</p>
@@ -2254,7 +2252,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapRemoveAll = <T, U>(_map: Map<T, U>, _value: U): void => { };
+    export const mapRemoveAll = <T, U>(_map: Map<T, U>, _value: U): void => { };
 
     /**
      * <p><b>id : </b>385</p>
@@ -2263,7 +2261,7 @@ export class FONCTION {
      * <p><b>operations : </b>3</p>
      */
         // @ts-ignore
-    static mapReplace = <T, U>(_map: Map<T, U>, _key: T, _value: U): U => { };
+    export const mapReplace = <T, U>(_map: Map<T, U>, _key: T, _value: U): U => { };
 
     /**
      * <p><b>id : </b>377</p>
@@ -2272,7 +2270,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapReplaceAll = <T, U>(_map1: Map<T, U>, _map2: Map<T, U>): void => { };
+    export const mapReplaceAll = <T, U>(_map1: Map<T, U>, _map2: Map<T, U>): void => { };
 
     /**
      * <p><b>id : </b>373</p>
@@ -2281,7 +2279,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapSearch = <T, U>(_map: Map<T, U>, _value: U): number => { };
+    export const mapSearch = <T, U>(_map: Map<T, U>, _value: U): number => { };
 
     /**
      * <p><b>id : </b>367</p>
@@ -2290,7 +2288,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static mapSize = <T, U>(_map: Map<T, U>): number => { };
+    export const mapSize = <T, U>(_map: Map<T, U>): number => { };
 
     /**
      * <p><b>id : </b>392</p>
@@ -2299,7 +2297,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapSome = <T, U>(_map: Map<T, U>, _callback: (arg1: U, arg2: T, arg3: Map<T, U>) => boolean): boolean => { };
+    export const mapSome = <T, U>(_map: Map<T, U>, _callback: (arg1: U, arg2: T, arg3: Map<T, U>) => boolean): boolean => { };
 
     /**
      * <p><b>id : </b>369</p>
@@ -2308,7 +2306,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapSum = <T, U>(_map: Map<T, U>): number => { };
+    export const mapSum = <T, U>(_map: Map<T, U>): number => { };
 
     /**
      * <p><b>id : </b>379</p>
@@ -2317,7 +2315,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static mapValues = <T, U>(_map: Map<T, U>): U[] => { };
+    export const mapValues = <T, U>(_map: Map<T, U>): U[] => { };
 
     /**
      * <p><b>id : </b>223</p>
@@ -2326,7 +2324,7 @@ export class FONCTION {
      * <p><b>operations : </b>164</p>
      */
         // @ts-ignore
-    static mark = (_cells: number | number[], _color?: number, _duration?: number): boolean => { };
+    export const mark = (_cells: number | number[], _color?: number, _duration?: number): boolean => { };
 
     /**
      * <p><b>id : </b>342</p>
@@ -2335,7 +2333,7 @@ export class FONCTION {
      * <p><b>operations : </b>164</p>
      */
         // @ts-ignore
-    static markText = (_cells: number | number[], _text?: string, _color?: number, _duration?: number): boolean => { };
+    export const markText = (_cells: number | number[], _text?: string, _color?: number, _duration?: number): boolean => { };
 
     /**
      * <p><b>id : </b>3</p>
@@ -2344,7 +2342,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static max = (_a: number, _b: number): number => { };
+    export const max = (_a: number, _b: number): number => { };
 
     /**
      * <p><b>id : </b>2</p>
@@ -2353,7 +2351,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static min = (_a: number, _b: number): number => { };
+    export const min = (_a: number, _b: number): number => { };
 
     /**
      * <p><b>id : </b>150</p>
@@ -2362,7 +2360,7 @@ export class FONCTION {
      * <p><b>operations : </b>500</p>
      */
         // @ts-ignore
-    static moveAwayFrom = (_entity: number, _mp?: number): number => { };
+    export const moveAwayFrom = (_entity: number, _mp?: number): number => { };
 
     /**
      * <p><b>id : </b>152</p>
@@ -2371,7 +2369,7 @@ export class FONCTION {
      * <p><b>operations : </b>500</p>
      */
         // @ts-ignore
-    static moveAwayFromCell = (_cell: number, _mp?: number): number => { };
+    export const moveAwayFromCell = (_cell: number, _mp?: number): number => { };
 
     /**
      * <p><b>id : </b>154</p>
@@ -2380,7 +2378,7 @@ export class FONCTION {
      * <p><b>operations : </b>500</p>
      */
         // @ts-ignore
-    static moveAwayFromCells = (_cells: number[], _mp?: number): number => { };
+    export const moveAwayFromCells = (_cells: number[], _mp?: number): number => { };
 
     /**
      * <p><b>id : </b>358</p>
@@ -2389,7 +2387,7 @@ export class FONCTION {
      * <p><b>operations : </b>500</p>
      */
         // @ts-ignore
-    static moveAwayFromEntities = (_entities: number[], _mp?: number): number => { };
+    export const moveAwayFromEntities = (_entities: number[], _mp?: number): number => { };
 
     /**
      * <p><b>id : </b>158</p>
@@ -2398,7 +2396,7 @@ export class FONCTION {
      * <p><b>operations : </b>500</p>
      */
         // @ts-ignore
-    static moveAwayFromLine = (_cell1: number, _cell2: number, _mp?: number): number => { };
+    export const moveAwayFromLine = (_cell1: number, _cell2: number, _mp?: number): number => { };
 
     /**
      * <p><b>id : </b>142</p>
@@ -2407,7 +2405,7 @@ export class FONCTION {
      * <p><b>operations : </b>500</p>
      */
         // @ts-ignore
-    static moveToward = (_entity: number, _mp?: number): number => { };
+    export const moveToward = (_entity: number, _mp?: number): number => { };
 
     /**
      * <p><b>id : </b>144</p>
@@ -2416,7 +2414,7 @@ export class FONCTION {
      * <p><b>operations : </b>500</p>
      */
         // @ts-ignore
-    static moveTowardCell = (_cell: number, _mp?: number): number => { };
+    export const moveTowardCell = (_cell: number, _mp?: number): number => { };
 
     /**
      * <p><b>id : </b>148</p>
@@ -2425,7 +2423,7 @@ export class FONCTION {
      * <p><b>operations : </b>500</p>
      */
         // @ts-ignore
-    static moveTowardCells = (_cells: number[], _mp?: number): number => { };
+    export const moveTowardCells = (_cells: number[], _mp?: number): number => { };
 
     /**
      * <p><b>id : </b>356</p>
@@ -2434,7 +2432,7 @@ export class FONCTION {
      * <p><b>operations : </b>500</p>
      */
         // @ts-ignore
-    static moveTowardEntities = (_entities: number[], _mp?: number): number => { };
+    export const moveTowardEntities = (_entities: number[], _mp?: number): number => { };
 
     /**
      * <p><b>id : </b>164</p>
@@ -2443,7 +2441,7 @@ export class FONCTION {
      * <p><b>operations : </b>500</p>
      */
         // @ts-ignore
-    static moveTowardLine = (_cell1: number, _cell2: number, _mp?: number): number => { };
+    export const moveTowardLine = (_cell1: number, _cell2: number, _mp?: number): number => { };
 
     /**
      * <p><b>id : </b>201</p>
@@ -2452,7 +2450,7 @@ export class FONCTION {
      * <p><b>operations : </b>20</p>
      */
         // @ts-ignore
-    static number = (_value: any): number | undefined => { };
+    export const number = (_value: any): number | undefined => { };
 
     /**
      * <p><b>id : </b>262</p>
@@ -2461,7 +2459,7 @@ export class FONCTION {
      * <p><b>operations : </b>30</p>
      */
         // @ts-ignore
-    static pause = (): void => { };
+    export const pause = (): void => { };
 
     /**
      * <p><b>id : </b>44</p>
@@ -2470,7 +2468,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static pop = <T>(_array: T[]): T => { };
+    export const pop = <T>(_array: T[]): T => { };
 
     /**
      * <p><b>id : </b>21</p>
@@ -2479,7 +2477,7 @@ export class FONCTION {
      * <p><b>operations : </b>140</p>
      */
         // @ts-ignore
-    static pow = (_base: number, _exp: number): number => { };
+    export const pow = (_base: number, _exp: number): number => { };
 
     /**
      * <p><b>id : </b>43</p>
@@ -2488,7 +2486,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static push = <T>(_array: T[], _element: T): void => { };
+    export const push = <T>(_array: T[], _element: T): void => { };
 
     /**
      * <p><b>id : </b>64</p>
@@ -2497,7 +2495,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static pushAll = <T>(_array: T[], _elements: T[]): void => { };
+    export const pushAll = <T>(_array: T[], _elements: T[]): void => { };
 
     /**
      * <p><b>id : </b>22</p>
@@ -2506,7 +2504,7 @@ export class FONCTION {
      * <p><b>operations : </b>30</p>
      */
         // @ts-ignore
-    static rand = (): number => { };
+    export const rand = (): number => { };
 
     /**
      * <p><b>id : </b>23</p>
@@ -2515,7 +2513,7 @@ export class FONCTION {
      * <p><b>operations : </b>30</p>
      */
         // @ts-ignore
-    static randInt = (_a: number, _b: number): number => { };
+    export const randInt = (_a: number, _b: number): number => { };
 
     /**
      * <p><b>id : </b>403</p>
@@ -2524,7 +2522,7 @@ export class FONCTION {
      * <p><b>operations : </b>30</p>
      */
         // @ts-ignore
-    static randReal = (_a: number, _b: number): number => { };
+    export const randReal = (_a: number, _b: number): number => { };
 
     /**
      * <p><b>id : </b>418</p>
@@ -2533,7 +2531,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static realBits = (_x: number): number => { };
+    export const realBits = (_x: number): number => { };
 
     /**
      * <p><b>id : </b>48</p>
@@ -2542,7 +2540,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static remove = <T>(_array: T[], _position: number): T => { };
+    export const remove = <T>(_array: T[], _position: number): T => { };
 
     /**
      * <p><b>id : </b>49</p>
@@ -2551,7 +2549,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static removeElement = <T>(_array: T[], _element: T): void => { };
+    export const removeElement = <T>(_array: T[], _element: T): void => { };
 
     /**
      * <p><b>id : </b>207</p>
@@ -2560,7 +2558,7 @@ export class FONCTION {
      * <p><b>operations : </b>5</p>
      */
         // @ts-ignore
-    static removeKey = <T>(_array: T[], _key: number): void => { };
+    export const removeKey = <T>(_array: T[], _key: number): void => { };
 
     /**
      * <p><b>id : </b>31</p>
@@ -2569,7 +2567,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static replace = (_string: string, _search: string, _replace: string): string => { };
+    export const replace = (_string: string, _search: string, _replace: string): string => { };
 
     /**
      * <p><b>id : </b>300</p>
@@ -2578,7 +2576,7 @@ export class FONCTION {
      * <p><b>operations : </b>500</p>
      */
         // @ts-ignore
-    static resurrect = (_entity: number, _cell: number): number => { };
+    export const resurrect = (_entity: number, _cell: number): number => { };
 
     /**
      * <p><b>id : </b>55</p>
@@ -2587,7 +2585,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static reverse = <T>(_array: T[]): void => { };
+    export const reverse = <T>(_array: T[]): void => { };
 
     /**
      * <p><b>id : </b>414</p>
@@ -2596,7 +2594,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static rotateLeft = (_x: number, _s: number): number => { };
+    export const rotateLeft = (_x: number, _s: number): number => { };
 
     /**
      * <p><b>id : </b>415</p>
@@ -2605,7 +2603,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static rotateRight = (_x: number, _s: number): number => { };
+    export const rotateRight = (_x: number, _s: number): number => { };
 
     /**
      * <p><b>id : </b>15</p>
@@ -2614,7 +2612,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static round = (_number: number): number => { };
+    export const round = (_number: number): number => { };
 
     /**
      * <p><b>id : </b>83</p>
@@ -2623,7 +2621,7 @@ export class FONCTION {
      * <p><b>operations : </b>30</p>
      */
         // @ts-ignore
-    static say = (_message: string): void => { };
+    export const say = (_message: string): void => { };
 
     /**
      * <p><b>id : </b>53</p>
@@ -2632,7 +2630,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static search = <T>(_array: T[], _element: T, _start?: number): number => { };
+    export const search = <T>(_array: T[], _element: T, _start?: number): number => { };
 
     /**
      * <p><b>id : </b>172</p>
@@ -2641,7 +2639,7 @@ export class FONCTION {
      * <p><b>operations : </b>40</p>
      */
         // @ts-ignore
-    static sendAll = (_type: number, _params: any): void => { };
+    export const sendAll = (_type: number, _params: any): void => { };
 
     /**
      * <p><b>id : </b>171</p>
@@ -2650,7 +2648,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static sendTo = (_entity: number, _type: number, _params: any): boolean => { };
+    export const sendTo = (_entity: number, _type: number, _params: any): boolean => { };
 
     /**
      * <p><b>id : </b>429</p>
@@ -2659,7 +2657,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static setClear = <T>(_set: Set<T>): Set<T> => { };
+    export const setClear = <T>(_set: Set<T>): Set<T> => { };
 
     /**
      * <p><b>id : </b>430</p>
@@ -2668,7 +2666,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static setContains = <T>(_set: Set<T>, _element: T): boolean => { };
+    export const setContains = <T>(_set: Set<T>, _element: T): boolean => { };
 
     /**
      * <p><b>id : </b>436</p>
@@ -2677,7 +2675,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static setDifference = <T>(_set1: Set<T>, _set2: Set<T>): Set<T> => { };
+    export const setDifference = <T>(_set1: Set<T>, _set2: Set<T>): Set<T> => { };
 
     /**
      * <p><b>id : </b>437</p>
@@ -2686,7 +2684,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static setDisjunction = <T>(_set1: Set<T>, _set2: Set<T>): Set<T> => { };
+    export const setDisjunction = <T>(_set1: Set<T>, _set2: Set<T>): Set<T> => { };
 
     /**
      * <p><b>id : </b>435</p>
@@ -2695,7 +2693,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static setIntersection = <T>(_set1: Set<T>, _set2: Set<T>): Set<T> => { };
+    export const setIntersection = <T>(_set1: Set<T>, _set2: Set<T>): Set<T> => { };
 
     /**
      * <p><b>id : </b>432</p>
@@ -2704,7 +2702,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static setIsEmpty = <T>(_set: Set<T>): boolean => { };
+    export const setIsEmpty = <T>(_set: Set<T>): boolean => { };
 
     /**
      * <p><b>id : </b>433</p>
@@ -2713,7 +2711,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static setIsSubsetOf = <T>(_set1: Set<T>, _set2: Set<T>): boolean => { };
+    export const setIsSubsetOf = <T>(_set1: Set<T>, _set2: Set<T>): boolean => { };
 
     /**
      * <p><b>id : </b>425</p>
@@ -2722,7 +2720,7 @@ export class FONCTION {
      * <p><b>operations : </b>3</p>
      */
         // @ts-ignore
-    static setPut = <T>(_set: Set<T>, _element: T): boolean => { };
+    export const setPut = <T>(_set: Set<T>, _element: T): boolean => { };
 
     /**
      * <p><b>id : </b>278</p>
@@ -2731,7 +2729,7 @@ export class FONCTION {
      * <p><b>operations : </b>50</p>
      */
         // @ts-ignore
-    static setRegister = (_key: string, _value: string): boolean => { };
+    export const setRegister = (_key: string, _value: string): boolean => { };
 
     /**
      * <p><b>id : </b>426</p>
@@ -2740,7 +2738,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static setRemove = <T>(_set: Set<T>, _element: T): boolean => { };
+    export const setRemove = <T>(_set: Set<T>, _element: T): boolean => { };
 
     /**
      * <p><b>id : </b>431</p>
@@ -2749,7 +2747,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static setSize = (_set: Set<any>): number => { };
+    export const setSize = (_set: Set<any>): number => { };
 
     /**
      * <p><b>id : </b>438</p>
@@ -2758,7 +2756,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static setToArray = <T>(_set: Set<T>): T[] => { };
+    export const setToArray = <T>(_set: Set<T>): T[] => { };
 
     /**
      * <p><b>id : </b>434</p>
@@ -2767,7 +2765,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static setUnion = <T>(_set1: Set<T>, _set2: Set<T>): Set<T> => { };
+    export const setUnion = <T>(_set1: Set<T>, _set2: Set<T>): Set<T> => { };
 
     /**
      * <p><b>id : </b>84</p>
@@ -2776,7 +2774,7 @@ export class FONCTION {
      * <p><b>operations : </b>15</p>
      */
         // @ts-ignore
-    static setWeapon = (_weapon: number): void => { };
+    export const setWeapon = (_weapon: number): void => { };
 
     /**
      * <p><b>id : </b>46</p>
@@ -2785,7 +2783,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static shift = <T>(_array: T[]): T => { };
+    export const shift = <T>(_array: T[]): T => { };
 
     /**
      * <p><b>id : </b>238</p>
@@ -2794,7 +2792,7 @@ export class FONCTION {
      * <p><b>operations : </b>8</p>
      */
         // @ts-ignore
-    static show = (_cell: number, _color?: number): void => { };
+    export const show = (_cell: number, _color?: number): void => { };
 
     /**
      * <p><b>id : </b>51</p>
@@ -2803,7 +2801,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static shuffle = (_array: any[]): void => { };
+    export const shuffle = (_array: any[]): void => { };
 
     /**
      * <p><b>id : </b>26</p>
@@ -2812,7 +2810,7 @@ export class FONCTION {
      * <p><b>operations : </b>2</p>
      */
         // @ts-ignore
-    static signum = (_number: number): number => { };
+    export const signum = (_number: number): number => { };
 
     /**
      * <p><b>id : </b>5</p>
@@ -2821,7 +2819,7 @@ export class FONCTION {
      * <p><b>operations : </b>30</p>
      */
         // @ts-ignore
-    static sin = (_angle: number): number => { };
+    export const sin = (_angle: number): number => { };
 
     /**
      * <p><b>id : </b>162</p>
@@ -2830,7 +2828,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(nlog(n))</p>
      */
         // @ts-ignore
-    static sort = (_array: any[], _order?: number): void => { };
+    export const sort = (_array: any[], _order?: number): void => { };
 
     /**
      * <p><b>id : </b>35</p>
@@ -2839,7 +2837,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static split = (_string: string, _delimiter: string, _limit?: number): string[] => { };
+    export const split = (_string: string, _delimiter: string, _limit?: number): string[] => { };
 
     /**
      * <p><b>id : </b>16</p>
@@ -2848,7 +2846,7 @@ export class FONCTION {
      * <p><b>operations : </b>8</p>
      */
         // @ts-ignore
-    static sqrt = (_number: number): number => { };
+    export const sqrt = (_number: number): number => { };
 
     /**
      * <p><b>id : </b>38</p>
@@ -2857,7 +2855,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static startsWith = (_string: string, _prefix: string): boolean => { };
+    export const startsWith = (_string: string, _prefix: string): boolean => { };
 
     /**
      * <p><b>id : </b>202</p>
@@ -2866,7 +2864,7 @@ export class FONCTION {
      * <p><b>operations : </b>8</p>
      */
         // @ts-ignore
-    static string = (_value: any): string => { };
+    export const string = (_value: any): string => { };
 
     /**
      * <p><b>id : </b>63</p>
@@ -2875,7 +2873,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static subArray = <T>(_array: T[], _start: number, _end: number): T[] => { };
+    export const subArray = <T>(_array: T[], _start: number, _end: number): T[] => { };
 
     /**
      * <p><b>id : </b>30</p>
@@ -2884,7 +2882,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static substring = (_string: string, _start: number, _length?: number): string => { };
+    export const substring = (_string: string, _start: number, _length?: number): string => { };
 
     /**
      * <p><b>id : </b>58</p>
@@ -2893,7 +2891,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static sum = (_array: number[]): number => { };
+    export const sum = (_array: number[]): number => { };
 
     /**
      * <p><b>id : </b>297</p>
@@ -2902,7 +2900,7 @@ export class FONCTION {
      * <p><b>operations : </b>1750</p>
      */
         // @ts-ignore
-    static summon = (_chip: number, _cell: number, _ai: (...args: any[]) => void): number => { };
+    export const summon = (_chip: number, _cell: number, _ai: (...args: any[]) => void): number => { };
 
     /**
      * <p><b>id : </b>6</p>
@@ -2911,7 +2909,7 @@ export class FONCTION {
      * <p><b>operations : </b>30</p>
      */
         // @ts-ignore
-    static tan = (_angle: number): number => { };
+    export const tan = (_angle: number): number => { };
 
     /**
      * <p><b>id : </b>11</p>
@@ -2920,7 +2918,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static toDegrees = (_radians: number): number => { };
+    export const toDegrees = (_radians: number): number => { };
 
     /**
      * <p><b>id : </b>36</p>
@@ -2929,7 +2927,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static toLower = (_string: string): string => { };
+    export const toLower = (_string: string): string => { };
 
     /**
      * <p><b>id : </b>10</p>
@@ -2938,7 +2936,7 @@ export class FONCTION {
      * <p><b>operations : </b>31</p>
      */
         // @ts-ignore
-    static toRadians = (_degrees: number): number => { };
+    export const toRadians = (_degrees: number): number => { };
 
     /**
      * <p><b>id : </b>37</p>
@@ -2947,7 +2945,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static toUpper = (_string: string): string => { };
+    export const toUpper = (_string: string): string => { };
 
     /**
      * <p><b>id : </b>410</p>
@@ -2956,7 +2954,7 @@ export class FONCTION {
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
-    static trailingZeros = (_x: number): number => { };
+    export const trailingZeros = (_x: number): number => { };
 
     /**
      * <p><b>id : </b>226</p>
@@ -2965,7 +2963,7 @@ export class FONCTION {
      * <p><b>operations : </b>8</p>
      */
         // @ts-ignore
-    static typeOf = (_value: any): number => { };
+    export const typeOf = (_value: any): number => { };
 
     /**
      * <p><b>id : </b>45</p>
@@ -2974,7 +2972,7 @@ export class FONCTION {
      * <p><b>complexity : </b>O(n)</p>
      */
         // @ts-ignore
-    static unshift = <T>(_array: T[], _element: T): void => { };
+    export const unshift = <T>(_array: T[], _element: T): void => { };
 
     /**
      * <p><b>id : </b>99</p>
@@ -2983,7 +2981,7 @@ export class FONCTION {
      * <p><b>operations : </b>3000</p>
      */
         // @ts-ignore
-    static useChip = (_chip: number, _entity: number): number => { };
+    export const useChip = (_chip: number, _entity: number): number => { };
 
     /**
      * <p><b>id : </b>100</p>
@@ -2992,7 +2990,7 @@ export class FONCTION {
      * <p><b>operations : </b>3000</p>
      */
         // @ts-ignore
-    static useChipOnCell = (_chip: number, _cell: number): number => { };
+    export const useChipOnCell = (_chip: number, _cell: number): number => { };
 
     /**
      * <p><b>id : </b>91</p>
@@ -3001,7 +2999,7 @@ export class FONCTION {
      * <p><b>operations : </b>3000</p>
      */
         // @ts-ignore
-    static useWeapon = (_entity: number): number => { };
+    export const useWeapon = (_entity: number): number => { };
 
     /**
      * <p><b>id : </b>92</p>
@@ -3010,7 +3008,7 @@ export class FONCTION {
      * <p><b>operations : </b>3000</p>
      */
         // @ts-ignore
-    static useWeaponOnCell = (_cell: number): number => { };
+    export const useWeaponOnCell = (_cell: number): number => { };
 
     /**
      * <p><b>id : </b>314</p>
@@ -3019,5 +3017,4 @@ export class FONCTION {
      * <p><b>operations : </b>10</p>
      */
         // @ts-ignore
-    static weaponNeedLos = (_weapon?: number): boolean => { };
-}
+    export const weaponNeedLos = (_weapon?: number): boolean => { };
