@@ -25,7 +25,7 @@ Pour utiliser une constante : `Constant.AREA_CIRCLE_1`.
 Le fichier .env référence les variables d'environment nécessaire au bon fonctionnement du programme :
  - **LOGIN** : Identifiant de connexion au compte LeekWars
  - **PASSWORD** : Mot de passe de connexion au compte LeekWars
- - **FILE_NAME** : Nom du fichier IA LeekWars où sera sauvegarder le code *NB : le fichier doit déjà exister*
+ - **FILE_NAME** : Nom du fichier IA LeekWars où sera sauvegarder le code *(NB : le fichier doit déjà exister)*
  - **ENABLE_SAVE** : 1 si l'on souhaite que le code soit sauvegarder sur LeekWars, 0 si l'on veut juste afficher le résultat
 de la transpilation dans la console
 
