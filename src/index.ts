@@ -9,10 +9,15 @@ const main = async () => {
 
     await api.login();
 
-    const path = ".\\src\\editor\\main.ts";
-    let code = concatFile(path, [path]);
+    if(!process.env.ABSOLUTE_PATH_TO_SOURCES) {
+        console.error("Aucun path vers les sources n'a été fournis")
+    }
+    let code = concatFile(process.env.ABSOLUTE_PATH_TO_SOURCES!, [process.env.ABSOLUTE_PATH_TO_SOURCES!]);
     code = refactoEnum(code);
-    console.log(code);
+
+    if(process.env.PRINT_TO_CONSOLE) {
+        console.log(code);
+    }
 
     if (process.env.ENABLE_SAVE && process.env.FILE_NAME) {
         let rootFileId = await api.getAiId(process.env.FILE_NAME);

@@ -28,6 +28,8 @@ Le fichier .env référence les variables d'environment nécessaire au bon fonct
  - **FILE_NAME** : Nom du fichier IA LeekWars où sera sauvegarder le code *(NB : le fichier doit déjà exister)*
  - **ENABLE_SAVE** : 1 si l'on souhaite que le code soit sauvegarder sur LeekWars, 0 si l'on veut juste afficher le résultat
 de la transpilation dans la console
+ - **ABSOLUTE_PATH_TO_SOURCES** : Chemin absolue vers le fichier main.js
+ - **PRINT_TO_CONSOLE** : 1 pour afficher le code transpiler dans la console, 0 sinon
 
 ## Transpilation
 ### Types
