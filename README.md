@@ -7,24 +7,25 @@ concaténés lors de la transpilation en se basant sur les imports dans chaque f
 Une fois votre code écrit, utiliser la commande `npm run start:dev`
 
 ## Informations générales
-Tous les fichiers créer dans le dossier [src/editor/globaux/](https://github.com/yanisr49/TranspilerLS/tree/master/src/editor/globaux) 
+Tous les fichiers créés dans le dossier [src/editor/globaux/](https://github.com/yanisr49/TranspilerLS/tree/master/src/editor/globaux) 
 seront ignorés lors de la transpilation.A l'exception du fichier 
-[src/editor/enums.ts](https://github.com/yanisr49/TranspilerLS/blob/master/src/editor/globaux/enums.ts) qui est un fichier 
-où on doit écrire toutes les énumérations que le souhaite utiliser.
+[src/editor/enums.ts](https://github.com/yanisr49/TranspilerLS/blob/master/src/editor/globaux/enums.ts) qui répertorie toutes les
+énumérations souhaitées.
 
 Les constants et les fonctions propres à LeekWars sont toutes référencées dans le dossier 
-[globaux](https://github.com/yanisr49/TranspilerLS/tree/master/src/editor/globaux), il est donc possible de les 
-utiliser, vous pouvez les voir en utilisant la complétion automatique de votre IDE préféré. (IDE conseillé : intelliJ).
+[globaux](https://github.com/yanisr49/TranspilerLS/tree/master/src/editor/globaux), il est possible de les consulter 
+en utilisant la complétion automatique de votre IDE préféré. (IDE conseillé : intelliJ).
 
 Pour utiliser une fonction : `Fonction.abs(1)`.
-Pour utiliser une fonction : `Constant.AREA_CIRCLE_1`.
+
+Pour utiliser une constante : `Constant.AREA_CIRCLE_1`.
 
 
 ## Variables d'environment
 Le fichier .env référence les variables d'environment nécessaire au bon fonctionnement du programme :
  - **LOGIN** : Identifiant de connexion au compte LeekWars
  - **PASSWORD** : Mot de passe de connexion au compte LeekWars
- - **FILE_NAME** : Nom du fichier IA LeekWars où sera sauvegarder le code
+ - **FILE_NAME** : Nom du fichier IA LeekWars où sera sauvegarder le code *NB : le fichier doit déjà exister*
  - **ENABLE_SAVE** : 1 si l'on souhaite que le code soit sauvegarder sur LeekWars, 0 si l'on veut juste afficher le résultat
 de la transpilation dans la console
 
