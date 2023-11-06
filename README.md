@@ -63,7 +63,7 @@ Transforme la snytaxe `` `xxx` `` en ` "xxx" `.
 Transforme la syntaxe `${xxx}` en `" + xxx + "` dans un template literals.
 *NB : ne fonctionne que pour les Template literals sur une seule ligne*
 
-Ce qui donnerais par exemple : `` `bar ${foo}` `` en `"bar " + foo + ""`
+Ce qui donnerait par exemple : `` `bar ${foo}` `` en `"bar " + foo + ""`
 
 ### Console.log
 Tranforme la syntaxe `console.log(xxx, xxx, xxx)` en `debug(xxx + ", " + xxx + ", " + xxx)`
@@ -71,7 +71,7 @@ Tranforme la syntaxe `console.log(xxx, xxx, xxx)` en `debug(xxx + ", " + xxx + "
 
 ### Enumérations
 Toutes les énumérations présentes dans le fichier [src/editor/enums.ts](https://github.com/yanisr49/TranspilerLS/blob/master/src/editor/globaux/enums.ts)
-sont récupérer et sont rajoutées au début du fichier principal. 
+sont récupérées et sont rajoutées au début du fichier principal. 
 
 Example : 
 ```
