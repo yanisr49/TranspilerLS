@@ -1,4 +1,5 @@
 import fs from "fs";
+import {TYPE_CHIP} from "../editor/globaux/types";
 
 export default (code: string) => {
     code = refactoType(code);
@@ -15,14 +16,16 @@ export default (code: string) => {
 
 const keywordsToMap = [
     ["abstract ", ""],
-    ["FONCTION.", ""],
-    ["CONSTANT.", ""],
     ["const ", "var "],
     ["let ", "var "],
     ["export var ", "global "],
     ["export ", ""],
     ["===", "=="],
-    ["!==", "!="]
+    ["!==", "!="],
+
+    ["LS.", ""],
+    ["TYPE_WEAPON.", ""],
+    ["TYPE_CHIP.", ""]
 ];
 const mapKeywords = (code: string) => {
     keywordsToMap.forEach(map => {

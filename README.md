@@ -16,9 +16,9 @@ Les constants et les fonctions propres à LeekWars sont toutes référencées da
 [globaux](https://github.com/yanisr49/TranspilerLS/tree/master/src/editor/globaux), il est possible de les consulter 
 en utilisant la complétion automatique de votre IDE préféré. (IDE conseillé : intelliJ).
 
-Pour utiliser une fonction : `FONCTION.abs(1)`.
+Pour utiliser une fonction : `LS.abs(1)`.
 
-Pour utiliser une constante : `CONSTANT.AREA_CIRCLE_1`.
+Pour utiliser une constante : `LS.AREA_CIRCLE_1`.
 
 
 ## Variables d'environment
@@ -45,8 +45,6 @@ Transforme la syntax `[...Array(612).keys()]` en `[0..612]`
 ### Mapping de mots-clés
 Mapping des mots-clés :
  - `abstract ` en ` `
- - `FONCTION.` en ` `
- - `CONSTANT.` en ` `
  - `const ` en `var `
  - `let ` en `var `
  - `export var ` en `global `
