@@ -3085,8 +3085,8 @@ export class LS {
     /* FONCTIONS */
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/abs">abs</a></h1>
      * <p><b>id : </b>1</p>
-     * <p><b>name : </b>abs</p>
      * <p><b>description : </b>Renvoie la valeur absolue du nombre <i>number</i>.</p>
      * <p><b>operations : </b>2</p>
      */
@@ -3094,8 +3094,8 @@ export class LS {
     static abs = (number: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/acos">acos</a></h1>
      * <p><b>id : </b>7</p>
-     * <p><b>name : </b>acos</p>
      * <p><b>description : </b>Calcule l'arc cosinus d'<i>argument</i>, dans l'intervalle [0, PI].</p>
      * <p><b>operations : </b>12</p>
      */
@@ -3103,8 +3103,8 @@ export class LS {
     static acos = (argument: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayChunk">arrayChunk</a></h1>
      * <p><b>id : </b>400</p>
-     * <p><b>name : </b>arrayChunk</p>
      * <p><b>description : </b>Découpe la liste <i>array</i> en sous-listes de taille <i>chunkSize</i> maximum et renvoie la liste de ces sous-listes.
      *
      * La dernière sous-liste peut contenir moins de <i>chunkSize</i> élements.</p>
@@ -3114,8 +3114,8 @@ export class LS {
     static arrayChunk = <T>(array: T[], chunkSize?: number): T[][] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayClear">arrayClear</a></h1>
      * <p><b>id : </b>396</p>
-     * <p><b>name : </b>arrayClear</p>
      * <p><b>description : </b>Vide la liste <i>array</i> de tous ses éléments.</p>
      * <p><b>operations : </b>2</p>
      */
@@ -3123,8 +3123,8 @@ export class LS {
     static arrayClear = <T>(array: T[]): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayConcat">arrayConcat</a></h1>
      * <p><b>id : </b>287</p>
-     * <p><b>name : </b>arrayConcat</p>
      * <p><b>description : </b>Retourne une nouvelle liste contenant tous les éléments des listes passées en paramètre bout à bout.
      *
      * Cette fonction est équivalente à <i>liste1 + liste2</i>./p>
@@ -3134,8 +3134,8 @@ export class LS {
     static arrayConcat = <T>(array1: T[], array2: T[]): T[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayEvery">arrayEvery</a></h1>
      * <p><b>id : </b>395</p>
-     * <p><b>name : </b>arrayEvery</p>
      * <p><b>description : </b>Renvoie <i>true</i> si le prédicat <i>callback</i> appliqué à chacun des éléments de la liste renvoie <i>true</i>.</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3143,8 +3143,8 @@ export class LS {
     static arrayEvery = <T>(array: T[], callback: (arg: T) => boolean): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayFilter">arrayFilter</a></h1>
      * <p><b>id : </b>280</p>
-     * <p><b>name : </b>arrayFilter</p>
      * <p><b>description : </b>Retourne une nouvelle liste contenant toutes les valeurs de la liste source <i>array</i>
      * pour lesquels la fonction </i>callback</i> a renvoyé une valeur équivalente à <i>true</i>.</p>
      * <p><b>complexity : </b>O(n)</p>
@@ -3153,8 +3153,8 @@ export class LS {
     static arrayFilter = <T>(array: T[], callback: (arg: T) => boolean): T[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayFlatten">arrayFlatten</a></h1>
      * <p><b>id : </b>282</p>
-     * <p><b>name : </b>arrayFlatten</p>
      * <p><b>description : </b>Retourne un nouveau tableau contenant tous les éléments du tableau source. Tous les
      * éléments contenus dans un sous tableau sont extraits dans le nouveau tableau.</p>
      * <p><b>complexity : </b>∞</p>
@@ -3163,8 +3163,8 @@ export class LS {
     static arrayFlatten = <T>(array: T[], depth?: number): T[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayFoldLeft">arrayFoldLeft</a></h1>
      * <p><b>id : </b>283</p>
-     * <p><b>name : </b>arrayFoldLeft</p>
      * <p><b>description : </b>Réduit la liste <i>array</i> [v1, v2, ..., vn] par la gauche en partant de la valeur </i>v0</i>
      * et en appliquant la fonction <i>f</>.</p>
      * <p><b>complexity : </b>O(n)</p>
@@ -3173,8 +3173,8 @@ export class LS {
     static arrayFoldLeft = (array: T[], f: (arg1: T, arg2: T, arg3: number) => T, v0: T): T => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayFoldRight">arrayFoldRight</a></h1>
      * <p><b>id : </b>284</p>
-     * <p><b>name : </b>arrayFoldRight</p>
      * <p><b>description : </b>Réduit la liste <i>array</i> [v1, v2, ..., vn] par la droite en partant de la valeur <i>v0</i>
      * et en appliquant la fonction <i>f</i>.</p>
      * <p><b>complexity : </b>O(n)</p>
@@ -3183,8 +3183,8 @@ export class LS {
     static arrayFoldRight = <T>(array: T[], f: (arg1: T, arg2: T, arg3: number) => T, v0: T): T => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayFrequencies">arrayFrequencies</a></h1>
      * <p><b>id : </b>402</p>
-     * <p><b>name : </b>arrayFrequencies</p>
      * <p><b>description : </b>Renvoie une table associant pour chaque élément unique de la liste array sa quantité (element => quantité).</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3192,26 +3192,31 @@ export class LS {
     static arrayFrequencies = <T>(array: T[]): Map<T, number> => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayGet">arrayGet</a></h1>
      * <p><b>id : </b>406</p>
-     * <p><b>name : </b>arrayGet</p>
-     * <p><b>description : </b>TODO</p>
+     * <p><b>description : </b>Renvoie l'élément de la liste <i>array</i> à la position <i>index</i>. Si l'<i>index</i> est
+     * hors de la liste, renvoie <i>defaultValue</> à la place.</p>
      * <p><b>operations : </b>1</p>
      */
         // @ts-ignore
     static arrayGet = <T>(array: T[], index: number, defaultValue?: T): T => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayIter">arrayIter</a></h1>
      * <p><b>id : </b>286</p>
-     * <p><b>name : </b>arrayIter</p>
-     * <p><b>description : </b>TODO</p>
+     * <p><b>description : </b>Appelle la fonction <i>callback</i> pour chaque élément du tableau. Si la fonction <i>callback</i>
+     * prend un paramètre, c'est la valeur du tableau source qui sera envoyée, si elle prend deux paramètres c'est la clé et la valeur qui seront envoyées.</p>
      * <p><b>complexity : </b>O(n)</p>
      */
-        // @ts-ignore
+      // @ts-ignore
     static arrayIter = <T>(array: T[], callback: (arg: T) => void): void => { };
+    // @ts-ignore
+    static arrayIter = <T>(array: T[], callback: (arg1: number, arg2: T) => void): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayMap">arrayMap</a></h1>
      * <p><b>id : </b>279</p>
-     * <p><b>name : </b>arrayMap</p>
+     * <p><b>name : </b><a href="https://leekwars.com/encyclopedia/fr/arrayMap">arrayMap</a></p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3219,8 +3224,8 @@ export class LS {
     static arrayMap = <T, U>(array: T[], callback: (arg: T) => U): U[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayMax">arrayMax</a></h1>
      * <p><b>id : </b>57</p>
-     * <p><b>name : </b>arrayMax</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3228,8 +3233,8 @@ export class LS {
     static arrayMax = <T>(array: T[]): T => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayMin">arrayMin</a></h1>
      * <p><b>id : </b>56</p>
-     * <p><b>name : </b>arrayMin</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3237,8 +3242,8 @@ export class LS {
     static arrayMin = <T>(array: T[]): T => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayPartition">arrayPartition</a></h1>
      * <p><b>id : </b>285</p>
-     * <p><b>name : </b>arrayPartition</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3246,8 +3251,8 @@ export class LS {
     static arrayPartition = <T>(array: T[], callback: (arg1: T, arg2: number, arg3: T[]) => boolean): T[][] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayRandom">arrayRandom</a></h1>
      * <p><b>id : </b>398</p>
-     * <p><b>name : </b>arrayRandom</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3255,8 +3260,8 @@ export class LS {
     static arrayRandom = <T>(array: T[], count: number): T[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayRemoveAll">arrayRemoveAll</a></h1>
      * <p><b>id : </b>404</p>
-     * <p><b>name : </b>arrayRemoveAll</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3264,8 +3269,8 @@ export class LS {
     static arrayRemoveAll = <T>(array: T[], element: T): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arraySlice">arraySlice</a></h1>
      * <p><b>id : </b>405</p>
-     * <p><b>name : </b>arraySlice</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3273,8 +3278,8 @@ export class LS {
     static arraySlice = <T>(array: T[], start: number, end?: number, stride?: number): T[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arraySome">arraySome</a></h1>
      * <p><b>id : </b>394</p>
-     * <p><b>name : </b>arraySome</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3282,8 +3287,8 @@ export class LS {
     static arraySome = <T>(array: T[], callback: (arg: T) => boolean): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arraySort">arraySort</a></h1>
      * <p><b>id : </b>288</p>
-     * <p><b>name : </b>arraySort</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(nlog(n))</p>
      */
@@ -3291,8 +3296,8 @@ export class LS {
     static arraySort = <T>(array: T[], callback?: (arg1: T, arg2: T) => number): T[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/arrayUnique">arrayUnique</a></h1>
      * <p><b>id : </b>401</p>
-     * <p><b>name : </b>arrayUnique</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n²)</p>
      */
@@ -3300,8 +3305,8 @@ export class LS {
     static arrayUnique = <T>(array: T[]): T[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/asin">asin</a></h1>
      * <p><b>id : </b>8</p>
-     * <p><b>name : </b>asin</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>12</p>
      */
@@ -3309,8 +3314,8 @@ export class LS {
     static asin = (argument: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/atan">atan</a></h1>
      * <p><b>id : </b>9</p>
-     * <p><b>name : </b>atan</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25</p>
      */
@@ -3318,8 +3323,8 @@ export class LS {
     static atan = (argument: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/atan2">atan2</a></h1>
      * <p><b>id : </b>12</p>
-     * <p><b>name : </b>atan2</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>35</p>
      */
@@ -3327,8 +3332,8 @@ export class LS {
     static atan2 = (y: number, x: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/average">average</a></h1>
      * <p><b>id : </b>59</p>
-     * <p><b>name : </b>average</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3336,8 +3341,8 @@ export class LS {
     static average = (array: number[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/binString">binString</a></h1>
      * <p><b>id : </b>416</p>
-     * <p><b>name : </b>binString</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>10</p>
      */
@@ -3345,8 +3350,8 @@ export class LS {
     static binString = (x: number): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/bitCount">bitCount</a></h1>
      * <p><b>id : </b>409</p>
-     * <p><b>name : </b>bitCount</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -3354,8 +3359,8 @@ export class LS {
     static bitCount = (x: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/bitReverse">bitReverse</a></h1>
      * <p><b>id : </b>412</p>
-     * <p><b>name : </b>bitReverse</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -3363,8 +3368,8 @@ export class LS {
     static bitReverse = (x: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/bitsToReal">bitsToReal</a></h1>
      * <p><b>id : </b>419</p>
-     * <p><b>name : </b>bitsToReal</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -3372,8 +3377,8 @@ export class LS {
     static bitsToReal = (x: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/byteReverse">byteReverse</a></h1>
      * <p><b>id : </b>413</p>
-     * <p><b>name : </b>byteReverse</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -3381,8 +3386,8 @@ export class LS {
     static byteReverse = (x: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/canUseChip">canUseChip</a></h1>
      * <p><b>id : </b>190</p>
-     * <p><b>name : </b>canUseChip</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>45</p>
      */
@@ -3390,8 +3395,8 @@ export class LS {
     static canUseChip = (chip: number, entity: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/canUseChipOnCell">canUseChipOnCell</a></h1>
      * <p><b>id : </b>191</p>
-     * <p><b>name : </b>canUseChipOnCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>45</p>
      */
@@ -3399,8 +3404,8 @@ export class LS {
     static canUseChipOnCell = (chip: number, cell: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/canUseWeapon">canUseWeapon</a></h1>
      * <p><b>id : </b>241</p>
-     * <p><b>name : </b>canUseWeapon</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>45</p>
      */
@@ -3408,8 +3413,8 @@ export class LS {
     static canUseWeapon = (weapon?: number, entity: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/canUseWeaponOnCell">canUseWeaponOnCell</a></h1>
      * <p><b>id : </b>242</p>
-     * <p><b>name : </b>canUseWeaponOnCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>45</p>
      */
@@ -3417,8 +3422,8 @@ export class LS {
     static canUseWeaponOnCell = (weapon?: number, cell: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/cbrt">cbrt</a></h1>
      * <p><b>id : </b>17</p>
-     * <p><b>name : </b>cbrt</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>62</p>
      */
@@ -3426,8 +3431,8 @@ export class LS {
     static cbrt = (number: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/ceil">ceil</a></h1>
      * <p><b>id : </b>13</p>
-     * <p><b>name : </b>ceil</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -3435,8 +3440,8 @@ export class LS {
     static ceil = (number: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/charAt">charAt</a></h1>
      * <p><b>id : </b>27</p>
-     * <p><b>name : </b>charAt</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>8</p>
      */
@@ -3444,8 +3449,8 @@ export class LS {
     static charAt = (string: string, position: number): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/chipNeedLos">chipNeedLos</a></h1>
      * <p><b>id : </b>313</p>
-     * <p><b>name : </b>chipNeedLos</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>10</p>
      */
@@ -3453,8 +3458,8 @@ export class LS {
     static chipNeedLos = (chip: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/clearMarks">clearMarks</a></h1>
      * <p><b>id : </b>359</p>
-     * <p><b>name : </b>clearMarks</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3462,8 +3467,8 @@ export class LS {
     static clearMarks = (): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/clone">clone</a></h1>
      * <p><b>id : </b>363</p>
-     * <p><b>name : </b>clone</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>∞</p>
      */
@@ -3471,8 +3476,8 @@ export class LS {
     static clone = <T>(value: T, level?: number): T => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/codePointAt">codePointAt</a></h1>
      * <p><b>id : </b>424</p>
-     * <p><b>name : </b>codePointAt</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -3480,8 +3485,8 @@ export class LS {
     static codePointAt = (string: string, index?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/contains">contains</a></h1>
      * <p><b>id : </b>40</p>
-     * <p><b>name : </b>contains</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3489,8 +3494,8 @@ export class LS {
     static contains = (string: string, search: string): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/cos">cos</a></h1>
      * <p><b>id : </b>4</p>
-     * <p><b>name : </b>cos</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>30</p>
      */
@@ -3498,8 +3503,8 @@ export class LS {
     static cos = (angle: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/count">count</a></h1>
      * <p><b>id : </b>41</p>
-     * <p><b>name : </b>count</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -3507,8 +3512,8 @@ export class LS {
     static count = <T>(array: T[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/debug">debug</a></h1>
      * <p><b>id : </b>161</p>
-     * <p><b>name : </b>debug</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>100</p>
      */
@@ -3516,8 +3521,8 @@ export class LS {
     static debug = <T>(object: T): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/debugC">debugC</a></h1>
      * <p><b>id : </b>324</p>
-     * <p><b>name : </b>debugC</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>100</p>
      */
@@ -3525,8 +3530,8 @@ export class LS {
     static debugC = <T>(object: T, color: number): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/debugE">debugE</a></h1>
      * <p><b>id : </b>166</p>
-     * <p><b>name : </b>debugE</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>100</p>
      */
@@ -3534,8 +3539,8 @@ export class LS {
     static debugE = <T>(object: T): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/debugW">debugW</a></h1>
      * <p><b>id : </b>165</p>
-     * <p><b>name : </b>debugW</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>100</p>
      */
@@ -3543,8 +3548,8 @@ export class LS {
     static debugW = <T>(object: T): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/deleteRegister">deleteRegister</a></h1>
      * <p><b>id : </b>277</p>
-     * <p><b>name : </b>deleteRegister</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>16</p>
      */
@@ -3552,8 +3557,8 @@ export class LS {
     static deleteRegister = (key: string): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/endsWith">endsWith</a></h1>
      * <p><b>id : </b>39</p>
-     * <p><b>name : </b>endsWith</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3561,8 +3566,8 @@ export class LS {
     static endsWith = (string: string, suffix: string): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/exp">exp</a></h1>
      * <p><b>id : </b>20</p>
-     * <p><b>name : </b>exp</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>40</p>
      */
@@ -3570,8 +3575,8 @@ export class LS {
     static exp = (number: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/fill">fill</a></h1>
      * <p><b>id : </b>61</p>
-     * <p><b>name : </b>fill</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -3579,8 +3584,8 @@ export class LS {
     static fill = <T>(array: T[], value: T, size?: number): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/floor">floor</a></h1>
      * <p><b>id : </b>14</p>
-     * <p><b>name : </b>floor</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -3588,8 +3593,8 @@ export class LS {
     static floor = (number: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAbsoluteShield">getAbsoluteShield</a></h1>
      * <p><b>id : </b>181</p>
-     * <p><b>name : </b>getAbsoluteShield</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3597,8 +3602,8 @@ export class LS {
     static getAbsoluteShield = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAgility">getAgility</a></h1>
      * <p><b>id : </b>70</p>
-     * <p><b>name : </b>getAgility</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3606,8 +3611,8 @@ export class LS {
     static getAgility = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAIID">getAIID</a></h1>
      * <p><b>id : </b>258</p>
-     * <p><b>name : </b>getAIID</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3615,8 +3620,8 @@ export class LS {
     static getAIID = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAIName">getAIName</a></h1>
      * <p><b>id : </b>260</p>
-     * <p><b>name : </b>getAIName</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3624,8 +3629,8 @@ export class LS {
     static getAIName = (entity?: number): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAliveAllies">getAliveAllies</a></h1>
      * <p><b>id : </b>130</p>
-     * <p><b>name : </b>getAliveAllies</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>100</p>
      */
@@ -3633,8 +3638,8 @@ export class LS {
     static getAliveAllies = (): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAliveEnemies">getAliveEnemies</a></h1>
      * <p><b>id : </b>122</p>
-     * <p><b>name : </b>getAliveEnemies</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>100</p>
      */
@@ -3642,8 +3647,8 @@ export class LS {
     static getAliveEnemies = (): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAliveEnemiesCount">getAliveEnemiesCount</a></h1>
      * <p><b>id : </b>123</p>
-     * <p><b>name : </b>getAliveEnemiesCount</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25</p>
      */
@@ -3651,8 +3656,8 @@ export class LS {
     static getAliveEnemiesCount = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAllChips">getAllChips</a></h1>
      * <p><b>id : </b>348</p>
-     * <p><b>name : </b>getAllChips</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>200</p>
      */
@@ -3660,8 +3665,8 @@ export class LS {
     static getAllChips = (): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAllEffects">getAllEffects</a></h1>
      * <p><b>id : </b>350</p>
-     * <p><b>name : </b>getAllEffects</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>200</p>
      */
@@ -3669,8 +3674,8 @@ export class LS {
     static getAllEffects = (): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAlliedTurret">getAlliedTurret</a></h1>
      * <p><b>id : </b>345</p>
-     * <p><b>name : </b>getAlliedTurret</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3678,8 +3683,8 @@ export class LS {
     static getAlliedTurret = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAllies">getAllies</a></h1>
      * <p><b>id : </b>193</p>
-     * <p><b>name : </b>getAllies</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>100</p>
      */
@@ -3687,8 +3692,8 @@ export class LS {
     static getAllies = (): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAlliesCount">getAlliesCount</a></h1>
      * <p><b>id : </b>132</p>
-     * <p><b>name : </b>getAlliesCount</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25</p>
      */
@@ -3696,8 +3701,8 @@ export class LS {
     static getAlliesCount = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAlliesLife">getAlliesLife</a></h1>
      * <p><b>id : </b>140</p>
-     * <p><b>name : </b>getAlliesLife</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>50</p>
      */
@@ -3705,8 +3710,8 @@ export class LS {
     static getAlliesLife = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getAllWeapons">getAllWeapons</a></h1>
      * <p><b>id : </b>349</p>
-     * <p><b>name : </b>getAllWeapons</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>200</p>
      */
@@ -3714,8 +3719,8 @@ export class LS {
     static getAllWeapons = (): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getBirthTurn">getBirthTurn</a></h1>
      * <p><b>id : </b>296</p>
-     * <p><b>name : </b>getBirthTurn</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3723,8 +3728,8 @@ export class LS {
     static getBirthTurn = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getBlue">getBlue</a></h1>
      * <p><b>id : </b>229</p>
-     * <p><b>name : </b>getBlue</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>10</p>
      */
@@ -3732,8 +3737,8 @@ export class LS {
     static getBlue = (color: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getBulbChips">getBulbChips</a></h1>
      * <p><b>id : </b>343</p>
-     * <p><b>name : </b>getBulbChips</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>40</p>
      */
@@ -3741,8 +3746,8 @@ export class LS {
     static getBulbChips = (bulbChip: number): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCell">getCell</a></h1>
      * <p><b>id : </b>72</p>
-     * <p><b>name : </b>getCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -3750,8 +3755,8 @@ export class LS {
     static getCell = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCellContent">getCellContent</a></h1>
      * <p><b>id : </b>113</p>
-     * <p><b>name : </b>getCellContent</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>6</p>
      */
@@ -3759,8 +3764,8 @@ export class LS {
     static getCellContent = (cell: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCellDistance">getCellDistance</a></h1>
      * <p><b>id : </b>108</p>
-     * <p><b>name : </b>getCellDistance</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3768,8 +3773,8 @@ export class LS {
     static getCellDistance = (cell1: number, cell2: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCellFromXY">getCellFromXY</a></h1>
      * <p><b>id : </b>169</p>
-     * <p><b>name : </b>getCellFromXY</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -3777,8 +3782,8 @@ export class LS {
     static getCellFromXY = (x: number, y: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCellsToUseChip">getCellsToUseChip</a></h1>
      * <p><b>id : </b>270</p>
-     * <p><b>name : </b>getCellsToUseChip</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25834</p>
      */
@@ -3786,8 +3791,8 @@ export class LS {
     static getCellsToUseChip = (chip: number, entity: number, ignoredCells?: number[]): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCellsToUseChipOnCell">getCellsToUseChipOnCell</a></h1>
      * <p><b>id : </b>269</p>
-     * <p><b>name : </b>getCellsToUseChipOnCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25834</p>
      */
@@ -3795,8 +3800,8 @@ export class LS {
     static getCellsToUseChipOnCell = (chip: number, cell: number, ignoredCells?: number[]): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCellsToUseWeapon">getCellsToUseWeapon</a></h1>
      * <p><b>id : </b>216</p>
-     * <p><b>name : </b>getCellsToUseWeapon</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25834</p>
      */
@@ -3804,8 +3809,8 @@ export class LS {
     static getCellsToUseWeapon = (weapon?: number, entity: number, ignoredCells?: number[]): number[] => {};
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCellsToUseWeaponOnCell">getCellsToUseWeaponOnCell</a></h1>
      * <p><b>id : </b>267</p>
-     * <p><b>name : </b>getCellsToUseWeaponOnCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25834</p>
      */
@@ -3813,8 +3818,8 @@ export class LS {
     static getCellsToUseWeaponOnCell = (weapon?: number, cell: number, ignoredCells?: number[]): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCellToUseChip">getCellToUseChip</a></h1>
      * <p><b>id : </b>266</p>
-     * <p><b>name : </b>getCellToUseChip</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>38080</p>
      */
@@ -3822,8 +3827,8 @@ export class LS {
     static getCellToUseChip = (chip: number, entity: number, ignoredCells?: number[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCellToUseChipOnCell">getCellToUseChipOnCell</a></h1>
      * <p><b>id : </b>265</p>
-     * <p><b>name : </b>getCellToUseChipOnCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>38080</p>
      */
@@ -3831,8 +3836,8 @@ export class LS {
     static getCellToUseChipOnCell = (chip: number, cell: number, ignoredCells?: number[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCellToUseWeapon">getCellToUseWeapon</a></h1>
      * <p><b>id : </b>264</p>
-     * <p><b>name : </b>getCellToUseWeapon</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>38080</p>
      */
@@ -3840,8 +3845,8 @@ export class LS {
     static getCellToUseWeapon = (weapon?: number, entity: number, ignoredCells?: number[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCellToUseWeaponOnCell">getCellToUseWeaponOnCell</a></h1>
      * <p><b>id : </b>263</p>
-     * <p><b>name : </b>getCellToUseWeaponOnCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>38080</p>
      */
@@ -3849,8 +3854,8 @@ export class LS {
     static getCellToUseWeaponOnCell = (weapon?: number, cell: number, ignoredCells?: number[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCellX">getCellX</a></h1>
      * <p><b>id : </b>117</p>
-     * <p><b>name : </b>getCellX</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -3858,8 +3863,8 @@ export class LS {
     static getCellX = (cell: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCellY">getCellY</a></h1>
      * <p><b>id : </b>118</p>
-     * <p><b>name : </b>getCellY</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -3867,8 +3872,8 @@ export class LS {
     static getCellY = (cell: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getChipArea">getChipArea</a></h1>
      * <p><b>id : </b>273</p>
-     * <p><b>name : </b>getChipArea</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3876,8 +3881,8 @@ export class LS {
     static getChipArea = (chip: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getChipCooldown">getChipCooldown</a></h1>
      * <p><b>id : </b>186</p>
-     * <p><b>name : </b>getChipCooldown</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3885,8 +3890,8 @@ export class LS {
     static getChipCooldown = (chip: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getChipCost">getChipCost</a></h1>
      * <p><b>id : </b>104</p>
-     * <p><b>name : </b>getChipCost</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3894,8 +3899,8 @@ export class LS {
     static getChipCost = (chip: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getChipEffectiveArea">getChipEffectiveArea</a></h1>
      * <p><b>id : </b>248</p>
-     * <p><b>name : </b>getChipEffectiveArea</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>78</p>
      */
@@ -3903,8 +3908,8 @@ export class LS {
     static getChipEffectiveArea = (chip: number, cell: number, from?: number): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getChipEffects">getChipEffects</a></h1>
      * <p><b>id : </b>105</p>
-     * <p><b>name : </b>getChipEffects</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>125</p>
      */
@@ -3912,8 +3917,8 @@ export class LS {
     static getChipEffects = (chip: number): any[][] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getChipLaunchType">getChipLaunchType</a></h1>
      * <p><b>id : </b>364</p>
-     * <p><b>name : </b>getChipLaunchType</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3921,8 +3926,8 @@ export class LS {
     static getChipLaunchType = (chip: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getChipMaxRange">getChipMaxRange</a></h1>
      * <p><b>id : </b>327</p>
-     * <p><b>name : </b>getChipMaxRange</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3930,8 +3935,8 @@ export class LS {
     static getChipMaxRange = (chip: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getChipMinRange">getChipMinRange</a></h1>
      * <p><b>id : </b>328</p>
-     * <p><b>name : </b>getChipMinRange</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3939,8 +3944,8 @@ export class LS {
     static getChipMinRange = (chip: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getChipName">getChipName</a></h1>
      * <p><b>id : </b>101</p>
-     * <p><b>name : </b>getChipName</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3948,8 +3953,8 @@ export class LS {
     static getChipName = (chip: number): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getChips">getChips</a></h1>
      * <p><b>id : </b>170</p>
-     * <p><b>name : </b>getChips</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>40</p>
      */
@@ -3957,8 +3962,8 @@ export class LS {
     static getChips = (entity?: number): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getChipTargets">getChipTargets</a></h1>
      * <p><b>id : </b>160</p>
-     * <p><b>name : </b>getChipTargets</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>40</p>
      */
@@ -3966,8 +3971,8 @@ export class LS {
     static getChipTargets = (chip: number, cell: number): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getColor">getColor</a></h1>
      * <p><b>id : </b>224</p>
-     * <p><b>name : </b>getColor</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3975,8 +3980,8 @@ export class LS {
     static getColor = (red: number, green: number, blue: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getCooldown">getCooldown</a></h1>
      * <p><b>id : </b>272</p>
-     * <p><b>name : </b>getCooldown</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>30</p>
      */
@@ -3984,8 +3989,8 @@ export class LS {
     static getCooldown = (chip: number, entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getDamageReturn">getDamageReturn</a></h1>
      * <p><b>id : </b>323</p>
-     * <p><b>name : </b>getDamageReturn</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -3993,8 +3998,8 @@ export class LS {
     static getDamageReturn = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getDate">getDate</a></h1>
      * <p><b>id : </b>353</p>
-     * <p><b>name : </b>getDate</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>50</p>
      */
@@ -4002,8 +4007,8 @@ export class LS {
     static getDate = (): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getDeadAllies">getDeadAllies</a></h1>
      * <p><b>id : </b>131</p>
-     * <p><b>name : </b>getDeadAllies</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>100</p>
      */
@@ -4011,8 +4016,8 @@ export class LS {
     static getDeadAllies = (): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getDeadEnemies">getDeadEnemies</a></h1>
      * <p><b>id : </b>124</p>
-     * <p><b>name : </b>getDeadEnemies</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>100</p>
      */
@@ -4020,8 +4025,8 @@ export class LS {
     static getDeadEnemies = (): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getDeadEnemiesCount">getDeadEnemiesCount</a></h1>
      * <p><b>id : </b>125</p>
-     * <p><b>name : </b>getDeadEnemiesCount</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25</p>
      */
@@ -4029,8 +4034,8 @@ export class LS {
     static getDeadEnemiesCount = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getEffects">getEffects</a></h1>
      * <p><b>id : </b>185</p>
-     * <p><b>name : </b>getEffects</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25</p>
      */
@@ -4038,8 +4043,8 @@ export class LS {
     static getEffects = (entity?: number): any[][] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getEnemies">getEnemies</a></h1>
      * <p><b>id : </b>126</p>
-     * <p><b>name : </b>getEnemies</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>100</p>
      */
@@ -4047,8 +4052,8 @@ export class LS {
     static getEnemies = (): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getEnemiesCount">getEnemiesCount</a></h1>
      * <p><b>id : </b>127</p>
-     * <p><b>name : </b>getEnemiesCount</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25</p>
      */
@@ -4056,8 +4061,8 @@ export class LS {
     static getEnemiesCount = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getEnemiesLife">getEnemiesLife</a></h1>
      * <p><b>id : </b>139</p>
-     * <p><b>name : </b>getEnemiesLife</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>50</p>
      */
@@ -4065,8 +4070,8 @@ export class LS {
     static getEnemiesLife = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getEnemyTurret">getEnemyTurret</a></h1>
      * <p><b>id : </b>346</p>
-     * <p><b>name : </b>getEnemyTurret</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4074,8 +4079,8 @@ export class LS {
     static getEnemyTurret = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getEntity">getEntity</a></h1>
      * <p><b>id : </b>220</p>
-     * <p><b>name : </b>getEntity</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -4083,8 +4088,8 @@ export class LS {
     static getEntity = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getEntityOnCell">getEntityOnCell</a></h1>
      * <p><b>id : </b>354</p>
-     * <p><b>name : </b>getEntityOnCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4092,8 +4097,8 @@ export class LS {
     static getEntityOnCell = (cell: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getEntityTurnOrder">getEntityTurnOrder</a></h1>
      * <p><b>id : </b>298</p>
-     * <p><b>name : </b>getEntityTurnOrder</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>30</p>
      */
@@ -4101,8 +4106,8 @@ export class LS {
     static getEntityTurnOrder = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getFarmerCountry">getFarmerCountry</a></h1>
      * <p><b>id : </b>332</p>
-     * <p><b>name : </b>getFarmerCountry</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4110,8 +4115,8 @@ export class LS {
     static getFarmerCountry = (entity?: number): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getFarmerID">getFarmerID</a></h1>
      * <p><b>id : </b>250</p>
-     * <p><b>name : </b>getFarmerID</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4119,8 +4124,8 @@ export class LS {
     static getFarmerID = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getFarmerName">getFarmerName</a></h1>
      * <p><b>id : </b>252</p>
-     * <p><b>name : </b>getFarmerName</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4128,8 +4133,8 @@ export class LS {
     static getFarmerName = (entity?: number): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getFarthestAlly">getFarthestAlly</a></h1>
      * <p><b>id : </b>129</p>
-     * <p><b>name : </b>getFarthestAlly</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>31</p>
      */
@@ -4137,8 +4142,8 @@ export class LS {
     static getFarthestAlly = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getFarthestEnemy">getFarthestEnemy</a></h1>
      * <p><b>id : </b>120</p>
-     * <p><b>name : </b>getFarthestEnemy</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>31</p>
      */
@@ -4146,8 +4151,8 @@ export class LS {
     static getFarthestEnemy = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getFightContext">getFightContext</a></h1>
      * <p><b>id : </b>194</p>
-     * <p><b>name : </b>getFightContext</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>10</p>
      */
@@ -4155,8 +4160,8 @@ export class LS {
     static getFightContext = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getFightID">getFightID</a></h1>
      * <p><b>id : </b>347</p>
-     * <p><b>name : </b>getFightID</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -4164,8 +4169,8 @@ export class LS {
     static getFightID = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getFightType">getFightType</a></h1>
      * <p><b>id : </b>195</p>
-     * <p><b>name : </b>getFightType</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>10</p>
      */
@@ -4173,8 +4178,8 @@ export class LS {
     static getFightType = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getFrequency">getFrequency</a></h1>
      * <p><b>id : </b>199</p>
-     * <p><b>name : </b>getFrequency</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4182,8 +4187,8 @@ export class LS {
     static getFrequency = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getGreen">getGreen</a></h1>
      * <p><b>id : </b>228</p>
-     * <p><b>name : </b>getGreen</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>10</p>
      */
@@ -4191,8 +4196,8 @@ export class LS {
     static getGreen = (color: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getLaunchedEffects">getLaunchedEffects</a></h1>
      * <p><b>id : </b>321</p>
-     * <p><b>name : </b>getLaunchedEffects</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25</p>
      */
@@ -4200,8 +4205,8 @@ export class LS {
     static getLaunchedEffects = (entity?: number): any[][] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getLeekID">getLeekID</a></h1>
      * <p><b>id : </b>233</p>
-     * <p><b>name : </b>getLeekID</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4209,8 +4214,8 @@ export class LS {
     static getLeekID = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getLevel">getLevel</a></h1>
      * <p><b>id : </b>179</p>
-     * <p><b>name : </b>getLevel</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4218,8 +4223,8 @@ export class LS {
     static getLevel = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getLife">getLife</a></h1>
      * <p><b>id : </b>66</p>
-     * <p><b>name : </b>getLife</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4227,8 +4232,8 @@ export class LS {
     static getLife = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getMagic">getMagic</a></h1>
      * <p><b>id : </b>306</p>
-     * <p><b>name : </b>getMagic</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4236,8 +4241,8 @@ export class LS {
     static getMagic = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getMapType">getMapType</a></h1>
      * <p><b>id : </b>304</p>
-     * <p><b>name : </b>getMapType</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -4245,8 +4250,8 @@ export class LS {
     static getMapType = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getMaxRAM">getMaxRAM</a></h1>
      * <p><b>id : </b>408</p>
-     * <p><b>name : </b>getMaxRAM</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4254,8 +4259,8 @@ export class LS {
     static getMaxRAM = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getMessageAuthor">getMessageAuthor</a></h1>
      * <p><b>id : </b>175</p>
-     * <p><b>name : </b>getMessageAuthor</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -4263,8 +4268,8 @@ export class LS {
     static getMessageAuthor = (message: any[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getMessageParams">getMessageParams</a></h1>
      * <p><b>id : </b>177</p>
-     * <p><b>name : </b>getMessageParams</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -4272,8 +4277,8 @@ export class LS {
     static getMessageParams = (message: any[]): any => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getMessages">getMessages</a></h1>
      * <p><b>id : </b>174</p>
-     * <p><b>name : </b>getMessages</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -4281,8 +4286,8 @@ export class LS {
     static getMessages = (entity?: number): any[][] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getMessageType">getMessageType</a></h1>
      * <p><b>id : </b>176</p>
-     * <p><b>name : </b>getMessageType</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -4290,8 +4295,8 @@ export class LS {
     static getMessageType = (message: any[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getMP">getMP</a></h1>
      * <p><b>id : </b>78</p>
-     * <p><b>name : </b>getMP</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4299,8 +4304,8 @@ export class LS {
     static getMP = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getName">getName</a></h1>
      * <p><b>id : </b>76</p>
-     * <p><b>name : </b>getName</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4308,8 +4313,8 @@ export class LS {
     static getName = (entity?: number): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getNearestAlly">getNearestAlly</a></h1>
      * <p><b>id : </b>128</p>
-     * <p><b>name : </b>getNearestAlly</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25</p>
      */
@@ -4317,8 +4322,8 @@ export class LS {
     static getNearestAlly = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getNearestAllyTo">getNearestAllyTo</a></h1>
      * <p><b>id : </b>209</p>
-     * <p><b>name : </b>getNearestAllyTo</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>35</p>
      */
@@ -4326,8 +4331,8 @@ export class LS {
     static getNearestAllyTo = (entity: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getNearestAllyToCell">getNearestAllyToCell</a></h1>
      * <p><b>id : </b>210</p>
-     * <p><b>name : </b>getNearestAllyToCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>35</p>
      */
@@ -4335,8 +4340,8 @@ export class LS {
     static getNearestAllyToCell = (cell: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getNearestEnemy">getNearestEnemy</a></h1>
      * <p><b>id : </b>119</p>
-     * <p><b>name : </b>getNearestEnemy</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25</p>
      */
@@ -4344,8 +4349,8 @@ export class LS {
     static getNearestEnemy = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getNearestEnemyTo">getNearestEnemyTo</a></h1>
      * <p><b>id : </b>211</p>
-     * <p><b>name : </b>getNearestEnemyTo</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>35</p>
      */
@@ -4353,8 +4358,8 @@ export class LS {
     static getNearestEnemyTo = (entity: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getNearestEnemyToCell">getNearestEnemyToCell</a></h1>
      * <p><b>id : </b>212</p>
-     * <p><b>name : </b>getNearestEnemyToCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>35</p>
      */
@@ -4362,8 +4367,8 @@ export class LS {
     static getNearestEnemyToCell = (cell: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getNextPlayer">getNextPlayer</a></h1>
      * <p><b>id : </b>133</p>
-     * <p><b>name : </b>getNextPlayer</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>20</p>
      */
@@ -4371,8 +4376,8 @@ export class LS {
     static getNextPlayer = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getObstacles">getObstacles</a></h1>
      * <p><b>id : </b>271</p>
-     * <p><b>name : </b>getObstacles</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>85</p>
      */
@@ -4380,8 +4385,8 @@ export class LS {
     static getObstacles = (): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getOperations">getOperations</a></h1>
      * <p><b>id : </b>301</p>
-     * <p><b>name : </b>getOperations</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4389,8 +4394,8 @@ export class LS {
     static getOperations = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getPassiveEffects">getPassiveEffects</a></h1>
      * <p><b>id : </b>337</p>
-     * <p><b>name : </b>getPassiveEffects</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>125</p>
      */
@@ -4398,8 +4403,8 @@ export class LS {
     static getPassiveEffects = (entity?: number): any[][] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getPath">getPath</a></h1>
      * <p><b>id : </b>236</p>
-     * <p><b>name : </b>getPath</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n²)</p>
      */
@@ -4407,8 +4412,8 @@ export class LS {
     static getPath = (start: number, end: number, ignoredCells?: number[]): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getPathLength">getPathLength</a></h1>
      * <p><b>id : </b>261</p>
-     * <p><b>name : </b>getPathLength</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n²)</p>
      */
@@ -4416,8 +4421,8 @@ export class LS {
     static getPathLength = (cell1: number, cell2: number, ignoredCells?: number[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getPower">getPower</a></h1>
      * <p><b>id : </b>365</p>
-     * <p><b>name : </b>getPower</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4425,8 +4430,8 @@ export class LS {
     static getPower = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getPreviousPlayer">getPreviousPlayer</a></h1>
      * <p><b>id : </b>134</p>
-     * <p><b>name : </b>getPreviousPlayer</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>20</p>
      */
@@ -4434,8 +4439,8 @@ export class LS {
     static getPreviousPlayer = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getRed">getRed</a></h1>
      * <p><b>id : </b>227</p>
-     * <p><b>name : </b>getRed</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>10</p>
      */
@@ -4443,8 +4448,8 @@ export class LS {
     static getRed = (color: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getRegister">getRegister</a></h1>
      * <p><b>id : </b>275</p>
-     * <p><b>name : </b>getRegister</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4452,8 +4457,8 @@ export class LS {
     static getRegister = (key: string): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getRegisters">getRegisters</a></h1>
      * <p><b>id : </b>276</p>
-     * <p><b>name : </b>getRegisters</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>25</p>
      */
@@ -4461,8 +4466,8 @@ export class LS {
     static getRegisters = (): string[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getRelativeShield">getRelativeShield</a></h1>
      * <p><b>id : </b>183</p>
-     * <p><b>name : </b>getRelativeShield</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4470,8 +4475,8 @@ export class LS {
     static getRelativeShield = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getResistance">getResistance</a></h1>
      * <p><b>id : </b>308</p>
-     * <p><b>name : </b>getResistance</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4479,8 +4484,8 @@ export class LS {
     static getResistance = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getScience">getScience</a></h1>
      * <p><b>id : </b>310</p>
-     * <p><b>name : </b>getScience</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4488,8 +4493,8 @@ export class LS {
     static getScience = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getStrength">getStrength</a></h1>
      * <p><b>id : </b>303</p>
-     * <p><b>name : </b>getStrength</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4497,8 +4502,8 @@ export class LS {
     static getStrength = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getSummoner">getSummoner</a></h1>
      * <p><b>id : </b>294</p>
-     * <p><b>name : </b>getSummoner</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4506,8 +4511,8 @@ export class LS {
     static getSummoner = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getSummons">getSummons</a></h1>
      * <p><b>id : </b>335</p>
-     * <p><b>name : </b>getSummons</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4515,8 +4520,8 @@ export class LS {
     static getSummons = (entity?: number): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getTeamID">getTeamID</a></h1>
      * <p><b>id : </b>254</p>
-     * <p><b>name : </b>getTeamID</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4524,8 +4529,8 @@ export class LS {
     static getTeamID = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getTeamName">getTeamName</a></h1>
      * <p><b>id : </b>256</p>
-     * <p><b>name : </b>getTeamName</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4533,8 +4538,8 @@ export class LS {
     static getTeamName = (entity?: number): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getTime">getTime</a></h1>
      * <p><b>id : </b>352</p>
-     * <p><b>name : </b>getTime</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>50</p>
      */
@@ -4542,8 +4547,8 @@ export class LS {
     static getTime = (): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getTimestamp">getTimestamp</a></h1>
      * <p><b>id : </b>351</p>
-     * <p><b>name : </b>getTimestamp</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -4551,8 +4556,8 @@ export class LS {
     static getTimestamp = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getTotalLife">getTotalLife</a></h1>
      * <p><b>id : </b>82</p>
-     * <p><b>name : </b>getTotalLife</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4560,8 +4565,8 @@ export class LS {
     static getTotalLife = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getTotalMP">getTotalMP</a></h1>
      * <p><b>id : </b>317</p>
-     * <p><b>name : </b>getTotalMP</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4569,8 +4574,8 @@ export class LS {
     static getTotalMP = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getTotalTP">getTotalTP</a></h1>
      * <p><b>id : </b>319</p>
-     * <p><b>name : </b>getTotalTP</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4578,8 +4583,8 @@ export class LS {
     static getTotalTP = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getTP">getTP</a></h1>
      * <p><b>id : </b>80</p>
-     * <p><b>name : </b>getTP</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4587,8 +4592,8 @@ export class LS {
     static getTP = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getTurn">getTurn</a></h1>
      * <p><b>id : </b>121</p>
-     * <p><b>name : </b>getTurn</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4596,8 +4601,8 @@ export class LS {
     static getTurn = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getType">getType</a></h1>
      * <p><b>id : </b>290</p>
-     * <p><b>name : </b>getType</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4605,8 +4610,8 @@ export class LS {
     static getType = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getUsedRAM">getUsedRAM</a></h1>
      * <p><b>id : </b>407</p>
-     * <p><b>name : </b>getUsedRAM</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4614,8 +4619,8 @@ export class LS {
     static getUsedRAM = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getWeapon">getWeapon</a></h1>
      * <p><b>id : </b>74</p>
-     * <p><b>name : </b>getWeapon</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4623,8 +4628,8 @@ export class LS {
     static getWeapon = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getWeaponArea">getWeaponArea</a></h1>
      * <p><b>id : </b>274</p>
-     * <p><b>name : </b>getWeaponArea</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4632,8 +4637,8 @@ export class LS {
     static getWeaponArea = (weapon: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getWeaponCost">getWeaponCost</a></h1>
      * <p><b>id : </b>96</p>
-     * <p><b>name : </b>getWeaponCost</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4641,8 +4646,8 @@ export class LS {
     static getWeaponCost = (weapon: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getWeaponEffectiveArea">getWeaponEffectiveArea</a></h1>
      * <p><b>id : </b>247</p>
-     * <p><b>name : </b>getWeaponEffectiveArea</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>78</p>
      */
@@ -4650,8 +4655,8 @@ export class LS {
     static getWeaponEffectiveArea = (weapon?: number, cell: number, from?: number): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getWeaponEffects">getWeaponEffects</a></h1>
      * <p><b>id : </b>97</p>
-     * <p><b>name : </b>getWeaponEffects</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>125</p>
      */
@@ -4659,8 +4664,8 @@ export class LS {
     static getWeaponEffects = (weapon?: number): any[][] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getWeaponLaunchType">getWeaponLaunchType</a></h1>
      * <p><b>id : </b>362</p>
-     * <p><b>name : </b>getWeaponLaunchType</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4668,8 +4673,8 @@ export class LS {
     static getWeaponLaunchType = (weapon?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getWeaponMaxRange">getWeaponMaxRange</a></h1>
      * <p><b>id : </b>329</p>
-     * <p><b>name : </b>getWeaponMaxRange</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4677,8 +4682,8 @@ export class LS {
     static getWeaponMaxRange = (weapon: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getWeaponMinRange">getWeaponMinRange</a></h1>
      * <p><b>id : </b>330</p>
-     * <p><b>name : </b>getWeaponMinRange</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4686,8 +4691,8 @@ export class LS {
     static getWeaponMinRange = (weapon: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getWeaponName">getWeaponName</a></h1>
      * <p><b>id : </b>93</p>
-     * <p><b>name : </b>getWeaponName</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4695,8 +4700,8 @@ export class LS {
     static getWeaponName = (weapon: number): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getWeaponPassiveEffects">getWeaponPassiveEffects</a></h1>
      * <p><b>id : </b>338</p>
-     * <p><b>name : </b>getWeaponPassiveEffects</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>125</p>
      */
@@ -4704,8 +4709,8 @@ export class LS {
     static getWeaponPassiveEffects = (weapon: number): any[][] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getWeapons">getWeapons</a></h1>
      * <p><b>id : </b>86</p>
-     * <p><b>name : </b>getWeapons</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>50</p>
      */
@@ -4713,8 +4718,8 @@ export class LS {
     static getWeapons = (entity?: number): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getWeaponTargets">getWeaponTargets</a></h1>
      * <p><b>id : </b>239</p>
-     * <p><b>name : </b>getWeaponTargets</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>40</p>
      */
@@ -4722,8 +4727,8 @@ export class LS {
     static getWeaponTargets = (weapon?: number, cell: number): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/getWisdom">getWisdom</a></h1>
      * <p><b>id : </b>312</p>
-     * <p><b>name : </b>getWisdom</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4731,8 +4736,8 @@ export class LS {
     static getWisdom = (entity?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/hexString">hexString</a></h1>
      * <p><b>id : </b>417</p>
-     * <p><b>name : </b>hexString</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>10</p>
      */
@@ -4740,8 +4745,8 @@ export class LS {
     static hexString = (x: number): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/hypot">hypot</a></h1>
      * <p><b>id : </b>25</p>
-     * <p><b>name : </b>hypot</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>187</p>
      */
@@ -4749,8 +4754,8 @@ export class LS {
     static hypot = (x: number, y: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/inArray">inArray</a></h1>
      * <p><b>id : </b>54</p>
-     * <p><b>name : </b>inArray</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -4758,8 +4763,8 @@ export class LS {
     static inArray = <T>(array: T[], element: T): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/include">include</a></h1>
      * <p><b>id : </b>200</p>
-     * <p><b>name : </b>include</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4767,8 +4772,8 @@ export class LS {
     static include = (ai: string): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/indexOf">indexOf</a></h1>
      * <p><b>id : </b>33</p>
-     * <p><b>name : </b>indexOf</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -4776,8 +4781,8 @@ export class LS {
     static indexOf = (string: string, search: string, start?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/insert">insert</a></h1>
      * <p><b>id : </b>47</p>
-     * <p><b>name : </b>insert</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -4785,8 +4790,8 @@ export class LS {
     static insert = <T>(array: T[], element: T, position: number): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalAverage">intervalAverage</a></h1>
      * <p><b>id : </b>443</p>
-     * <p><b>name : </b>intervalAverage</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>3</p>
      */
@@ -4794,8 +4799,8 @@ export class LS {
     static intervalAverage = (interval: number[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalCombine">intervalCombine</a></h1>
      * <p><b>id : </b>446</p>
-     * <p><b>name : </b>intervalCombine</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>3</p>
      */
@@ -4803,8 +4808,8 @@ export class LS {
     static intervalCombine = (interval1: number[], interval2: number[]): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalIntersection">intervalIntersection</a></h1>
      * <p><b>id : </b>445</p>
-     * <p><b>name : </b>intervalIntersection</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>3</p>
      */
@@ -4812,8 +4817,8 @@ export class LS {
     static intervalIntersection = (interval1: number[], interval2: number[]): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalIsBounded">intervalIsBounded</a></h1>
      * <p><b>id : </b>440</p>
-     * <p><b>name : </b>intervalIsBounded</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4821,8 +4826,8 @@ export class LS {
     static intervalIsBounded = (interval: number[]): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalIsClosed">intervalIsClosed</a></h1>
      * <p><b>id : </b>450</p>
-     * <p><b>name : </b>intervalIsClosed</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4830,8 +4835,8 @@ export class LS {
     static intervalIsClosed = (interval: number[]): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalIsEmpty">intervalIsEmpty</a></h1>
      * <p><b>id : </b>439</p>
-     * <p><b>name : </b>intervalIsEmpty</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4839,8 +4844,8 @@ export class LS {
     static intervalIsEmpty = (interval: number[]): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalIsLeftBounded">intervalIsLeftBounded</a></h1>
      * <p><b>id : </b>442</p>
-     * <p><b>name : </b>intervalIsLeftBounded</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4848,8 +4853,8 @@ export class LS {
     static intervalIsLeftBounded = (interval: number[]): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalIsLeftClosed">intervalIsLeftClosed</a></h1>
      * <p><b>id : </b>449</p>
-     * <p><b>name : </b>intervalIsLeftClosed</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4857,8 +4862,8 @@ export class LS {
     static intervalIsLeftClosed = (interval: number[]): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalIsRightBounded">intervalIsRightBounded</a></h1>
      * <p><b>id : </b>441</p>
-     * <p><b>name : </b>intervalIsRightBounded</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4866,8 +4871,8 @@ export class LS {
     static intervalIsRightBounded = (interval: number[]): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalIsRightClosed">intervalIsRightClosed</a></h1>
      * <p><b>id : </b>448</p>
-     * <p><b>name : </b>intervalIsRightClosed</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4875,8 +4880,8 @@ export class LS {
     static intervalIsRightClosed = (interval: number[]): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalMax">intervalMax</a></h1>
      * <p><b>id : </b>428</p>
-     * <p><b>name : </b>intervalMax</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4884,8 +4889,8 @@ export class LS {
     static intervalMax = (interval: number[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalMin">intervalMin</a></h1>
      * <p><b>id : </b>427</p>
-     * <p><b>name : </b>intervalMin</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4893,8 +4898,8 @@ export class LS {
     static intervalMin = (interval: number[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalSize">intervalSize</a></h1>
      * <p><b>id : </b>444</p>
-     * <p><b>name : </b>intervalSize</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4902,8 +4907,8 @@ export class LS {
     static intervalSize = (interval: number[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/intervalToArray">intervalToArray</a></h1>
      * <p><b>id : </b>447</p>
-     * <p><b>name : </b>intervalToArray</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -4911,8 +4916,8 @@ export class LS {
     static intervalToArray = (interval: number[], step?: number): number[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isAlive">isAlive</a></h1>
      * <p><b>id : </b>90</p>
-     * <p><b>name : </b>isAlive</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4920,8 +4925,8 @@ export class LS {
     static isAlive = (entity: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isAlly">isAlly</a></h1>
      * <p><b>id : </b>88</p>
-     * <p><b>name : </b>isAlly</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4929,8 +4934,8 @@ export class LS {
     static isAlly = (entity: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isChip">isChip</a></h1>
      * <p><b>id : </b>232</p>
-     * <p><b>name : </b>isChip</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>10</p>
      */
@@ -4938,8 +4943,8 @@ export class LS {
     static isChip = (value: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isDead">isDead</a></h1>
      * <p><b>id : </b>89</p>
-     * <p><b>name : </b>isDead</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4947,8 +4952,8 @@ export class LS {
     static isDead = (entity: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isEmpty">isEmpty</a></h1>
      * <p><b>id : </b>62</p>
-     * <p><b>name : </b>isEmpty</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -4956,8 +4961,8 @@ export class LS {
     static isEmpty = <T>(array: T[]): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isEmptyCell">isEmptyCell</a></h1>
      * <p><b>id : </b>114</p>
-     * <p><b>name : </b>isEmptyCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>10</p>
      */
@@ -4965,8 +4970,8 @@ export class LS {
     static isEmptyCell = (cell: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isEnemy">isEnemy</a></h1>
      * <p><b>id : </b>87</p>
-     * <p><b>name : </b>isEnemy</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -4974,8 +4979,8 @@ export class LS {
     static isEnemy = (entity: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isEntity">isEntity</a></h1>
      * <p><b>id : </b>344</p>
-     * <p><b>name : </b>isEntity</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4983,8 +4988,8 @@ export class LS {
     static isEntity = (cell: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isFinite">isFinite</a></h1>
      * <p><b>id : </b>420</p>
-     * <p><b>name : </b>isFinite</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -4992,8 +4997,8 @@ export class LS {
     static isFinite = (x: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isInfinite">isInfinite</a></h1>
      * <p><b>id : </b>421</p>
-     * <p><b>name : </b>isInfinite</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -5001,8 +5006,8 @@ export class LS {
     static isInfinite = (x: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isNaN">isNaN</a></h1>
      * <p><b>id : </b>422</p>
-     * <p><b>name : </b>isNaN</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -5010,8 +5015,8 @@ export class LS {
     static isNaN = (x: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isObstacle">isObstacle</a></h1>
      * <p><b>id : </b>115</p>
-     * <p><b>name : </b>isObstacle</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>10</p>
      */
@@ -5019,8 +5024,8 @@ export class LS {
     static isObstacle = (cell: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isOnSameLine">isOnSameLine</a></h1>
      * <p><b>id : </b>112</p>
-     * <p><b>name : </b>isOnSameLine</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -5028,8 +5033,8 @@ export class LS {
     static isOnSameLine = (cell1: number, cell2: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isPermutation">isPermutation</a></h1>
      * <p><b>id : </b>423</p>
-     * <p><b>name : </b>isPermutation</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>50</p>
      */
@@ -5037,8 +5042,8 @@ export class LS {
     static isPermutation = (x: number, y: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isStatic">isStatic</a></h1>
      * <p><b>id : </b>333</p>
-     * <p><b>name : </b>isStatic</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -5046,8 +5051,8 @@ export class LS {
     static isStatic = (entity?: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isSummon">isSummon</a></h1>
      * <p><b>id : </b>292</p>
-     * <p><b>name : </b>isSummon</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>10</p>
      */
@@ -5055,8 +5060,8 @@ export class LS {
     static isSummon = (entity?: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/isWeapon">isWeapon</a></h1>
      * <p><b>id : </b>231</p>
-     * <p><b>name : </b>isWeapon</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -5064,8 +5069,8 @@ export class LS {
     static isWeapon = (value: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/join">join</a></h1>
      * <p><b>id : </b>42</p>
-     * <p><b>name : </b>join</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5073,8 +5078,8 @@ export class LS {
     static join = <T>(array: T[], glue: string): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/jsonDecode">jsonDecode</a></h1>
      * <p><b>id : </b>326</p>
-     * <p><b>name : </b>jsonDecode</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5082,8 +5087,8 @@ export class LS {
     static jsonDecode = (json: string): any => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/jsonEncode">jsonEncode</a></h1>
      * <p><b>id : </b>325</p>
-     * <p><b>name : </b>jsonEncode</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>∞</p>
      */
@@ -5091,8 +5096,8 @@ export class LS {
     static jsonEncode = (object: string): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/keySort">keySort</a></h1>
      * <p><b>id : </b>206</p>
-     * <p><b>name : </b>keySort</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(nlog(n))</p>
      */
@@ -5100,8 +5105,8 @@ export class LS {
     static keySort = <T>(array: T[], order?: number): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/leadingZeros">leadingZeros</a></h1>
      * <p><b>id : </b>411</p>
-     * <p><b>name : </b>leadingZeros</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -5109,8 +5114,8 @@ export class LS {
     static leadingZeros = (x: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/length">length</a></h1>
      * <p><b>id : </b>28</p>
-     * <p><b>name : </b>length</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -5118,8 +5123,8 @@ export class LS {
     static length = (string: string): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/lineOfSight">lineOfSight</a></h1>
      * <p><b>id : </b>235</p>
-     * <p><b>name : </b>lineOfSight</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>31</p>
      */
@@ -5127,8 +5132,8 @@ export class LS {
     static lineOfSight = (start: number, end: number, entityToIgnore?: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/listen">listen</a></h1>
      * <p><b>id : </b>230</p>
-     * <p><b>name : </b>listen</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>78</p>
      */
@@ -5136,8 +5141,8 @@ export class LS {
     static listen = (): any[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/log">log</a></h1>
      * <p><b>id : </b>18</p>
-     * <p><b>name : </b>log</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>39</p>
      */
@@ -5145,8 +5150,8 @@ export class LS {
     static log = (number: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/log10">log10</a></h1>
      * <p><b>id : </b>19</p>
-     * <p><b>name : </b>log10</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>23</p>
      */
@@ -5154,8 +5159,8 @@ export class LS {
     static log10 = (number: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/log2">log2</a></h1>
      * <p><b>id : </b>382</p>
-     * <p><b>name : </b>log2</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -5163,8 +5168,8 @@ export class LS {
     static log2 = (number: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapAverage">mapAverage</a></h1>
      * <p><b>id : </b>370</p>
-     * <p><b>name : </b>mapAverage</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5172,8 +5177,8 @@ export class LS {
     static mapAverage = <T, U>(map: Map<T, U>): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapClear">mapClear</a></h1>
      * <p><b>id : </b>397</p>
-     * <p><b>name : </b>mapClear</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -5181,8 +5186,8 @@ export class LS {
     static mapClear = <T, U>(map: Map<T, U>): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapContains">mapContains</a></h1>
      * <p><b>id : </b>374</p>
-     * <p><b>name : </b>mapContains</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5190,8 +5195,8 @@ export class LS {
     static mapContains = <T, U>(map: Map<T, U>, value: U): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapContainsKey">mapContainsKey</a></h1>
      * <p><b>id : </b>375</p>
-     * <p><b>name : </b>mapContainsKey</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -5199,8 +5204,8 @@ export class LS {
     static mapContainsKey = <T, U>(map: Map<T, U>, key: T): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapEvery">mapEvery</a></h1>
      * <p><b>id : </b>393</p>
-     * <p><b>name : </b>mapEvery</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5208,8 +5213,8 @@ export class LS {
     static mapEvery = <T, U>(map: Map<T, U>, callback: (arg: T) => boolean): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapFill">mapFill</a></h1>
      * <p><b>id : </b>390</p>
-     * <p><b>name : </b>mapFill</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5217,8 +5222,8 @@ export class LS {
     static mapFill = <T, U>(map: Map<T, U>, value: U): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapFilter">mapFilter</a></h1>
      * <p><b>id : </b>389</p>
-     * <p><b>name : </b>mapFilter</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5226,8 +5231,8 @@ export class LS {
     static mapFilter = <T, U>(map: Map<T, U>, callback: (arg: T) => boolean): Map<T, U> => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapFold">mapFold</a></h1>
      * <p><b>id : </b>391</p>
-     * <p><b>name : </b>mapFold</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5235,8 +5240,8 @@ export class LS {
     static mapFold = <T, U>(map: Map<T, U>, f: (arg1: U, arg2: U, arg3: T, arg4: Map<T, U>[]) => boolean, v: U): U => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapGet">mapGet</a></h1>
      * <p><b>id : </b>378</p>
-     * <p><b>name : </b>mapGet</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -5244,8 +5249,8 @@ export class LS {
     static mapGet = <T, U>(map: Map<T, U>, key: T, defaut?: U): U | undefined => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapIsEmpty">mapIsEmpty</a></h1>
      * <p><b>id : </b>399</p>
-     * <p><b>name : </b>mapIsEmpty</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -5253,8 +5258,8 @@ export class LS {
     static mapIsEmpty = <T, U>(map: Map<T, U>): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapIter">mapIter</a></h1>
      * <p><b>id : </b>381</p>
-     * <p><b>name : </b>mapIter</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5262,8 +5267,8 @@ export class LS {
     static mapIter = <T, U>(map: Map<T, U>, callback: (arg1: U, arg2: T, arg3: Map<T, U>) => void): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapKeys">mapKeys</a></h1>
      * <p><b>id : </b>380</p>
-     * <p><b>name : </b>mapKeys</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5271,8 +5276,8 @@ export class LS {
     static mapKeys = <T, U>(map: Map<T, U>): T[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapMap">mapMap</a></h1>
      * <p><b>id : </b>368</p>
-     * <p><b>name : </b>mapMap</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5280,8 +5285,8 @@ export class LS {
     static mapMap = <T, U, V>(map: Map<T, U>, callback: (arg1: U, arg2: T, arg3: Map<T, U>) => V): Map<T, V> => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapMax">mapMax</a></h1>
      * <p><b>id : </b>372</p>
-     * <p><b>name : </b>mapMax</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5289,8 +5294,8 @@ export class LS {
     static mapMax = <T, U>(map: Map<T, U>): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapMerge">mapMerge</a></h1>
      * <p><b>id : </b>388</p>
-     * <p><b>name : </b>mapMerge</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5298,8 +5303,8 @@ export class LS {
     static mapMerge = <T, U>(map1: Map<T, U>, map2: Map<T, U>): Map<T, U> => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapMin">mapMin</a></h1>
      * <p><b>id : </b>371</p>
-     * <p><b>name : </b>mapMin</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5307,8 +5312,8 @@ export class LS {
     static mapMin = <T>(map: Map<T, number>): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapPut">mapPut</a></h1>
      * <p><b>id : </b>383</p>
-     * <p><b>name : </b>mapPut</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>3</p>
      */
@@ -5316,8 +5321,8 @@ export class LS {
     static mapPut = <T, U>(map: Map<T, U>, key: T, value: U): U | undefined => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapPutAll">mapPutAll</a></h1>
      * <p><b>id : </b>384</p>
-     * <p><b>name : </b>mapPutAll</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5325,8 +5330,8 @@ export class LS {
     static mapPutAll = <T, U>(map: Map<T, U>, elements: Map<T, U>): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapRemove">mapRemove</a></h1>
      * <p><b>id : </b>366</p>
-     * <p><b>name : </b>mapRemove</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -5334,8 +5339,8 @@ export class LS {
     static mapRemove = <T, U>(map: Map<T, U>, key: T): U | undefined => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapRemoveAll">mapRemoveAll</a></h1>
      * <p><b>id : </b>387</p>
-     * <p><b>name : </b>mapRemoveAll</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5343,8 +5348,8 @@ export class LS {
     static mapRemoveAll = <T, U>(map: Map<T, U>, value: U): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapReplace">mapReplace</a></h1>
      * <p><b>id : </b>385</p>
-     * <p><b>name : </b>mapReplace</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>3</p>
      */
@@ -5352,8 +5357,8 @@ export class LS {
     static mapReplace = <T, U>(map: Map<T, U>, key: T, value: U): U => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapReplaceAll">mapReplaceAll</a></h1>
      * <p><b>id : </b>377</p>
-     * <p><b>name : </b>mapReplaceAll</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5361,8 +5366,8 @@ export class LS {
     static mapReplaceAll = <T, U>(map1: Map<T, U>, map2: Map<T, U>): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapSearch">mapSearch</a></h1>
      * <p><b>id : </b>373</p>
-     * <p><b>name : </b>mapSearch</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5370,8 +5375,8 @@ export class LS {
     static mapSearch = <T, U>(map: Map<T, U>, value: U): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapSize">mapSize</a></h1>
      * <p><b>id : </b>367</p>
-     * <p><b>name : </b>mapSize</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -5379,8 +5384,8 @@ export class LS {
     static mapSize = <T, U>(map: Map<T, U>): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapSome">mapSome</a></h1>
      * <p><b>id : </b>392</p>
-     * <p><b>name : </b>mapSome</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5388,8 +5393,8 @@ export class LS {
     static mapSome = <T, U>(map: Map<T, U>, callback: (arg1: U, arg2: T, arg3: Map<T, U>) => boolean): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapSum">mapSum</a></h1>
      * <p><b>id : </b>369</p>
-     * <p><b>name : </b>mapSum</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5397,8 +5402,8 @@ export class LS {
     static mapSum = <T, U>(map: Map<T, U>): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mapValues">mapValues</a></h1>
      * <p><b>id : </b>379</p>
-     * <p><b>name : </b>mapValues</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5406,8 +5411,8 @@ export class LS {
     static mapValues = <T, U>(map: Map<T, U>): U[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/mark">mark</a></h1>
      * <p><b>id : </b>223</p>
-     * <p><b>name : </b>mark</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>164</p>
      */
@@ -5415,8 +5420,8 @@ export class LS {
     static mark = (cells: number | number[], color?: number, duration?: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/markText">markText</a></h1>
      * <p><b>id : </b>342</p>
-     * <p><b>name : </b>markText</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>164</p>
      */
@@ -5424,8 +5429,8 @@ export class LS {
     static markText = (cells: number | number[], text?: string, color?: number, duration?: number): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/max">max</a></h1>
      * <p><b>id : </b>3</p>
-     * <p><b>name : </b>max</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -5433,8 +5438,8 @@ export class LS {
     static max = (a: number, b: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/min">min</a></h1>
      * <p><b>id : </b>2</p>
-     * <p><b>name : </b>min</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -5442,8 +5447,8 @@ export class LS {
     static min = (a: number, b: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/moveAwayFrom">moveAwayFrom</a></h1>
      * <p><b>id : </b>150</p>
-     * <p><b>name : </b>moveAwayFrom</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>500</p>
      */
@@ -5451,8 +5456,8 @@ export class LS {
     static moveAwayFrom = (entity: number, mp?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/moveAwayFromCell">moveAwayFromCell</a></h1>
      * <p><b>id : </b>152</p>
-     * <p><b>name : </b>moveAwayFromCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>500</p>
      */
@@ -5460,8 +5465,8 @@ export class LS {
     static moveAwayFromCell = (cell: number, mp?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/moveAwayFromCells">moveAwayFromCells</a></h1>
      * <p><b>id : </b>154</p>
-     * <p><b>name : </b>moveAwayFromCells</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>500</p>
      */
@@ -5469,8 +5474,8 @@ export class LS {
     static moveAwayFromCells = (cells: number[], mp?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/moveAwayFromEntities">moveAwayFromEntities</a></h1>
      * <p><b>id : </b>358</p>
-     * <p><b>name : </b>moveAwayFromEntities</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>500</p>
      */
@@ -5478,8 +5483,8 @@ export class LS {
     static moveAwayFromEntities = (entities: number[], mp?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/moveAwayFromLine">moveAwayFromLine</a></h1>
      * <p><b>id : </b>158</p>
-     * <p><b>name : </b>moveAwayFromLine</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>500</p>
      */
@@ -5487,8 +5492,8 @@ export class LS {
     static moveAwayFromLine = (cell1: number, cell2: number, mp?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/moveToward">moveToward</a></h1>
      * <p><b>id : </b>142</p>
-     * <p><b>name : </b>moveToward</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>500</p>
      */
@@ -5496,8 +5501,8 @@ export class LS {
     static moveToward = (entity: number, mp?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/moveTowardCell">moveTowardCell</a></h1>
      * <p><b>id : </b>144</p>
-     * <p><b>name : </b>moveTowardCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>500</p>
      */
@@ -5505,8 +5510,8 @@ export class LS {
     static moveTowardCell = (cell: number, mp?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/moveTowardCells">moveTowardCells</a></h1>
      * <p><b>id : </b>148</p>
-     * <p><b>name : </b>moveTowardCells</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>500</p>
      */
@@ -5514,8 +5519,8 @@ export class LS {
     static moveTowardCells = (cells: number[], mp?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/moveTowardEntities">moveTowardEntities</a></h1>
      * <p><b>id : </b>356</p>
-     * <p><b>name : </b>moveTowardEntities</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>500</p>
      */
@@ -5523,8 +5528,8 @@ export class LS {
     static moveTowardEntities = (entities: number[], mp?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/moveTowardLine">moveTowardLine</a></h1>
      * <p><b>id : </b>164</p>
-     * <p><b>name : </b>moveTowardLine</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>500</p>
      */
@@ -5532,8 +5537,8 @@ export class LS {
     static moveTowardLine = (cell1: number, cell2: number, mp?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/number">number</a></h1>
      * <p><b>id : </b>201</p>
-     * <p><b>name : </b>number</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>20</p>
      */
@@ -5541,8 +5546,8 @@ export class LS {
     static number = (value: any): number | undefined => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/pause">pause</a></h1>
      * <p><b>id : </b>262</p>
-     * <p><b>name : </b>pause</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>30</p>
      */
@@ -5550,8 +5555,8 @@ export class LS {
     static pause = (): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/pop">pop</a></h1>
      * <p><b>id : </b>44</p>
-     * <p><b>name : </b>pop</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -5559,8 +5564,8 @@ export class LS {
     static pop = <T>(array: T[]): T => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/pow">pow</a></h1>
      * <p><b>id : </b>21</p>
-     * <p><b>name : </b>pow</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>140</p>
      */
@@ -5568,8 +5573,8 @@ export class LS {
     static pow = (base: number, exp: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/push">push</a></h1>
      * <p><b>id : </b>43</p>
-     * <p><b>name : </b>push</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -5577,8 +5582,8 @@ export class LS {
     static push = <T>(array: T[], element: T): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/pushAll">pushAll</a></h1>
      * <p><b>id : </b>64</p>
-     * <p><b>name : </b>pushAll</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5586,8 +5591,8 @@ export class LS {
     static pushAll = <T>(array: T[], elements: T[]): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/rand">rand</a></h1>
      * <p><b>id : </b>22</p>
-     * <p><b>name : </b>rand</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>30</p>
      */
@@ -5595,8 +5600,8 @@ export class LS {
     static rand = (): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/randInt">randInt</a></h1>
      * <p><b>id : </b>23</p>
-     * <p><b>name : </b>randInt</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>30</p>
      */
@@ -5604,8 +5609,8 @@ export class LS {
     static randInt = (a: number, b: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/randReal">randReal</a></h1>
      * <p><b>id : </b>403</p>
-     * <p><b>name : </b>randReal</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>30</p>
      */
@@ -5613,8 +5618,8 @@ export class LS {
     static randReal = (a: number, b: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/realBits">realBits</a></h1>
      * <p><b>id : </b>418</p>
-     * <p><b>name : </b>realBits</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -5622,8 +5627,8 @@ export class LS {
     static realBits = (x: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/remove">remove</a></h1>
      * <p><b>id : </b>48</p>
-     * <p><b>name : </b>remove</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5631,8 +5636,8 @@ export class LS {
     static remove = <T>(array: T[], position: number): T => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/removeElement">removeElement</a></h1>
      * <p><b>id : </b>49</p>
-     * <p><b>name : </b>removeElement</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5640,8 +5645,8 @@ export class LS {
     static removeElement = <T>(array: T[], element: T): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/removeKey">removeKey</a></h1>
      * <p><b>id : </b>207</p>
-     * <p><b>name : </b>removeKey</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>5</p>
      */
@@ -5649,8 +5654,8 @@ export class LS {
     static removeKey = <T>(array: T[], key: number): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/replace">replace</a></h1>
      * <p><b>id : </b>31</p>
-     * <p><b>name : </b>replace</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5658,8 +5663,8 @@ export class LS {
     static replace = (string: string, search: string, replace: string): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/resurrect">resurrect</a></h1>
      * <p><b>id : </b>300</p>
-     * <p><b>name : </b>resurrect</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>500</p>
      */
@@ -5667,8 +5672,8 @@ export class LS {
     static resurrect = (entity: number, cell: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/reverse">reverse</a></h1>
      * <p><b>id : </b>55</p>
-     * <p><b>name : </b>reverse</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5676,8 +5681,8 @@ export class LS {
     static reverse = <T>(array: T[]): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/rotateLeft">rotateLeft</a></h1>
      * <p><b>id : </b>414</p>
-     * <p><b>name : </b>rotateLeft</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -5685,8 +5690,8 @@ export class LS {
     static rotateLeft = (x: number, s: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/rotateRight">rotateRight</a></h1>
      * <p><b>id : </b>415</p>
-     * <p><b>name : </b>rotateRight</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -5694,8 +5699,8 @@ export class LS {
     static rotateRight = (x: number, s: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/round">round</a></h1>
      * <p><b>id : </b>15</p>
-     * <p><b>name : </b>round</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -5703,8 +5708,8 @@ export class LS {
     static round = (number: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/say">say</a></h1>
      * <p><b>id : </b>83</p>
-     * <p><b>name : </b>say</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>30</p>
      */
@@ -5712,8 +5717,8 @@ export class LS {
     static say = (message: string): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/search">search</a></h1>
      * <p><b>id : </b>53</p>
-     * <p><b>name : </b>search</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5721,8 +5726,8 @@ export class LS {
     static search = <T>(array: T[], element: T, start?: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/sendAll">sendAll</a></h1>
      * <p><b>id : </b>172</p>
-     * <p><b>name : </b>sendAll</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>40</p>
      */
@@ -5730,8 +5735,8 @@ export class LS {
     static sendAll = (type: number, params: any): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/sendTo">sendTo</a></h1>
      * <p><b>id : </b>171</p>
-     * <p><b>name : </b>sendTo</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -5739,8 +5744,8 @@ export class LS {
     static sendTo = (entity: number, type: number, params: any): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setClear">setClear</a></h1>
      * <p><b>id : </b>429</p>
-     * <p><b>name : </b>setClear</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -5748,8 +5753,8 @@ export class LS {
     static setClear = <T>(set: Set<T>): Set<T> => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setContains">setContains</a></h1>
      * <p><b>id : </b>430</p>
-     * <p><b>name : </b>setContains</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -5757,8 +5762,8 @@ export class LS {
     static setContains = <T>(set: Set<T>, element: T): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setDifference">setDifference</a></h1>
      * <p><b>id : </b>436</p>
-     * <p><b>name : </b>setDifference</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5766,8 +5771,8 @@ export class LS {
     static setDifference = <T>(set1: Set<T>, set2: Set<T>): Set<T> => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setDisjunction">setDisjunction</a></h1>
      * <p><b>id : </b>437</p>
-     * <p><b>name : </b>setDisjunction</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5775,8 +5780,8 @@ export class LS {
     static setDisjunction = <T>(set1: Set<T>, set2: Set<T>): Set<T> => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setIntersection">setIntersection</a></h1>
      * <p><b>id : </b>435</p>
-     * <p><b>name : </b>setIntersection</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5784,8 +5789,8 @@ export class LS {
     static setIntersection = <T>(set1: Set<T>, set2: Set<T>): Set<T> => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setIsEmpty">setIsEmpty</a></h1>
      * <p><b>id : </b>432</p>
-     * <p><b>name : </b>setIsEmpty</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -5793,8 +5798,8 @@ export class LS {
     static setIsEmpty = <T>(set: Set<T>): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setIsSubsetOf">setIsSubsetOf</a></h1>
      * <p><b>id : </b>433</p>
-     * <p><b>name : </b>setIsSubsetOf</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5802,8 +5807,8 @@ export class LS {
     static setIsSubsetOf = <T>(set1: Set<T>, set2: Set<T>): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setPut">setPut</a></h1>
      * <p><b>id : </b>425</p>
-     * <p><b>name : </b>setPut</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>3</p>
      */
@@ -5811,8 +5816,8 @@ export class LS {
     static setPut = <T>(set: Set<T>, element: T): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setRegister">setRegister</a></h1>
      * <p><b>id : </b>278</p>
-     * <p><b>name : </b>setRegister</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>50</p>
      */
@@ -5820,8 +5825,8 @@ export class LS {
     static setRegister = (key: string, value: string): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setRemove">setRemove</a></h1>
      * <p><b>id : </b>426</p>
-     * <p><b>name : </b>setRemove</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -5829,8 +5834,8 @@ export class LS {
     static setRemove = <T>(set: Set<T>, element: T): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setSize">setSize</a></h1>
      * <p><b>id : </b>431</p>
-     * <p><b>name : </b>setSize</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -5838,8 +5843,8 @@ export class LS {
     static setSize = (set: Set<any>): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setToArray">setToArray</a></h1>
      * <p><b>id : </b>438</p>
-     * <p><b>name : </b>setToArray</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5847,8 +5852,8 @@ export class LS {
     static setToArray = <T>(set: Set<T>): T[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setUnion">setUnion</a></h1>
      * <p><b>id : </b>434</p>
-     * <p><b>name : </b>setUnion</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5856,8 +5861,8 @@ export class LS {
     static setUnion = <T>(set1: Set<T>, set2: Set<T>): Set<T> => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/setWeapon">setWeapon</a></h1>
      * <p><b>id : </b>84</p>
-     * <p><b>name : </b>setWeapon</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>15</p>
      */
@@ -5865,8 +5870,8 @@ export class LS {
     static setWeapon = (weapon: number): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/shift">shift</a></h1>
      * <p><b>id : </b>46</p>
-     * <p><b>name : </b>shift</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5874,8 +5879,8 @@ export class LS {
     static shift = <T>(array: T[]): T => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/show">show</a></h1>
      * <p><b>id : </b>238</p>
-     * <p><b>name : </b>show</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>8</p>
      */
@@ -5883,8 +5888,8 @@ export class LS {
     static show = (cell: number, color?: number): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/shuffle">shuffle</a></h1>
      * <p><b>id : </b>51</p>
-     * <p><b>name : </b>shuffle</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5892,8 +5897,8 @@ export class LS {
     static shuffle = (array: any[]): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/signum">signum</a></h1>
      * <p><b>id : </b>26</p>
-     * <p><b>name : </b>signum</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>2</p>
      */
@@ -5901,8 +5906,8 @@ export class LS {
     static signum = (number: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/sin">sin</a></h1>
      * <p><b>id : </b>5</p>
-     * <p><b>name : </b>sin</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>30</p>
      */
@@ -5910,8 +5915,8 @@ export class LS {
     static sin = (angle: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/sort">sort</a></h1>
      * <p><b>id : </b>162</p>
-     * <p><b>name : </b>sort</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(nlog(n))</p>
      */
@@ -5919,8 +5924,8 @@ export class LS {
     static sort = (array: any[], order?: number): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/split">split</a></h1>
      * <p><b>id : </b>35</p>
-     * <p><b>name : </b>split</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5928,8 +5933,8 @@ export class LS {
     static split = (string: string, delimiter: string, limit?: number): string[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/sqrt">sqrt</a></h1>
      * <p><b>id : </b>16</p>
-     * <p><b>name : </b>sqrt</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>8</p>
      */
@@ -5937,8 +5942,8 @@ export class LS {
     static sqrt = (number: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/startsWith">startsWith</a></h1>
      * <p><b>id : </b>38</p>
-     * <p><b>name : </b>startsWith</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5946,8 +5951,8 @@ export class LS {
     static startsWith = (string: string, prefix: string): boolean => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/string">string</a></h1>
      * <p><b>id : </b>202</p>
-     * <p><b>name : </b>string</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>8</p>
      */
@@ -5955,8 +5960,8 @@ export class LS {
     static string = (value: any): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/subArray">subArray</a></h1>
      * <p><b>id : </b>63</p>
-     * <p><b>name : </b>subArray</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5964,8 +5969,8 @@ export class LS {
     static subArray = <T>(array: T[], start: number, end: number): T[] => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/substring">substring</a></h1>
      * <p><b>id : </b>30</p>
-     * <p><b>name : </b>substring</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5973,8 +5978,8 @@ export class LS {
     static substring = (string: string, start: number, length?: number): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/sum">sum</a></h1>
      * <p><b>id : </b>58</p>
-     * <p><b>name : </b>sum</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -5982,8 +5987,8 @@ export class LS {
     static sum = (array: number[]): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/summon">summon</a></h1>
      * <p><b>id : </b>297</p>
-     * <p><b>name : </b>summon</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1750</p>
      */
@@ -5991,8 +5996,8 @@ export class LS {
     static summon = (chip: number, cell: number, ai: (...args: any[]) => void): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/tan">tan</a></h1>
      * <p><b>id : </b>6</p>
-     * <p><b>name : </b>tan</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>30</p>
      */
@@ -6000,8 +6005,8 @@ export class LS {
     static tan = (angle: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/toDegrees">toDegrees</a></h1>
      * <p><b>id : </b>11</p>
-     * <p><b>name : </b>toDegrees</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -6009,8 +6014,8 @@ export class LS {
     static toDegrees = (radians: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/toLower">toLower</a></h1>
      * <p><b>id : </b>36</p>
-     * <p><b>name : </b>toLower</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -6018,8 +6023,8 @@ export class LS {
     static toLower = (string: string): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/toRadians">toRadians</a></h1>
      * <p><b>id : </b>10</p>
-     * <p><b>name : </b>toRadians</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>31</p>
      */
@@ -6027,8 +6032,8 @@ export class LS {
     static toRadians = (degrees: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/toUpper">toUpper</a></h1>
      * <p><b>id : </b>37</p>
-     * <p><b>name : </b>toUpper</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -6036,8 +6041,8 @@ export class LS {
     static toUpper = (string: string): string => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/trailingZeros">trailingZeros</a></h1>
      * <p><b>id : </b>410</p>
-     * <p><b>name : </b>trailingZeros</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>1</p>
      */
@@ -6045,8 +6050,8 @@ export class LS {
     static trailingZeros = (x: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/typeOf">typeOf</a></h1>
      * <p><b>id : </b>226</p>
-     * <p><b>name : </b>typeOf</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>8</p>
      */
@@ -6054,8 +6059,8 @@ export class LS {
     static typeOf = (value: any): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/unshift">unshift</a></h1>
      * <p><b>id : </b>45</p>
-     * <p><b>name : </b>unshift</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>complexity : </b>O(n)</p>
      */
@@ -6063,8 +6068,8 @@ export class LS {
     static unshift = <T>(array: T[], element: T): void => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/useChip">useChip</a></h1>
      * <p><b>id : </b>99</p>
-     * <p><b>name : </b>useChip</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>3000</p>
      */
@@ -6072,8 +6077,8 @@ export class LS {
     static useChip = (chip: number, entity: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/useChipOnCell">useChipOnCell</a></h1>
      * <p><b>id : </b>100</p>
-     * <p><b>name : </b>useChipOnCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>3000</p>
      */
@@ -6081,8 +6086,8 @@ export class LS {
     static useChipOnCell = (chip: number, cell: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/useWeapon">useWeapon</a></h1>
      * <p><b>id : </b>91</p>
-     * <p><b>name : </b>useWeapon</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>3000</p>
      */
@@ -6090,8 +6095,8 @@ export class LS {
     static useWeapon = (entity: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/useWeaponOnCell">useWeaponOnCell</a></h1>
      * <p><b>id : </b>92</p>
-     * <p><b>name : </b>useWeaponOnCell</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>3000</p>
      */
@@ -6099,8 +6104,8 @@ export class LS {
     static useWeaponOnCell = (cell: number): number => { };
 
     /**
+     * <h1><a href="https://leekwars.com/encyclopedia/fr/weaponNeedLos">weaponNeedLos</a></h1>
      * <p><b>id : </b>314</p>
-     * <p><b>name : </b>weaponNeedLos</p>
      * <p><b>description : </b>TODO</p>
      * <p><b>operations : </b>10</p>
      */
