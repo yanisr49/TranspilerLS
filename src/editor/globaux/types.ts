@@ -1,3 +1,3 @@
 
-export type TYPE_WEAPON = {};
-export type TYPE_CHIP = {};
+export type TYPE_WEAPON = number;
+export type TYPE_CHIP = number;
