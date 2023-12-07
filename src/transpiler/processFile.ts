@@ -1,5 +1,5 @@
 import fs from "fs";
-import {TYPE_CHIP} from "../editor/globaux/types";
+import "dotenv/config";
 
 export default (code: string) => {
     code = refactoType(code);
@@ -40,7 +40,7 @@ const typeToMap = [
 ];
 const refactoType = (code: string) => {
     // Supprime le type des variable
-    code.match(/\w[?!]?: [\w\[\]| ]+/g)?.forEach(typeStatement => {
+    code.match(/[^ ]: [^(){}=,;]+/g)?.forEach(typeStatement => {
         code = code.replace(typeStatement.substring(1), "");
     });
 
@@ -50,7 +50,7 @@ const refactoType = (code: string) => {
     });
 
     // Renomme les types qui n'existe pas en LS (type générique)
-    code.match(/<[\s\S]+?>/g)?.forEach(typeStatement => {
+    code.match(/<[^(){}=,]+?>/g)?.forEach(typeStatement => {
         let newTypeStatement = typeStatement;
         typeToMap.forEach(type => {
             newTypeStatement = typeStatement.replaceAll(type[0], type[1]);
@@ -108,22 +108,33 @@ const refactoConsoleLog = (code: string) => {
 };
 
 export const refactoEnum = (code: string) => {
-    let enumCode = fs.readFileSync("./src/editor/globaux/enums.ts", {encoding: "utf8"});
+    if(!process.env.ABSOLUTE_PATH_TO_ENUMS) {
+        console.error("Aucun path vers les enums sources n'a été fournis")
+    }
+    let enumCode = fs.readFileSync(`${process.env.ABSOLUTE_PATH_TO_ENUMS}`, {encoding: "utf8"});
     const enums: string[] = [];
 
 
     enumCode.match(/export enum \w+? \{/g)?.forEach(enumStatement => {
         const enumName = enumStatement.substring(12, enumStatement.length - 2);
         enums.push(enumName);
-        const startEnumIndex = enumCode.indexOf(enumName) + enumName.length + 2;
+        const startEnumIndex = enumCode.indexOf(enumStatement) + enumStatement.length;
         const endEnumIndex = enumCode.indexOf("}", startEnumIndex);
         const enumBloc = enumCode.substring(startEnumIndex, endEnumIndex);
 
         let i = 0;
-        enumBloc.match(/\n {4}\w+/g)?.forEach(enumLine => {
-            const enumValue = enumLine.substring(5);
+        enumBloc.match(/[^,]+/g)?.forEach(enumLine => {
+            // Remove spaces for split
+            const enumLineWithoutSpaces = enumLine.replace(/\s+/g,'');
 
-            code = `global ${enumName}_${enumValue} = ${i++};\n` + code;
+            let enumKey = enumLineWithoutSpaces;
+            let enumValue = '' + i++;
+
+            if (enumLine.includes('=')) {
+                [enumKey, enumValue] = enumLineWithoutSpaces.split('=');
+            }
+
+            code = `global ${enumName}_${enumKey} = ${enumValue};\n` + code;
         });
     });
 

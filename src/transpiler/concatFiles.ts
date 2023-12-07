@@ -10,6 +10,8 @@ const concatFile = (path: string, filesIncluded: string[]) => {
     code.match(/import [\s\S]*?;/g)?.forEach(importStatement => {
 
         if (/\.\//g.test(importStatement)) {
+            importStatement = importStatement.replaceAll('\'', '\"');
+
             const newPath = nodePath.join(path.substring(0, path.lastIndexOf("\\")), importStatement.substring(importStatement.lastIndexOf("\".") + 1, importStatement.lastIndexOf("\";"))) + ".ts";
 
             if (filesIncluded.includes(newPath)) {
