@@ -40,7 +40,7 @@ const typeToMap = [
 ];
 const refactoType = (code: string) => {
     // Supprime le type des variable
-    code.match(/[^ ]: [^(){}=,;]+/g)?.forEach(typeStatement => {
+    code.match(/[^ ](!|\?)?: [^(){}=,;]+/g)?.forEach(typeStatement => {
         code = code.replace(typeStatement.substring(1), "");
     });
 
