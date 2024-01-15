@@ -4,8 +4,31 @@ import {SyntaxKind} from 'typescript';
 import API from "./transpiler/request";
 import concatFile from "./transpiler/concatFiles";
 import {refactoEnum} from "./transpiler/processFile";
+import fs from "fs";
 
 const main = async () => {
+
+    function getFiles(dir, files: any[] = []) {
+        // Get an array of all files and directories in the passed directory using fs.readdirSync
+        const fileList = fs.readdirSync(dir)
+        // Create the full path of the file/directory by concatenating the passed directory and file/directory name
+        for (const file of fileList) {
+            const name = `${dir}/${file}`
+            // Check if the current file/directory is a directory using fs.statSync
+            if (fs.statSync(name).isDirectory()) {
+                // If it is a directory, recursively call the getFiles function with the directory path and the files array
+                getFiles(name, files)
+            } else {
+                // If it is a file, push the full path to the files array
+                files.push(name)
+            }
+        }
+        return files
+    }
+
+
+    console.log(getFiles("C:\\Users\\yrichard\\Documents\\EditorSave\\src\\", []));
+
 /*
     function transformToLeekScript(sourceCode: string): string {
         const sourceFile = ts.createSourceFile(
@@ -222,6 +245,12 @@ const main = async () => {
 
         for(let i=0; i<30; i++) {
             if (rootFileId >= 0) {
+                if(i % 1 === 0) {
+
+                    await new Promise((resolve) => {
+                        setTimeout(resolve, 25);
+                    });
+                }
                 await api.updateCodeAI(rootFileId, code);
             }
         }
