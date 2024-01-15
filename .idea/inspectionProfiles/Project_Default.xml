@@ -1912,7 +1912,7 @@
       <option name="processLiterals" value="true" />
       <option name="processComments" value="true" />
     </inspection_tool>
-    <inspection_tool class="StandardJS" enabled="true" level="ERROR" enabled_by_default="true">
+    <inspection_tool class="StandardJS" enabled="false" level="ERROR" enabled_by_default="true">
       <scope name="globaux" level="WARNING" enabled="false" editorAttributes="WARNING_ATTRIBUTES" />
     </inspection_tool>
     <inspection_tool class="StatementsPerFunctionJS" enabled="true" level="WARNING" enabled_by_default="true">
