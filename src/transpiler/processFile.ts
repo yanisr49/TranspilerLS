@@ -1,7 +1,12 @@
 import fs from "fs";
 import "dotenv/config";
 
+
+
+import * as ts from 'typescript';
+
 export default (code: string) => {
+    code = refactoAbstract(code);
     code = refactoType(code);
     code = refactoInterval(code);
     code = mapKeywords(code);
@@ -9,6 +14,7 @@ export default (code: string) => {
     code = refactoPush(code);
     code = refactoTemplateLiterals(code);
     code = refactoConsoleLog(code);
+
 
     return code;
 }
@@ -22,31 +28,47 @@ const keywordsToMap = [
     ["export ", ""],
     ["===", "=="],
     ["!==", "!="],
-
-    ["LS.", ""],
-    ["TYPE_WEAPON.", ""],
-    ["TYPE_CHIP.", ""]
+    ["! ", " "],
+    ["!.", "."],
+    ["undefined", "null"],
+    [/\.get\(([\s\S]+?)\)/g, "[$1]"],
+    [/\.set\(([\s\S]+?), ([\s\S]+?)\)/g, "[$1] = $2"],
 ];
 const mapKeywords = (code: string) => {
     keywordsToMap.forEach(map => {
-        code = code.replaceAll(map[0], map[1]);
+        code = code.replaceAll(map[0], map[1].toString());
     });
 
     return code;
 };
 
+const refactoAbstract = (code: string) => {
+    code.match(/.*\ abstract\ [\s\S]+?[;{]/g)?.forEach(statement => {
+        if(statement.endsWith(";")) {
+            code = code.replaceAll(statement, "");
+        }
+    });
+
+    return code;
+}
+
 const typeToMap = [
     ["number", "real"]
 ];
 const refactoType = (code: string) => {
-    // Supprime le type des variable
-    code.match(/[^ ](!|\?)?: [^(){}=,;]+/g)?.forEach(typeStatement => {
-        code = code.replace(typeStatement.substring(1), "");
-    });
-
     // Refacto les constructeur de Map
     code.match(/new Map<[\s\S]+?>\(\)/g)?.forEach(statement => {
         code = code.replaceAll(statement, "[:]");
+    });
+
+    // Supprime les types map des variables
+    code.match(/: Map<.+?>/g)?.forEach(statement => {
+        code = code.replaceAll(statement, "");
+    });
+
+    // Supprime le type des variable
+    code.match(/[^ ](!|\?)?: [^(){}=,;]+/g)?.forEach(typeStatement => {
+        code = code.replace(typeStatement.substring(1), "");
     });
 
     // Renomme les types qui n'existe pas en LS (type générique)
@@ -57,6 +79,8 @@ const refactoType = (code: string) => {
         });
         code = code.replaceAll(typeStatement, newTypeStatement);
     });
+
+    //  const test: Map<Map<number, string> CAMP_TYPE> = ...
 
     return code;
 };
