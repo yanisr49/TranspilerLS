@@ -8,3 +8,4 @@ src/editor2/globaux/enums.ts
 /src/editor/.idea/
 /src/EditorSave/.idea/workspace.xml
 /src/EditorSave/.idea/vcs.xml
+/build/*
