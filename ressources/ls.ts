@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment,@typescript-eslint/no-unused-vars,@typescript-eslint/no-explicit-any */
 // noinspection JSUnusedGlobalSymbols,JSUnusedLocalSymbols
 
-import {TYPE_CHIP, TYPE_WEAPON} from './types';
+export type TypeWeapon = number;
+export type TypeChip = number;
 
 /* CONSTANTES */
 
@@ -194,7 +195,7 @@ export const CELL_PLAYER: number;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ACCELERATION: TYPE_CHIP;
+export const CHIP_ACCELERATION: TypeChip;
 
 /**
  * <p><h1>CHIP_ADRENALINE</h1></p>
@@ -205,7 +206,7 @@ export const CHIP_ACCELERATION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ADRENALINE: TYPE_CHIP;
+export const CHIP_ADRENALINE: TypeChip;
 
 /**
  * <p><h1>CHIP_ALTERATION</h1></p>
@@ -216,7 +217,7 @@ export const CHIP_ADRENALINE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ALTERATION: TYPE_CHIP;
+export const CHIP_ALTERATION: TypeChip;
 
 /**
  * <p><h1>CHIP_ANTIDOTE</h1></p>
@@ -227,7 +228,7 @@ export const CHIP_ALTERATION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ANTIDOTE: TYPE_CHIP;
+export const CHIP_ANTIDOTE: TypeChip;
 
 /**
  * <p><h1>CHIP_ARMOR</h1></p>
@@ -238,7 +239,7 @@ export const CHIP_ANTIDOTE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ARMOR: TYPE_CHIP;
+export const CHIP_ARMOR: TypeChip;
 
 /**
  * <p><h1>CHIP_ARMORING</h1></p>
@@ -249,7 +250,7 @@ export const CHIP_ARMOR: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ARMORING: TYPE_CHIP;
+export const CHIP_ARMORING: TypeChip;
 
 /**
  * <p><h1>CHIP_ARSENIC</h1></p>
@@ -260,7 +261,7 @@ export const CHIP_ARMORING: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ARSENIC: TYPE_CHIP;
+export const CHIP_ARSENIC: TypeChip;
 
 /**
  * <p><h1>CHIP_BALL_AND_CHAIN</h1></p>
@@ -271,7 +272,7 @@ export const CHIP_ARSENIC: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_BALL_AND_CHAIN: TYPE_CHIP;
+export const CHIP_BALL_AND_CHAIN: TypeChip;
 
 /**
  * <p><h1>CHIP_BANDAGE</h1></p>
@@ -282,7 +283,7 @@ export const CHIP_BALL_AND_CHAIN: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_BANDAGE: TYPE_CHIP;
+export const CHIP_BANDAGE: TypeChip;
 
 /**
  * <p><h1>CHIP_BARK</h1></p>
@@ -293,7 +294,7 @@ export const CHIP_BANDAGE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_BARK: TYPE_CHIP;
+export const CHIP_BARK: TypeChip;
 
 /**
  * <p><h1>CHIP_BOXING_GLOVE</h1></p>
@@ -304,7 +305,7 @@ export const CHIP_BARK: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_BOXING_GLOVE: TYPE_CHIP;
+export const CHIP_BOXING_GLOVE: TypeChip;
 
 /**
  * <p><h1>CHIP_BRAINWASHING</h1></p>
@@ -315,7 +316,7 @@ export const CHIP_BOXING_GLOVE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_BRAINWASHING: TYPE_CHIP;
+export const CHIP_BRAINWASHING: TypeChip;
 
 /**
  * <p><h1>CHIP_BRAMBLE</h1></p>
@@ -326,7 +327,7 @@ export const CHIP_BRAINWASHING: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_BRAMBLE: TYPE_CHIP;
+export const CHIP_BRAMBLE: TypeChip;
 
 /**
  * <p><h1>CHIP_BURNING</h1></p>
@@ -337,7 +338,7 @@ export const CHIP_BRAMBLE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_BURNING: TYPE_CHIP;
+export const CHIP_BURNING: TypeChip;
 
 /**
  * <p><h1>CHIP_CARAPACE</h1></p>
@@ -348,7 +349,7 @@ export const CHIP_BURNING: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_CARAPACE: TYPE_CHIP;
+export const CHIP_CARAPACE: TypeChip;
 
 /**
  * <p><h1>CHIP_COLLAR</h1></p>
@@ -359,7 +360,7 @@ export const CHIP_CARAPACE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_COLLAR: TYPE_CHIP;
+export const CHIP_COLLAR: TypeChip;
 
 /**
  * <p><h1>CHIP_COVETOUSNESS</h1></p>
@@ -370,7 +371,7 @@ export const CHIP_COLLAR: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_COVETOUSNESS: TYPE_CHIP;
+export const CHIP_COVETOUSNESS: TypeChip;
 
 /**
  * <p><h1>CHIP_COVID</h1></p>
@@ -381,7 +382,7 @@ export const CHIP_COVETOUSNESS: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_COVID: TYPE_CHIP;
+export const CHIP_COVID: TypeChip;
 
 /**
  * <p><h1>CHIP_CRUSHING</h1></p>
@@ -392,7 +393,7 @@ export const CHIP_COVID: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_CRUSHING: TYPE_CHIP;
+export const CHIP_CRUSHING: TypeChip;
 
 /**
  * <p><h1>CHIP_CURE</h1></p>
@@ -403,7 +404,7 @@ export const CHIP_CRUSHING: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_CURE: TYPE_CHIP;
+export const CHIP_CURE: TypeChip;
 
 /**
  * <p><h1>CHIP_DESINTEGRATION</h1></p>
@@ -414,7 +415,7 @@ export const CHIP_CURE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_DESINTEGRATION: TYPE_CHIP;
+export const CHIP_DESINTEGRATION: TypeChip;
 
 /**
  * <p><h1>CHIP_DEVIL_STRIKE</h1></p>
@@ -425,7 +426,7 @@ export const CHIP_DESINTEGRATION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_DEVIL_STRIKE: TYPE_CHIP;
+export const CHIP_DEVIL_STRIKE: TypeChip;
 
 /**
  * <p><h1>CHIP_DOME</h1></p>
@@ -436,7 +437,7 @@ export const CHIP_DEVIL_STRIKE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_DOME: TYPE_CHIP;
+export const CHIP_DOME: TypeChip;
 
 /**
  * <p><h1>CHIP_DOPING</h1></p>
@@ -447,7 +448,7 @@ export const CHIP_DOME: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_DOPING: TYPE_CHIP;
+export const CHIP_DOPING: TypeChip;
 
 /**
  * <p><h1>CHIP_DRIP</h1></p>
@@ -458,7 +459,7 @@ export const CHIP_DOPING: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_DRIP: TYPE_CHIP;
+export const CHIP_DRIP: TypeChip;
 
 /**
  * <p><h1>CHIP_ELEVATION</h1></p>
@@ -469,7 +470,7 @@ export const CHIP_DRIP: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ELEVATION: TYPE_CHIP;
+export const CHIP_ELEVATION: TypeChip;
 
 /**
  * <p><h1>CHIP_FEROCITY</h1></p>
@@ -480,7 +481,7 @@ export const CHIP_ELEVATION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_FEROCITY: TYPE_CHIP;
+export const CHIP_FEROCITY: TypeChip;
 
 /**
  * <p><h1>CHIP_FERTILIZER</h1></p>
@@ -491,7 +492,7 @@ export const CHIP_FEROCITY: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_FERTILIZER: TYPE_CHIP;
+export const CHIP_FERTILIZER: TypeChip;
 
 /**
  * <p><h1>CHIP_FIRE_BULB</h1></p>
@@ -502,7 +503,7 @@ export const CHIP_FERTILIZER: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_FIRE_BULB: TYPE_CHIP;
+export const CHIP_FIRE_BULB: TypeChip;
 
 /**
  * <p><h1>CHIP_FLAME</h1></p>
@@ -513,7 +514,7 @@ export const CHIP_FIRE_BULB: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_FLAME: TYPE_CHIP;
+export const CHIP_FLAME: TypeChip;
 
 /**
  * <p><h1>CHIP_FLASH</h1></p>
@@ -524,7 +525,7 @@ export const CHIP_FLAME: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_FLASH: TYPE_CHIP;
+export const CHIP_FLASH: TypeChip;
 
 /**
  * <p><h1>CHIP_FORTRESS</h1></p>
@@ -535,7 +536,7 @@ export const CHIP_FLASH: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_FORTRESS: TYPE_CHIP;
+export const CHIP_FORTRESS: TypeChip;
 
 /**
  * <p><h1>CHIP_FRACTURE</h1></p>
@@ -546,7 +547,7 @@ export const CHIP_FORTRESS: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_FRACTURE: TYPE_CHIP;
+export const CHIP_FRACTURE: TypeChip;
 
 /**
  * <p><h1>CHIP_GRAPPLE</h1></p>
@@ -557,7 +558,7 @@ export const CHIP_FRACTURE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_GRAPPLE: TYPE_CHIP;
+export const CHIP_GRAPPLE: TypeChip;
 
 /**
  * <p><h1>CHIP_HEALER_BULB</h1></p>
@@ -568,7 +569,7 @@ export const CHIP_GRAPPLE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_HEALER_BULB: TYPE_CHIP;
+export const CHIP_HEALER_BULB: TypeChip;
 
 /**
  * <p><h1>CHIP_HELMET</h1></p>
@@ -579,7 +580,7 @@ export const CHIP_HEALER_BULB: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_HELMET: TYPE_CHIP;
+export const CHIP_HELMET: TypeChip;
 
 /**
  * <p><h1>CHIP_ICE</h1></p>
@@ -590,7 +591,7 @@ export const CHIP_HELMET: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ICE: TYPE_CHIP;
+export const CHIP_ICE: TypeChip;
 
 /**
  * <p><h1>CHIP_ICEBERG</h1></p>
@@ -601,7 +602,7 @@ export const CHIP_ICE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ICEBERG: TYPE_CHIP;
+export const CHIP_ICEBERG: TypeChip;
 
 /**
  * <p><h1>CHIP_ICED_BULB</h1></p>
@@ -612,7 +613,7 @@ export const CHIP_ICEBERG: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ICED_BULB: TYPE_CHIP;
+export const CHIP_ICED_BULB: TypeChip;
 
 /**
  * <p><h1>CHIP_INVERSION</h1></p>
@@ -623,7 +624,7 @@ export const CHIP_ICED_BULB: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_INVERSION: TYPE_CHIP;
+export const CHIP_INVERSION: TypeChip;
 
 /**
  * <p><h1>CHIP_JUMP</h1></p>
@@ -634,7 +635,7 @@ export const CHIP_INVERSION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_JUMP: TYPE_CHIP;
+export const CHIP_JUMP: TypeChip;
 
 /**
  * <p><h1>CHIP_KNOWLEDGE</h1></p>
@@ -645,7 +646,7 @@ export const CHIP_JUMP: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_KNOWLEDGE: TYPE_CHIP;
+export const CHIP_KNOWLEDGE: TypeChip;
 
 /**
  * <p><h1>CHIP_LEATHER_BOOTS</h1></p>
@@ -656,7 +657,7 @@ export const CHIP_KNOWLEDGE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_LEATHER_BOOTS: TYPE_CHIP;
+export const CHIP_LEATHER_BOOTS: TypeChip;
 
 /**
  * <p><h1>CHIP_LIBERATION</h1></p>
@@ -667,7 +668,7 @@ export const CHIP_LEATHER_BOOTS: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_LIBERATION: TYPE_CHIP;
+export const CHIP_LIBERATION: TypeChip;
 
 /**
  * <p><h1>CHIP_LIGHTNING</h1></p>
@@ -678,7 +679,7 @@ export const CHIP_LIBERATION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_LIGHTNING: TYPE_CHIP;
+export const CHIP_LIGHTNING: TypeChip;
 
 /**
  * <p><h1>CHIP_LIGHTNING_BULB</h1></p>
@@ -689,7 +690,7 @@ export const CHIP_LIGHTNING: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_LIGHTNING_BULB: TYPE_CHIP;
+export const CHIP_LIGHTNING_BULB: TypeChip;
 
 /**
  * <p><h1>CHIP_LOAM</h1></p>
@@ -700,7 +701,7 @@ export const CHIP_LIGHTNING_BULB: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_LOAM: TYPE_CHIP;
+export const CHIP_LOAM: TypeChip;
 
 /**
  * <p><h1>CHIP_MANUMISSION</h1></p>
@@ -711,7 +712,7 @@ export const CHIP_LOAM: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_MANUMISSION: TYPE_CHIP;
+export const CHIP_MANUMISSION: TypeChip;
 
 /**
  * <p><h1>CHIP_METALLIC_BULB</h1></p>
@@ -722,7 +723,7 @@ export const CHIP_MANUMISSION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_METALLIC_BULB: TYPE_CHIP;
+export const CHIP_METALLIC_BULB: TypeChip;
 
 /**
  * <p><h1>CHIP_METEORITE</h1></p>
@@ -733,7 +734,7 @@ export const CHIP_METALLIC_BULB: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_METEORITE: TYPE_CHIP;
+export const CHIP_METEORITE: TypeChip;
 
 /**
  * <p><h1>CHIP_MIRROR</h1></p>
@@ -744,7 +745,7 @@ export const CHIP_METEORITE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_MIRROR: TYPE_CHIP;
+export const CHIP_MIRROR: TypeChip;
 
 /**
  * <p><h1>CHIP_MOTIVATION</h1></p>
@@ -755,7 +756,7 @@ export const CHIP_MIRROR: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_MOTIVATION: TYPE_CHIP;
+export const CHIP_MOTIVATION: TypeChip;
 
 /**
  * <p><h1>CHIP_MUTATION</h1></p>
@@ -766,7 +767,7 @@ export const CHIP_MOTIVATION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_MUTATION: TYPE_CHIP;
+export const CHIP_MUTATION: TypeChip;
 
 /**
  * <p><h1>CHIP_PEBBLE</h1></p>
@@ -777,7 +778,7 @@ export const CHIP_MUTATION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_PEBBLE: TYPE_CHIP;
+export const CHIP_PEBBLE: TypeChip;
 
 /**
  * <p><h1>CHIP_PLAGUE</h1></p>
@@ -788,7 +789,7 @@ export const CHIP_PEBBLE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_PLAGUE: TYPE_CHIP;
+export const CHIP_PLAGUE: TypeChip;
 
 /**
  * <p><h1>CHIP_PLASMA</h1></p>
@@ -799,7 +800,7 @@ export const CHIP_PLAGUE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_PLASMA: TYPE_CHIP;
+export const CHIP_PLASMA: TypeChip;
 
 /**
  * <p><h1>CHIP_PRECIPITATION</h1></p>
@@ -810,7 +811,7 @@ export const CHIP_PLASMA: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_PRECIPITATION: TYPE_CHIP;
+export const CHIP_PRECIPITATION: TypeChip;
 
 /**
  * <p><h1>CHIP_PRISM</h1></p>
@@ -821,7 +822,7 @@ export const CHIP_PRECIPITATION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_PRISM: TYPE_CHIP;
+export const CHIP_PRISM: TypeChip;
 
 /**
  * <p><h1>CHIP_PROTEIN</h1></p>
@@ -832,7 +833,7 @@ export const CHIP_PRISM: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_PROTEIN: TYPE_CHIP;
+export const CHIP_PROTEIN: TypeChip;
 
 /**
  * <p><h1>CHIP_PUNISHMENT</h1></p>
@@ -843,7 +844,7 @@ export const CHIP_PROTEIN: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_PUNISHMENT: TYPE_CHIP;
+export const CHIP_PUNISHMENT: TypeChip;
 
 /**
  * <p><h1>CHIP_PUNY_BULB</h1></p>
@@ -854,7 +855,7 @@ export const CHIP_PUNISHMENT: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_PUNY_BULB: TYPE_CHIP;
+export const CHIP_PUNY_BULB: TypeChip;
 
 /**
  * <p><h1>CHIP_RAGE</h1></p>
@@ -865,7 +866,7 @@ export const CHIP_PUNY_BULB: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_RAGE: TYPE_CHIP;
+export const CHIP_RAGE: TypeChip;
 
 /**
  * <p><h1>CHIP_RAMPART</h1></p>
@@ -876,7 +877,7 @@ export const CHIP_RAGE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_RAMPART: TYPE_CHIP;
+export const CHIP_RAMPART: TypeChip;
 
 /**
  * <p><h1>CHIP_REFLEXES</h1></p>
@@ -887,7 +888,7 @@ export const CHIP_RAMPART: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_REFLEXES: TYPE_CHIP;
+export const CHIP_REFLEXES: TypeChip;
 
 /**
  * <p><h1>CHIP_REGENERATION</h1></p>
@@ -898,7 +899,7 @@ export const CHIP_REFLEXES: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_REGENERATION: TYPE_CHIP;
+export const CHIP_REGENERATION: TypeChip;
 
 /**
  * <p><h1>CHIP_REMISSION</h1></p>
@@ -909,7 +910,7 @@ export const CHIP_REGENERATION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_REMISSION: TYPE_CHIP;
+export const CHIP_REMISSION: TypeChip;
 
 /**
  * <p><h1>CHIP_REPOTTING</h1></p>
@@ -920,7 +921,7 @@ export const CHIP_REMISSION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_REPOTTING: TYPE_CHIP;
+export const CHIP_REPOTTING: TypeChip;
 
 /**
  * <p><h1>CHIP_RESURRECTION</h1></p>
@@ -931,7 +932,7 @@ export const CHIP_REPOTTING: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_RESURRECTION: TYPE_CHIP;
+export const CHIP_RESURRECTION: TypeChip;
 
 /**
  * <p><h1>CHIP_ROCK</h1></p>
@@ -942,7 +943,7 @@ export const CHIP_RESURRECTION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ROCK: TYPE_CHIP;
+export const CHIP_ROCK: TypeChip;
 
 /**
  * <p><h1>CHIP_ROCKFALL</h1></p>
@@ -953,7 +954,7 @@ export const CHIP_ROCK: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ROCKFALL: TYPE_CHIP;
+export const CHIP_ROCKFALL: TypeChip;
 
 /**
  * <p><h1>CHIP_ROCKY_BULB</h1></p>
@@ -964,7 +965,7 @@ export const CHIP_ROCKFALL: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_ROCKY_BULB: TYPE_CHIP;
+export const CHIP_ROCKY_BULB: TypeChip;
 
 /**
  * <p><h1>CHIP_SAVANT_BULB</h1></p>
@@ -975,7 +976,7 @@ export const CHIP_ROCKY_BULB: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_SAVANT_BULB: TYPE_CHIP;
+export const CHIP_SAVANT_BULB: TypeChip;
 
 /**
  * <p><h1>CHIP_SERUM</h1></p>
@@ -986,7 +987,7 @@ export const CHIP_SAVANT_BULB: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_SERUM: TYPE_CHIP;
+export const CHIP_SERUM: TypeChip;
 
 /**
  * <p><h1>CHIP_SEVEN_LEAGUE_BOOTS</h1></p>
@@ -997,7 +998,7 @@ export const CHIP_SERUM: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_SEVEN_LEAGUE_BOOTS: TYPE_CHIP;
+export const CHIP_SEVEN_LEAGUE_BOOTS: TypeChip;
 
 /**
  * <p><h1>CHIP_SHIELD</h1></p>
@@ -1008,7 +1009,7 @@ export const CHIP_SEVEN_LEAGUE_BOOTS: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_SHIELD: TYPE_CHIP;
+export const CHIP_SHIELD: TypeChip;
 
 /**
  * <p><h1>CHIP_SHOCK</h1></p>
@@ -1019,7 +1020,7 @@ export const CHIP_SHIELD: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_SHOCK: TYPE_CHIP;
+export const CHIP_SHOCK: TypeChip;
 
 /**
  * <p><h1>CHIP_SLOW_DOWN</h1></p>
@@ -1030,7 +1031,7 @@ export const CHIP_SHOCK: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_SLOW_DOWN: TYPE_CHIP;
+export const CHIP_SLOW_DOWN: TypeChip;
 
 /**
  * <p><h1>CHIP_SOLIDIFICATION</h1></p>
@@ -1041,7 +1042,7 @@ export const CHIP_SLOW_DOWN: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_SOLIDIFICATION: TYPE_CHIP;
+export const CHIP_SOLIDIFICATION: TypeChip;
 
 /**
  * <p><h1>CHIP_SOPORIFIC</h1></p>
@@ -1052,7 +1053,7 @@ export const CHIP_SOLIDIFICATION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_SOPORIFIC: TYPE_CHIP;
+export const CHIP_SOPORIFIC: TypeChip;
 
 /**
  * <p><h1>CHIP_SPARK</h1></p>
@@ -1063,7 +1064,7 @@ export const CHIP_SOPORIFIC: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_SPARK: TYPE_CHIP;
+export const CHIP_SPARK: TypeChip;
 
 /**
  * <p><h1>CHIP_STALACTITE</h1></p>
@@ -1074,7 +1075,7 @@ export const CHIP_SPARK: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_STALACTITE: TYPE_CHIP;
+export const CHIP_STALACTITE: TypeChip;
 
 /**
  * <p><h1>CHIP_STEROID</h1></p>
@@ -1085,7 +1086,7 @@ export const CHIP_STALACTITE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_STEROID: TYPE_CHIP;
+export const CHIP_STEROID: TypeChip;
 
 /**
  * <p><h1>CHIP_STRETCHING</h1></p>
@@ -1096,7 +1097,7 @@ export const CHIP_STEROID: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_STRETCHING: TYPE_CHIP;
+export const CHIP_STRETCHING: TypeChip;
 
 /**
  * <p><h1>CHIP_TACTICIAN_BULB</h1></p>
@@ -1107,7 +1108,7 @@ export const CHIP_STRETCHING: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_TACTICIAN_BULB: TYPE_CHIP;
+export const CHIP_TACTICIAN_BULB: TypeChip;
 
 /**
  * <p><h1>CHIP_TELEPORTATION</h1></p>
@@ -1118,7 +1119,7 @@ export const CHIP_TACTICIAN_BULB: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_TELEPORTATION: TYPE_CHIP;
+export const CHIP_TELEPORTATION: TypeChip;
 
 /**
  * <p><h1>CHIP_THERAPY</h1></p>
@@ -1129,7 +1130,7 @@ export const CHIP_TELEPORTATION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_THERAPY: TYPE_CHIP;
+export const CHIP_THERAPY: TypeChip;
 
 /**
  * <p><h1>CHIP_THORN</h1></p>
@@ -1140,7 +1141,7 @@ export const CHIP_THERAPY: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_THORN: TYPE_CHIP;
+export const CHIP_THORN: TypeChip;
 
 /**
  * <p><h1>CHIP_TOXIN</h1></p>
@@ -1151,7 +1152,7 @@ export const CHIP_THORN: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_TOXIN: TYPE_CHIP;
+export const CHIP_TOXIN: TypeChip;
 
 /**
  * <p><h1>CHIP_TRANQUILIZER</h1></p>
@@ -1162,7 +1163,7 @@ export const CHIP_TOXIN: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_TRANQUILIZER: TYPE_CHIP;
+export const CHIP_TRANQUILIZER: TypeChip;
 
 /**
  * <p><h1>CHIP_TRANSMUTATION</h1></p>
@@ -1173,7 +1174,7 @@ export const CHIP_TRANQUILIZER: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_TRANSMUTATION: TYPE_CHIP;
+export const CHIP_TRANSMUTATION: TypeChip;
 
 /**
  * <p><h1>CHIP_VACCINE</h1></p>
@@ -1184,7 +1185,7 @@ export const CHIP_TRANSMUTATION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_VACCINE: TYPE_CHIP;
+export const CHIP_VACCINE: TypeChip;
 
 /**
  * <p><h1>CHIP_VAMPIRIZATION</h1></p>
@@ -1195,7 +1196,7 @@ export const CHIP_VACCINE: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_VAMPIRIZATION: TYPE_CHIP;
+export const CHIP_VAMPIRIZATION: TypeChip;
 
 /**
  * <p><h1>CHIP_VENOM</h1></p>
@@ -1206,7 +1207,7 @@ export const CHIP_VAMPIRIZATION: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_VENOM: TYPE_CHIP;
+export const CHIP_VENOM: TypeChip;
 
 /**
  * <p><h1>CHIP_WALL</h1></p>
@@ -1217,7 +1218,7 @@ export const CHIP_VENOM: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_WALL: TYPE_CHIP;
+export const CHIP_WALL: TypeChip;
 
 /**
  * <p><h1>CHIP_WARM_UP</h1></p>
@@ -1228,7 +1229,7 @@ export const CHIP_WALL: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_WARM_UP: TYPE_CHIP;
+export const CHIP_WARM_UP: TypeChip;
 
 /**
  * <p><h1>CHIP_WHIP</h1></p>
@@ -1239,7 +1240,7 @@ export const CHIP_WARM_UP: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_WHIP: TYPE_CHIP;
+export const CHIP_WHIP: TypeChip;
 
 /**
  * <p><h1>CHIP_WINGED_BOOTS</h1></p>
@@ -1250,7 +1251,7 @@ export const CHIP_WHIP: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_WINGED_BOOTS: TYPE_CHIP;
+export const CHIP_WINGED_BOOTS: TypeChip;
 
 /**
  * <p><h1>CHIP_WIZARD_BULB</h1></p>
@@ -1261,7 +1262,7 @@ export const CHIP_WINGED_BOOTS: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_WIZARD_BULB: TYPE_CHIP;
+export const CHIP_WIZARD_BULB: TypeChip;
 
 /**
  * <p><h1>CHIP_WIZARDRY</h1></p>
@@ -1272,7 +1273,7 @@ export const CHIP_WIZARD_BULB: TYPE_CHIP;
  * <p><b>category:</b> 7</p>
  */
 // @ts-ignore
-export const CHIP_WIZARDRY: TYPE_CHIP;
+export const CHIP_WIZARDRY: TypeChip;
 
 /**
  * <p><h1>COLOR_BLUE</h1></p>
@@ -2733,7 +2734,7 @@ export const USE_TOO_MANY_SUMMONS: number;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_AXE: TYPE_WEAPON;
+export const WEAPON_AXE: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_BAZOOKA</h1></p>
@@ -2744,7 +2745,7 @@ export const WEAPON_AXE: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_BAZOOKA: TYPE_WEAPON;
+export const WEAPON_BAZOOKA: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_B_LASER</h1></p>
@@ -2755,7 +2756,7 @@ export const WEAPON_BAZOOKA: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_B_LASER: TYPE_WEAPON;
+export const WEAPON_B_LASER: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_BROADSWORD</h1></p>
@@ -2766,7 +2767,7 @@ export const WEAPON_B_LASER: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_BROADSWORD: TYPE_WEAPON;
+export const WEAPON_BROADSWORD: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_DARK_KATANA</h1></p>
@@ -2777,7 +2778,7 @@ export const WEAPON_BROADSWORD: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_DARK_KATANA: TYPE_WEAPON;
+export const WEAPON_DARK_KATANA: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_DESTROYER</h1></p>
@@ -2788,7 +2789,7 @@ export const WEAPON_DARK_KATANA: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_DESTROYER: TYPE_WEAPON;
+export const WEAPON_DESTROYER: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_DOUBLE_GUN</h1></p>
@@ -2799,7 +2800,7 @@ export const WEAPON_DESTROYER: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_DOUBLE_GUN: TYPE_WEAPON;
+export const WEAPON_DOUBLE_GUN: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_ELECTRISOR</h1></p>
@@ -2810,7 +2811,7 @@ export const WEAPON_DOUBLE_GUN: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_ELECTRISOR: TYPE_WEAPON;
+export const WEAPON_ELECTRISOR: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_ENHANCED_LIGHTNINGER</h1></p>
@@ -2821,7 +2822,7 @@ export const WEAPON_ELECTRISOR: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_ENHANCED_LIGHTNINGER: TYPE_WEAPON;
+export const WEAPON_ENHANCED_LIGHTNINGER: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_EXPLORER_RIFLE</h1></p>
@@ -2832,7 +2833,7 @@ export const WEAPON_ENHANCED_LIGHTNINGER: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_EXPLORER_RIFLE: TYPE_WEAPON;
+export const WEAPON_EXPLORER_RIFLE: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_FLAME_THROWER</h1></p>
@@ -2843,7 +2844,7 @@ export const WEAPON_EXPLORER_RIFLE: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_FLAME_THROWER: TYPE_WEAPON;
+export const WEAPON_FLAME_THROWER: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_GAZOR</h1></p>
@@ -2854,7 +2855,7 @@ export const WEAPON_FLAME_THROWER: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_GAZOR: TYPE_WEAPON;
+export const WEAPON_GAZOR: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_GRENADE_LAUNCHER</h1></p>
@@ -2865,7 +2866,7 @@ export const WEAPON_GAZOR: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_GRENADE_LAUNCHER: TYPE_WEAPON;
+export const WEAPON_GRENADE_LAUNCHER: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_HEAVY_SWORD</h1></p>
@@ -2876,7 +2877,7 @@ export const WEAPON_GRENADE_LAUNCHER: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_HEAVY_SWORD: TYPE_WEAPON;
+export const WEAPON_HEAVY_SWORD: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_ILLICIT_GRENADE_LAUNCHER</h1></p>
@@ -2887,7 +2888,7 @@ export const WEAPON_HEAVY_SWORD: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_ILLICIT_GRENADE_LAUNCHER: TYPE_WEAPON;
+export const WEAPON_ILLICIT_GRENADE_LAUNCHER: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_J_LASER</h1></p>
@@ -2898,7 +2899,7 @@ export const WEAPON_ILLICIT_GRENADE_LAUNCHER: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_J_LASER: TYPE_WEAPON;
+export const WEAPON_J_LASER: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_KATANA</h1></p>
@@ -2909,7 +2910,7 @@ export const WEAPON_J_LASER: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_KATANA: TYPE_WEAPON;
+export const WEAPON_KATANA: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_LASER</h1></p>
@@ -2920,7 +2921,7 @@ export const WEAPON_KATANA: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_LASER: TYPE_WEAPON;
+export const WEAPON_LASER: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_LIGHTNINGER</h1></p>
@@ -2931,7 +2932,7 @@ export const WEAPON_LASER: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_LIGHTNINGER: TYPE_WEAPON;
+export const WEAPON_LIGHTNINGER: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_MACHINE_GUN</h1></p>
@@ -2942,7 +2943,7 @@ export const WEAPON_LIGHTNINGER: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_MACHINE_GUN: TYPE_WEAPON;
+export const WEAPON_MACHINE_GUN: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_MAGNUM</h1></p>
@@ -2953,7 +2954,7 @@ export const WEAPON_MACHINE_GUN: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_MAGNUM: TYPE_WEAPON;
+export const WEAPON_MAGNUM: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_M_LASER</h1></p>
@@ -2964,7 +2965,7 @@ export const WEAPON_MAGNUM: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_M_LASER: TYPE_WEAPON;
+export const WEAPON_M_LASER: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_MYSTERIOUS_ELECTRISOR</h1></p>
@@ -2975,7 +2976,7 @@ export const WEAPON_M_LASER: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_MYSTERIOUS_ELECTRISOR: TYPE_WEAPON;
+export const WEAPON_MYSTERIOUS_ELECTRISOR: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_NEUTRINO</h1></p>
@@ -2986,7 +2987,7 @@ export const WEAPON_MYSTERIOUS_ELECTRISOR: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_NEUTRINO: TYPE_WEAPON;
+export const WEAPON_NEUTRINO: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_PISTOL</h1></p>
@@ -2997,7 +2998,7 @@ export const WEAPON_NEUTRINO: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_PISTOL: TYPE_WEAPON;
+export const WEAPON_PISTOL: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_REVOKED_M_LASER</h1></p>
@@ -3008,7 +3009,7 @@ export const WEAPON_PISTOL: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_REVOKED_M_LASER: TYPE_WEAPON;
+export const WEAPON_REVOKED_M_LASER: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_RHINO</h1></p>
@@ -3019,7 +3020,7 @@ export const WEAPON_REVOKED_M_LASER: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_RHINO: TYPE_WEAPON;
+export const WEAPON_RHINO: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_RIFLE</h1></p>
@@ -3030,7 +3031,7 @@ export const WEAPON_RHINO: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_RIFLE: TYPE_WEAPON;
+export const WEAPON_RIFLE: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_SHOTGUN</h1></p>
@@ -3041,7 +3042,7 @@ export const WEAPON_RIFLE: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_SHOTGUN: TYPE_WEAPON;
+export const WEAPON_SHOTGUN: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_SWORD</h1></p>
@@ -3052,7 +3053,7 @@ export const WEAPON_SHOTGUN: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_SWORD: TYPE_WEAPON;
+export const WEAPON_SWORD: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_UNBRIDLED_GAZOR</h1></p>
@@ -3063,7 +3064,7 @@ export const WEAPON_SWORD: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_UNBRIDLED_GAZOR: TYPE_WEAPON;
+export const WEAPON_UNBRIDLED_GAZOR: TypeWeapon;
 
 /**
  * <p><h1>WEAPON_UNSTABLE_DESTROYER</h1></p>
@@ -3074,7 +3075,7 @@ export const WEAPON_UNBRIDLED_GAZOR: TYPE_WEAPON;
  * <p><b>category:</b> 6</p>
  */
 // @ts-ignore
-export const WEAPON_UNSTABLE_DESTROYER: TYPE_WEAPON;
+export const WEAPON_UNSTABLE_DESTROYER: TypeWeapon;
 
 /* FONCTIONS */
 
