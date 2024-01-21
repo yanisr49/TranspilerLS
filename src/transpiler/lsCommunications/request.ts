@@ -1,5 +1,6 @@
 import axios, {AxiosInstance} from 'axios';
 import {addChildAIs, addChildFolders, AI, Folder} from './treeStructure';
+import {sleep} from '../utils';
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
@@ -29,6 +30,24 @@ export default class API {
             });
     }
 
+    /**
+     * Sets an interceptor for handling responses in the API instance.
+     * If the response data is 'Too Many Requests', it will wait for 50ms and retry the original request.
+     *
+     * @return {Promise} - A promise that resolves when the interceptor is set.
+     */
+    public async setInterceptor(): Promise<any> {
+        this.instance.interceptors.response.use(undefined, async error => {
+            if (error.response.data === 'Too Many Requests') {
+                console.error('TOO MANY REQUEST');
+                await sleep(500);
+                return this.instance(error.config);
+            }
+
+            return Promise.reject(error);
+        });
+    }
+
     public async getFarmerTreeStructure(rootDirName: string): Promise<Folder> {
         const data = await this.instance.get('/ai/get-farmer-ais');
 
@@ -52,18 +71,6 @@ export default class API {
         addChildAIs(sourceFolder, data.data.ais);
 
         return sourceFolder;
-    }
-
-    public async updateCodeAI(fileAI: number, code: string) {
-        setTimeout(() => {}, 1000);
-        await this.instance
-            .post('/ai/save', {
-                ai_id: fileAI,
-                code: code,
-            })
-            .then(data => {
-                // return data.data.id;
-            });
     }
 
     public async createFolder(folderName: string, parentFolderId: number): Promise<Folder> {
@@ -95,14 +102,13 @@ export default class API {
         return this.instance
             .post('/ai/new-name', {
                 folder_id: parentFolder.id,
-                version: 1,
+                version: 4,
                 name: fileName,
             })
             .then(data => {
-                // console.log(data.data);
                 return {
-                    id: data.data.id,
-                    name: data.data.name,
+                    id: data.data.ai.id,
+                    name: data.data.ai.name,
                     toBeDeleted: false,
                 };
             });
@@ -114,5 +120,16 @@ export default class API {
                 ai_id: ai.id,
             },
         });
+    }
+
+    public async saveFile(ai: AI, code: string) {
+        await this.instance
+            .post('/ai/save', {
+                ai_id: ai.id,
+                code: code,
+            })
+            .then(res => {
+                // console.log(res.data);
+            });
     }
 }

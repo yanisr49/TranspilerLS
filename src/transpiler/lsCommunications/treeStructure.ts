@@ -7,7 +7,6 @@ export interface AI {
     total_lines?: number;
     total_chars?: number;
     entrypoint?: false;
-    includes_ais_ids?: number[];
     toBeDeleted: boolean;
 }
 
@@ -42,7 +41,7 @@ export const addChildFolders = (folder: Folder, folders: any) => {
 
 export const addChildAIs = (folder: Folder, ais: any) => {
     (ais as any[]).forEach(ai => {
-        if (ai.folder === folder.id) {
+        if (ai.folder === folder.id && !folder.ais.some(a => a.id === ai.id)) {
             const newAI: AI = {
                 id: ai.id,
                 name: ai.name,
@@ -52,7 +51,6 @@ export const addChildAIs = (folder: Folder, ais: any) => {
                 total_lines: ai.total_lines,
                 total_chars: ai.total_chars,
                 entrypoint: ai.entrypoint,
-                includes_ais_ids: ai.includes_ais_ids,
                 toBeDeleted: true,
             };
 
