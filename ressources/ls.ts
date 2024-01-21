@@ -5498,7 +5498,7 @@ export const mapReplaceAll = <T, U>(map1: Map<T, U>, map2: Map<T, U>): void => {
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
-export const mapSearch = <T, U>(map: Map<T, U>, value: U): number => {};
+export const mapSearch = <T, U>(map: Map<T, U>, value: U): T => {};
 
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/mapSize">mapSize</a></h1>
@@ -5929,7 +5929,7 @@ export const setIntersection = <T>(set1: Set<T>, set2: Set<T>): Set<T> => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/setIsEmpty">setIsEmpty</a></h1>
  * <p><b>id : </b>432</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Renvoie si un ensemble set est vide ou non.</p>
  * <p><b>operations : </b>2</p>
  */
 // @ts-ignore
@@ -5938,7 +5938,7 @@ export const setIsEmpty = <T>(set: Set<T>): boolean => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/setIsSubsetOf">setIsSubsetOf</a></h1>
  * <p><b>id : </b>433</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Détermine si un ensemble set1 est un sous-ensemble de set2.</p>
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
@@ -5947,7 +5947,7 @@ export const setIsSubsetOf = <T>(set1: Set<T>, set2: Set<T>): boolean => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/setPut">setPut</a></h1>
  * <p><b>id : </b>425</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Insère un élément element dans l'ensemble set.</p>
  * <p><b>operations : </b>3</p>
  */
 // @ts-ignore
@@ -5956,7 +5956,8 @@ export const setPut = <T>(set: Set<T>, element: T): boolean => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/setRegister">setRegister</a></h1>
  * <p><b>id : </b>278</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Stores given value in your entity's register, associated with given key. Given key and value are strings, respectively with maximum lengths of 100 and 5000
+ * characters. A leek can have at most 100 distinct keys in its register, any additionnal (key:value) pair will not be stored if your entity's register is full.</p>
  * <p><b>operations : </b>50</p>
  */
 // @ts-ignore
@@ -5965,7 +5966,7 @@ export const setRegister = (key: string, value: string): boolean => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/setRemove">setRemove</a></h1>
  * <p><b>id : </b>426</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Supprime un élément element de l'ensemble set.</p>
  * <p><b>operations : </b>2</p>
  */
 // @ts-ignore
@@ -5974,7 +5975,7 @@ export const setRemove = <T>(set: Set<T>, element: T): boolean => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/setSize">setSize</a></h1>
  * <p><b>id : </b>431</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Renvoie la taille de l'ensemble set.</p>
  * <p><b>operations : </b>1</p>
  */
 // @ts-ignore
@@ -5983,7 +5984,9 @@ export const setSize = (set: Set<any>): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/setToArray">setToArray</a></h1>
  * <p><b>id : </b>438</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Renvoie une liste contenant tous les éléments de l'ensemble set.
+ *
+ * L'ordre des éléments est arbitraire.</p>
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
@@ -5992,7 +5995,7 @@ export const setToArray = <T>(set: Set<T>): T[] => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/setUnion">setUnion</a></h1>
  * <p><b>id : </b>434</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Calcule l'union de deux ensembles set1 et set2, notée set1 ∪ set2, qui contient tous les éléments présents dans set1 ou dans set2.</p>
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
@@ -6001,7 +6004,9 @@ export const setUnion = <T>(set1: Set<T>, set2: Set<T>): Set<T> => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/setWeapon">setWeapon</a></h1>
  * <p><b>id : </b>84</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Équipe l'arme weapon sur votre entité.
+ *
+ * Cette fonction coûte 1PT ✦.</p>
  * <p><b>operations : </b>15</p>
  */
 // @ts-ignore
@@ -6010,7 +6015,7 @@ export const setWeapon = (weapon: number): void => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/shift">shift</a></h1>
  * <p><b>id : </b>46</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Removes the first element of given array, and returns the corresponding element.</p>
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
@@ -6019,7 +6024,11 @@ export const shift = <T>(array: T[]): T => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/show">show</a></h1>
  * <p><b>id : </b>238</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Montre aux joueurs une cellule cell de la couleur color sur le terrain pour 1 tour.
+ *
+ * Cette fonction coûte 1PT ✦.
+ *
+ * La limite de show() par tour est de 5.</p>
  * <p><b>operations : </b>8</p>
  */
 // @ts-ignore
@@ -6028,7 +6037,7 @@ export const show = (cell: number, color?: number): void => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/shuffle">shuffle</a></h1>
  * <p><b>id : </b>51</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Mélange une liste de manière aléatoire.</p>
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
@@ -6037,7 +6046,7 @@ export const shuffle = (array: any[]): void => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/signum">signum</a></h1>
  * <p><b>id : </b>26</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Détermine le signe du nombre number.</p>
  * <p><b>operations : </b>2</p>
  */
 // @ts-ignore
@@ -6046,7 +6055,7 @@ export const signum = (number: number): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/sin">sin</a></h1>
  * <p><b>id : </b>5</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Calcule le sinus de l'angle angle passé en paramètre.</p>
  * <p><b>operations : </b>30</p>
  */
 // @ts-ignore
@@ -6055,7 +6064,14 @@ export const sin = (angle: number): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/sort">sort</a></h1>
  * <p><b>id : </b>162</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Sorts given array, using the following order:
+ * <ul>
+ *     <li>Booleans (false then true)</li>
+ *     <li>Numbers (least to greatest)</li>
+ *     <li>Strings (sorted alphabetically)</li>
+ *     <li>null elements</li>
+ * </ul>
+ * , using the given order.</p>
  * <p><b>complexity : </b>O(nlog(n))</p>
  */
 // @ts-ignore
@@ -6064,7 +6080,7 @@ export const sort = (array: any[], order?: number): void => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/split">split</a></h1>
  * <p><b>id : </b>35</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Découpe la chaîne string sous-chaînes en délimitées par delimiter. Pour limiter la découpe à un certain nombre de morceaux, utilisez le paramètre limit.</p>
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
@@ -6073,7 +6089,7 @@ export const split = (string: string, delimiter: string, limit?: number): string
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/sqrt">sqrt</a></h1>
  * <p><b>id : </b>16</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Calcule la racine carrée du nombre number.</p>
  * <p><b>operations : </b>8</p>
  */
 // @ts-ignore
@@ -6082,7 +6098,7 @@ export const sqrt = (number: number): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/startsWith">startsWith</a></h1>
  * <p><b>id : </b>38</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Vérifie si la chaîne string commence par la chaîne prefix.</p>
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
@@ -6091,7 +6107,7 @@ export const startsWith = (string: string, prefix: string): boolean => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/string">string</a></h1>
  * <p><b>id : </b>202</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Convertit une valeur value en chaîne de caractères.</p>
  * <p><b>operations : </b>8</p>
  */
 // @ts-ignore
@@ -6100,7 +6116,7 @@ export const string = (value: any): string => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/subArray">subArray</a></h1>
  * <p><b>id : </b>63</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Retourne un sous-tableau de array commençant à la position start et finissant à la position end.</p>
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
@@ -6109,7 +6125,7 @@ export const subArray = <T>(array: T[], start: number, end: number): T[] => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/substring">substring</a></h1>
  * <p><b>id : </b>30</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Retourne la sous-chaîne de la chaîne string à partir du caractère à l'indice start et de taille length.</p>
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
@@ -6118,7 +6134,7 @@ export const substring = (string: string, start: number, length?: number): strin
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/sum">sum</a></h1>
  * <p><b>id : </b>58</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Computes the sum of all elements within given array.</p>
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
@@ -6127,7 +6143,7 @@ export const sum = (array: number[]): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/summon">summon</a></h1>
  * <p><b>id : </b>297</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Uses given chip to summon the corresponding entity on given cell. The entity uses the AI contained in given ai function.</p>
  * <p><b>operations : </b>1750</p>
  */
 // @ts-ignore
@@ -6136,7 +6152,7 @@ export const summon = (chip: number, cell: number, ai: (...args: any[]) => void)
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/tan">tan</a></h1>
  * <p><b>id : </b>6</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Calcule la tangente de l'angle angle (en radians).</p>
  * <p><b>operations : </b>30</p>
  */
 // @ts-ignore
@@ -6145,7 +6161,7 @@ export const tan = (angle: number): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/toDegrees">toDegrees</a></h1>
  * <p><b>id : </b>11</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Convertit l'angle radians en degrés.</p>
  * <p><b>operations : </b>1</p>
  */
 // @ts-ignore
@@ -6154,7 +6170,7 @@ export const toDegrees = (radians: number): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/toLower">toLower</a></h1>
  * <p><b>id : </b>36</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Convertit les caractères majuscules de la chaîne string en minuscules.</p>
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
@@ -6163,7 +6179,7 @@ export const toLower = (string: string): string => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/toRadians">toRadians</a></h1>
  * <p><b>id : </b>10</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Convertit l'angle degrees en radians.</p>
  * <p><b>operations : </b>31</p>
  */
 // @ts-ignore
@@ -6172,7 +6188,7 @@ export const toRadians = (degrees: number): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/toUpper">toUpper</a></h1>
  * <p><b>id : </b>37</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Convertit les caractères minuscules de la chaîne string en majuscules.</p>
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
@@ -6181,7 +6197,7 @@ export const toUpper = (string: string): string => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/trailingZeros">trailingZeros</a></h1>
  * <p><b>id : </b>410</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Renvoie le nombre de bits à 0 à la fin du nombre x.</p>
  * <p><b>operations : </b>1</p>
  */
 // @ts-ignore
@@ -6190,7 +6206,19 @@ export const trailingZeros = (x: number): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/typeOf">typeOf</a></h1>
  * <p><b>id : </b>226</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Renvoie le type de la valeur value, parmis les types :
+ *
+ * <ul>
+ *     <li>TYPE_NULL pour une valeur null.</li>
+ *     <li>TYPE_BOOLEAN pour un booléen, true ou false.</li>
+ *     <li>TYPE_NUMBER pour un nombre, exemple : 12, -0.15.</li>
+ *     <li>TYPE_STRING pour une chaîne de caractères, exemple : "salut".</li>
+ *     <li>TYPE_ARRAY pour un tableau, exemple : [1, 2, 3].</li>
+ *     <li>TYPE_MAP pour un tableau associatif, exemple : [a: 5, b: true].</li>
+ *     <li>TYPE_OBJECT pour un objet, exemple : {a: 5, b: true}.</li>
+ *     <li>TYPE_CLASS pour une classe, exemple : class A { }.</li>
+ *     <li>TYPE_FUNCTION pour une fonction, exemple : function() {}.</li>
+ * </ul>
  * <p><b>operations : </b>8</p>
  */
 // @ts-ignore
@@ -6199,7 +6227,7 @@ export const typeOf = (value: any): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/unshift">unshift</a></h1>
  * <p><b>id : </b>45</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Adds given element at the beginning of given array.</p>
  * <p><b>complexity : </b>O(n)</p>
  */
 // @ts-ignore
@@ -6208,7 +6236,7 @@ export const unshift = <T>(array: T[], element: T): void => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/useChip">useChip</a></h1>
  * <p><b>id : </b>99</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Utilise la puce chip sur l'entité entity, ou sur vous-même si le second paramètre n'est pas fourni.</p>
  * <p><b>operations : </b>3000</p>
  */
 // @ts-ignore
@@ -6217,7 +6245,7 @@ export const useChip = (chip: number, entity: number): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/useChipOnCell">useChipOnCell</a></h1>
  * <p><b>id : </b>100</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Utilise la puce chip sur la cellule cell.</p>
  * <p><b>operations : </b>3000</p>
  */
 // @ts-ignore
@@ -6226,7 +6254,7 @@ export const useChipOnCell = (chip: number, cell: number): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/useWeapon">useWeapon</a></h1>
  * <p><b>id : </b>91</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Utilise l'arme sélectionnée sur l'entité entity.</p>
  * <p><b>operations : </b>3000</p>
  */
 // @ts-ignore
@@ -6235,7 +6263,7 @@ export const useWeapon = (entity: number): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/useWeaponOnCell">useWeaponOnCell</a></h1>
  * <p><b>id : </b>92</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Fires your entity's weapon, targeting given cell.</p>
  * <p><b>operations : </b>3000</p>
  */
 // @ts-ignore
@@ -6244,7 +6272,7 @@ export const useWeaponOnCell = (cell: number): number => {};
 /**
  * <h1><a href="https://leekwars.com/encyclopedia/fr/weaponNeedLos">weaponNeedLos</a></h1>
  * <p><b>id : </b>314</p>
- * <p><b>description : </b>TODO</p>
+ * <p><b>description : </b>Returns whether given weapon requires a line of sight in order to be shot.</p>
  * <p><b>operations : </b>10</p>
  */
 // @ts-ignore
