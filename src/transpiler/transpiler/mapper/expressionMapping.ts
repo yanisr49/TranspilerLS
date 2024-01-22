@@ -1,7 +1,6 @@
 import ts, {SyntaxKind} from 'typescript';
-import {Context} from '../utils/context';
 
-export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, context: Context) {
+export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string) {
     if (ts.isCallExpression(node)) {
         if (node.questionDotToken) {
             throw new Error("la syntax '?.' ne peut pas être utilisé en leekscript");

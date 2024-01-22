@@ -1,8 +1,17 @@
 import axios, {AxiosInstance} from 'axios';
 import {addChildAIs, addChildFolders, AI, Folder} from './treeStructure';
-import {sleep} from '../utils';
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+
+/**
+ * Sleeps for the given amount of time.
+ *
+ * @param {number} time - The amount of time to sleep, in milliseconds.
+ * @return {Promise} - A Promise that resolves after the specified time has elapsed.
+ */
+export function sleep(time: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
 
 interface File {
     id: number;

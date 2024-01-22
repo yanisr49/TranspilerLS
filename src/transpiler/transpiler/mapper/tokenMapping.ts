@@ -1,10 +1,7 @@
 import ts, {SyntaxKind} from 'typescript';
-import {Context} from '../utils/context';
 
-export function tokenMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, context: Context) {
-    if (context.interfaces.includes(node.getText()) || context.types.includes(node.getText()) || context.enums.includes(node.getText())) {
-        return `any /* ${node.getText()} */`;
-    } else if (node.kind === SyntaxKind.UndefinedKeyword) {
+export function tokenMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string) {
+    if (node.kind === SyntaxKind.UndefinedKeyword) {
         return 'null';
     } else if (node.kind === SyntaxKind.NumberKeyword) {
         return 'real';

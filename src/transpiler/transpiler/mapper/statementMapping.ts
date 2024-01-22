@@ -1,8 +1,7 @@
 import ts from 'typescript';
 import {getLeadingWhitespace, getLeadingWhitespaceInLine, mapModifier} from '../utils/utils';
-import {Context} from '../utils/context';
 
-export function statementMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, context: Context) {
+export function statementMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string) {
     const fullWhitespaces = getLeadingWhitespace(node, sourceFile);
     const lineWhitespaces = getLeadingWhitespaceInLine(node, sourceFile);
 

@@ -1,7 +1,6 @@
 import ts from 'typescript';
-import {Context} from '../utils/context';
 
-export function variableMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, context: Context) {
+export function variableMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string) {
     if (ts.isVariableDeclarationList(node)) {
         return visitNode(node.declarations[0]);
     } else if (ts.isVariableDeclaration(node)) {

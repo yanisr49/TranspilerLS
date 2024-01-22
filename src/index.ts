@@ -1,45 +1,45 @@
 import 'dotenv/config';
-import {Context} from './transpiler/transpiler/utils/context';
-import {watchMain} from './transpiler/transpiler/transpiler';
+import API from './transpiler/lsCommunications/request';
+import {Action, checkModification, initData, updateModifications} from './transpiler/transpiler/transpiler';
+import {debounce} from 'lodash';
+import chokidar from 'chokidar';
 
 const main = async () => {
-    const fileName = process.env.FILE_NAME;
-    const sourcesPath = process.env.ABSOLUTE_PATH_TO_SOURCES;
-
-    if (!fileName || !sourcesPath) {
+    if (!process.env.ABSOLUTE_PATH_TO_SOURCES) {
         throw Error('Aïe Aïe Aïe');
     }
+    const api: API = new API();
+    await api.login();
+    await api.setInterceptor();
 
-    // const api: API = new API();
-    // await api.login();
-    // await api.setInterceptor();
-    //
-    // const allFilePaths = getAllFiles(sourcesPath, sourcesPath, []);
-    //
-    // const sourceFolder: Folder = await initData(api, fileName, allFilePaths);
-    //
-    // let ai = sourceFolder.ais.find(ai => ai.name === 'includes');
-    // if (!ai) {
-    //     ai = await api.createFile('includes', sourceFolder);
-    // }
-    // await api.saveFile(ai, allFilePaths.map(p => `include('${p}');`).join('\n'));
+    const sourceFolder = await initData(api);
 
-    const context: Context = {
-        classes: [],
-        interfaces: [],
-        types: [],
-        enums: [],
-    };
+    let actions: Action[] = [];
 
-    // transformToLeekScript2(context);
+    const processDebouncedActions = debounce(async () => {
+        await updateModifications(api, actions, sourceFolder);
+        actions = [];
+    }, 250);
 
-    watchMain();
+    const watcher = chokidar.watch(process.env.ABSOLUTE_PATH_TO_SOURCES, {
+        ignored: /(^|[/\\])\../, // ignore dotfiles
+        persistent: true,
+    });
 
-    // processFolder(sourcesPath, allFilePaths, context);
-    // watchDirectory(api, sourcesPath, sourceFolder, context);
+    let isInitialScan = true;
 
-    // console.log(transformToLeekScript(path.join(sourcesPath, 'entities/AbstractEntity.ts')));
-    // main.ts
+    console.log('Wait half a second !');
+    setTimeout(() => {
+        isInitialScan = false;
+    }, 500);
+    console.log("I'm listening !");
+
+    watcher.on('all', (event, path) => {
+        if (!isInitialScan) {
+            checkModification(event, path, actions);
+            processDebouncedActions();
+        }
+    });
 };
 
 main().then();
