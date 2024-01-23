@@ -1,6 +1,6 @@
 import ts from 'typescript';
 
-export function leftoversMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string) {
+export function leftoversMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, typeChecker: ts.TypeChecker) {
     if (ts.isArrowFunction(node)) {
         return `(${node.parameters.map(p => visitNode(p))}) => ${visitNode(node.body)}`;
     } else if (ts.isImportDeclaration(node)) {

@@ -1,6 +1,6 @@
 import ts from 'typescript';
 
-export function typeMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string) {
+export function typeMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, typeChecker: ts.TypeChecker) {
     if (ts.isArrayTypeNode(node)) {
         return `Array<${visitNode(node.elementType)}>`;
     } else if (ts.isParenthesizedTypeNode(node)) {

@@ -1,6 +1,6 @@
 import ts, {SyntaxKind} from 'typescript';
 
-export function tokenMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string) {
+export function tokenMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, typeChecker: ts.TypeChecker) {
     if (node.kind === SyntaxKind.UndefinedKeyword) {
         return 'null';
     } else if (node.kind === SyntaxKind.NumberKeyword) {

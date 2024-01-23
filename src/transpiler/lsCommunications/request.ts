@@ -100,7 +100,7 @@ export default class API {
     }
 
     public async deleteFolder(folder: Folder) {
-        await this.instance.delete('/ai-folder/delete', {
+        return this.instance.delete('/ai-folder/delete', {
             data: {
                 folder_id: folder.id,
             },
@@ -124,7 +124,7 @@ export default class API {
     }
 
     public async deleteFile(ai: AI) {
-        await this.instance.delete('/ai/delete', {
+        return this.instance.delete('/ai/delete', {
             data: {
                 ai_id: ai.id,
             },
@@ -132,7 +132,7 @@ export default class API {
     }
 
     public async saveFile(ai: AI, code: string) {
-        await this.instance
+        return this.instance
             .post('/ai/save', {
                 ai_id: ai.id,
                 code: code,
@@ -140,5 +140,9 @@ export default class API {
             .then(res => {
                 // console.log(res.data);
             });
+    }
+
+    public async getCode(ai: AI): Promise<string> {
+        return this.instance.get(`ai/get/${ai.id}`).then(res => res.data.ai.code);
     }
 }

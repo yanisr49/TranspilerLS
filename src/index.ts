@@ -5,9 +5,16 @@ import {debounce} from 'lodash';
 import chokidar from 'chokidar';
 
 const main = async () => {
-    if (!process.env.ABSOLUTE_PATH_TO_SOURCES) {
-        throw Error('Aïe Aïe Aïe');
+    if (!process.env.DIR_NAME) {
+        throw new Error("Veuillez spécifier un nom de dossier dans le fichier d'environment");
     }
+    if (!process.env.TS_CONFIG_PATH) {
+        throw new Error("Veuillez spécifier le chemin absolu du fichier tsconfig.json dans le fichier d'environment");
+    }
+    if (!process.env.ABSOLUTE_PATH_TO_SOURCES) {
+        throw new Error("Veuillez spécifier le chemin absolut du dossier contenant les sources à transpiler dans le fichier d'environment");
+    }
+
     const api: API = new API();
     await api.login();
     await api.setInterceptor();

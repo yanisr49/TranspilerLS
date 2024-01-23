@@ -37,30 +37,32 @@ export const createTranspilerProgram = (tsconfigPath: string, sourcePath: string
 };
 
 export const initData = async (api: API) => {
-    console.log('Start init data ...');
+    const sourcesPath = path.normalize(process.env.ABSOLUTE_PATH_TO_SOURCES!);
+    const tsConfigPath = path.normalize(process.env.TS_CONFIG_PATH!);
 
-    if (!process.env.DIR_NAME) {
-        throw new Error("Veuillez spécifier un nom de dossier dans le fichier d'environment");
-    }
-    if (!process.env.TS_CONFIG_PATH) {
-        throw new Error("Veuillez spécifier le chemin absolu du fichier tsconfig.json dans le fichier d'environment");
-    }
-    if (!process.env.ABSOLUTE_PATH_TO_SOURCES) {
-        throw new Error("Veuillez spécifier le chemin absolut du dossier contenant les sources à transpiler dans le fichier d'environment");
-    }
-
-    const program = createTranspilerProgram(process.env.TS_CONFIG_PATH, process.env.ABSOLUTE_PATH_TO_SOURCES);
+    const program = createTranspilerProgram(tsConfigPath, sourcesPath);
     const typeChecker = program.getTypeChecker();
 
-    const sourceFolder = await api.getFarmerTreeStructure(process.env.DIR_NAME);
+    const sourceFolder = await api.getFarmerTreeStructure(process.env.DIR_NAME!);
 
     for (const sourceFile of program.getSourceFiles()) {
-        if (path.normalize(sourceFile.fileName).startsWith(path.normalize(process.env.ABSOLUTE_PATH_TO_SOURCES!))) {
-            const ai = await createFileAndFolders(api, path.relative(process.env.ABSOLUTE_PATH_TO_SOURCES, sourceFile.fileName), sourceFolder);
-            console.log(`Transpilation du fichier ${path.relative(process.env.ABSOLUTE_PATH_TO_SOURCES, sourceFile.fileName)}`);
-            await api.saveFile(ai!, transpile(sourceFile));
+        const sourcefileName = path.normalize(sourceFile.fileName);
+        if (sourcefileName.startsWith(sourcesPath) && sourcefileName.split('\\').pop() !== 'ls.ts') {
+            const ai = await createFileAndFolders(api, path.relative(process.env.ABSOLUTE_PATH_TO_SOURCES!, sourceFile.fileName), sourceFolder);
+
+            console.log(`Transpilation du fichier ${path.relative(process.env.ABSOLUTE_PATH_TO_SOURCES!, sourceFile.fileName)}`);
+
+            await api.saveFile(ai!, transpile(sourceFile, typeChecker));
         }
     }
+
+    let includesFile = sourceFolder.ais.find(ai => ai.name === 'includes');
+    if (!includesFile) {
+        includesFile = await api.createFile('includes', sourceFolder);
+        sourceFolder.ais.push(includesFile);
+    }
+    includesFile.toBeDeleted = false;
+    await api.saveFile(includesFile!, constructIncludesFile(sourceFolder).join('\n'));
 
     await deleteOutdatedFilesAndFolders(api, sourceFolder);
 
@@ -71,22 +73,12 @@ export const initData = async (api: API) => {
 export const transpileFile = async (filepath: string) => {
     console.log(`Transpiling file ${filepath}`);
 
-    if (!process.env.DIR_NAME) {
-        throw new Error("Veuillez spécifier un nom de dossier dans le fichier d'environment");
-    }
-    if (!process.env.TS_CONFIG_PATH) {
-        throw new Error("Veuillez spécifier le chemin absolu du fichier tsconfig.json dans le fichier d'environment");
-    }
-    if (!process.env.ABSOLUTE_PATH_TO_SOURCES) {
-        throw new Error("Veuillez spécifier le chemin absolut du dossier contenant les sources à transpiler dans le fichier d'environment");
-    }
-
-    const program = createTranspilerProgram(process.env.TS_CONFIG_PATH, process.env.ABSOLUTE_PATH_TO_SOURCES);
+    const program = createTranspilerProgram(process.env.TS_CONFIG_PATH!, process.env.ABSOLUTE_PATH_TO_SOURCES!);
     const typeChecker = program.getTypeChecker();
 
     for (const sourceFile of program.getSourceFiles()) {
-        if (path.relative(process.env.ABSOLUTE_PATH_TO_SOURCES, sourceFile.fileName) === path.normalize(filepath)) {
-            return transpile(sourceFile);
+        if (path.relative(process.env.ABSOLUTE_PATH_TO_SOURCES!, sourceFile.fileName) === path.normalize(filepath)) {
+            return transpile(sourceFile, typeChecker);
         }
     }
 
@@ -142,22 +134,25 @@ const createFileAndFolders = async (api: API, filepath: string, sourceFolder: Fo
  * @returns {Promise} - A promise that resolves when all outdated files and folders have been deleted.
  */
 const deleteOutdatedFilesAndFolders = async (api: API, folder: Folder): Promise<any> => {
+    for (const f of folder.folders.filter(f => f.toBeDeleted)) {
+        await api.deleteFolder(f);
+        folder.folders = folder.folders.filter(folder => folder !== f);
+    }
+    folder.folders = folder.folders.filter(f => !f.toBeDeleted);
+
     for (const f of folder.folders) {
-        if (f.toBeDeleted) {
-            await api.deleteFolder(f);
-        } else {
-            await deleteOutdatedFilesAndFolders(api, f);
-        }
+        await deleteOutdatedFilesAndFolders(api, f);
     }
 
     for (const ai of folder.ais) {
         if (ai.toBeDeleted) {
             await api.deleteFile(ai);
+            folder.ais = folder.ais.filter(aiNode => aiNode !== ai);
         }
     }
 };
 
-const transpile = (sourceFile: ts.SourceFile) => {
+const transpile = (sourceFile: ts.SourceFile, typeChecker: ts.TypeChecker) => {
     const visitNode = (node: ts.Node): string => {
         if (node.getText().includes('undefined')) {
             // console.log(getKind(node), node.getText());
@@ -166,7 +161,7 @@ const transpile = (sourceFile: ts.SourceFile) => {
         let result: string | undefined;
 
         for (const func of [tokenMapper, typeMapper, variableMapper, expressionMapper, classMapper, statementMapper, leftoversMapper]) {
-            result = func(node, sourceFile, visitNode);
+            result = func(node, sourceFile, visitNode, typeChecker);
             if (result) {
                 break;
             }
@@ -237,23 +232,24 @@ export const updateModifications = async (api: API, actions: Action[], sourceFol
                         break;
                     }
                 } else {
-                    await api.deleteFolder(currFolder);
+                    currFolder.toBeDeleted = true;
                 }
             } else {
                 if (pathSplits.length) {
                     currFolder = currFolder.folders.find(f => f.name === pathSplit);
 
                     if (!currFolder) {
-                        break;
+                        throw new Error(`Le dossier ${pathSplit} est introuvable`);
                     }
                 } else {
                     let ai = currFolder.ais.find(ai => ai.name === pathSplit);
 
                     if (action.action === 'unlink' && ai) {
-                        await api.deleteFolder(currFolder);
+                        ai.toBeDeleted = true;
                     } else if (action.action === 'save') {
                         if (!ai) {
                             ai = await api.createFile(pathSplit!, currFolder);
+                            currFolder.ais.push(ai);
                         }
 
                         await api.saveFile(ai, await transpileFile(relativePath));
@@ -261,5 +257,24 @@ export const updateModifications = async (api: API, actions: Action[], sourceFol
                 }
             }
         }
+
+        await deleteOutdatedFilesAndFolders(api, sourceFolder);
+
+        let includesFile = sourceFolder.ais.find(ai => ai.name === 'includes');
+        if (!includesFile) {
+            includesFile = await api.createFile('includes', sourceFolder);
+            sourceFolder.ais.push(includesFile);
+        }
+        await api.saveFile(includesFile, constructIncludesFile(sourceFolder).join('\n'));
     }
+};
+
+const constructIncludesFile = (sourceFolder: Folder, filePath = '', includes: string[] = []) => {
+    if (sourceFolder.folders.length) {
+        includes.push(...sourceFolder.folders.filter(folder => !folder.toBeDeleted).flatMap(folder => constructIncludesFile(folder, `${folder.name}/`)));
+    }
+
+    sourceFolder.ais.filter(ai => !ai.toBeDeleted && (filePath !== '' || ai.name !== 'includes')).forEach(ai => includes.push(`include('${filePath}${ai.name}');`));
+
+    return includes;
 };
