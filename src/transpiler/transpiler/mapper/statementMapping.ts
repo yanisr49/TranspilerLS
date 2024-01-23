@@ -9,6 +9,8 @@ export function statementMapper(node: ts.Node, sourceFile: ts.SourceFile, visitN
         return `${fullWhitespaces}for (${visitNode(node.initializer!)}; ${visitNode(node.condition!)}; ${visitNode(node.incrementor!)}) {${visitNode(
             node.statement
         )}\n${lineWhitespaces}}`;
+    } else if (ts.isForOfStatement(node)) {
+        return `${fullWhitespaces}for (${visitNode(node.initializer)} in ${visitNode(node.expression)}) {${visitNode(node.statement)}\n${lineWhitespaces}}`;
     } else if (ts.isDoStatement(node)) {
         return `${fullWhitespaces}do {${visitNode(node.statement)}\n${lineWhitespaces}} while(${visitNode(node.expression)});`;
     } else if (ts.isIfStatement(node)) {
