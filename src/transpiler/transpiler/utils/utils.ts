@@ -65,12 +65,5 @@ export function getKind(node: ts.Node) {
 }
 
 export const typeToNode = (node: ts.Node, type: ts.Type, typechecker: ts.TypeChecker) => {
-    const objectType = type as ts.ObjectType;
-    const typeArguments = objectType.objectFlags & ts.ObjectFlags.Reference ? typechecker.getTypeArguments(objectType!) : [];
-    console.log(typeArguments);
-
-    console.log(
-        'AAAAAAAAAA',
-        type.getProperties().map(prop => prop.name)
-    );
+    console.log((type as ts.TypeReference).typeArguments?.map(t => typechecker.typeToString(t)));
 };
