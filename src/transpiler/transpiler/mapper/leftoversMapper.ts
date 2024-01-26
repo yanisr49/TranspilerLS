@@ -7,7 +7,7 @@ export function leftoversMapper(node: ts.Node, sourceFile: ts.SourceFile, visitN
         if (node.getText().match(/^\.\.\.Array\([0-9]+\)\.keys\(\)$/g)) {
             return `0..${node.getText().slice(9, -8)}`;
         }
-        throw new Error("Le spread operator n'est supporté que dans la forme [...Array(xxx).keys()]");
+        throw new Error("Le spread operator n'est supporté que dans la forme [...Array(xxx).keys()] qqui est alors transformé en [0..xxx]");
     } else if (ts.isImportDeclaration(node)) {
         return `// ${node.getText()}`;
     }

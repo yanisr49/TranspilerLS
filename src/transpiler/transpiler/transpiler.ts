@@ -1,6 +1,6 @@
 import ts from 'typescript';
 import {typeMapper} from './mapper/typeMapping';
-import {variableMapper} from './mapper/variableMapping';
+import {declarationMapper} from './mapper/declarationMapping';
 import {statementMapper} from './mapper/statementMapping';
 import {classMapper} from './mapper/classMapping';
 import {expressionMapper} from './mapper/expressionMapping';
@@ -154,21 +154,21 @@ const deleteOutdatedFilesAndFolders = async (api: API, folder: Folder): Promise<
 
 const transpile = (sourceFile: ts.SourceFile, typeChecker: ts.TypeChecker) => {
     const visitNode = (node: ts.Node): string => {
-        if (node?.getText()?.includes('const id')) {
+        if (node?.getText()?.includes('extends ')) {
             // console.log(getKind(node), node.getText());
         }
 
         let result: string | undefined;
 
-        for (const func of [tokenMapper, typeMapper, variableMapper, expressionMapper, classMapper, statementMapper, leftoversMapper]) {
+        for (const func of [tokenMapper, typeMapper, declarationMapper, expressionMapper, classMapper, statementMapper, leftoversMapper]) {
             result = func(node, sourceFile, visitNode, typeChecker);
-            if (result) {
+            if (result !== undefined) {
                 break;
             }
         }
 
-        if (!result) {
-            // console.log(`TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`);
+        if (result === undefined) {
+            console.log(`TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`);
         }
         return result ?? `TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`;
     };

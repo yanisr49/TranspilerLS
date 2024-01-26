@@ -67,15 +67,24 @@ export function getKind(node: ts.Node) {
     return '';
 }
 
-export const typeToNode = (type: ts.Type, typechecker: ts.TypeChecker) => {
+export const inferredTypeNameFromNode = (node: ts.Node, typeChecker: ts.TypeChecker) => {
+    return inferredTypeNameFromType(typeChecker.getTypeAtLocation(node), typeChecker);
+};
+
+export const inferredTypeNameFromType = (type: ts.Type, typeChecker: ts.TypeChecker) => {
+    if (type?.aliasSymbol?.flags === ts.SymbolFlags.TypeAlias) {
+        // Inferred alias type
+        return `any /* ${type.aliasSymbol.escapedName} */`;
+    }
+
     let name = type.symbol?.name ?? '';
 
     if (type.isUnion()) {
-        return type.types.map(t => typeToNode(t, typechecker)).join(' | ');
+        return type.types.map(t => inferredTypeNameFromType(t, typeChecker)).join(' | ');
     }
 
     if (!name) {
-        name = typechecker.typeToString(type);
+        name = typeChecker.typeToString(type);
     }
 
     if (name === 'undefined') {
@@ -87,12 +96,12 @@ export const typeToNode = (type: ts.Type, typechecker: ts.TypeChecker) => {
     }
 
     if (name === 'Array') {
-        return `Array<${typeToNode((type as ts.TypeReference).typeArguments![0], typechecker)}>`;
+        return `Array<${inferredTypeNameFromType((type as ts.TypeReference).typeArguments![0], typeChecker)}>`;
     }
 
     let typeArguments = '';
     if ((type as ts.TypeReference).typeArguments?.length) {
-        typeArguments = `<${(type as ts.TypeReference).typeArguments!.map(typeArgument => typeToNode(typeArgument, typechecker)).join(', ')}>`;
+        typeArguments = `<${(type as ts.TypeReference).typeArguments!.map(typeArgument => inferredTypeNameFromType(typeArgument, typeChecker)).join(', ')}>`;
     }
 
     if (type.isNumberLiteral()) {
