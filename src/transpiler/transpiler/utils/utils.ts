@@ -41,10 +41,12 @@ export function mapModifier(modifiers: ts.NodeArray<ts.ModifierLike> | undefined
         .map(m => {
             switch (m.kind) {
                 case SyntaxKind.AbstractKeyword:
+                case SyntaxKind.ExportKeyword:
                     return '';
                 case SyntaxKind.PublicKeyword:
                 case SyntaxKind.PrivateKeyword:
                 case SyntaxKind.ProtectedKeyword:
+                case SyntaxKind.StaticKeyword:
                     return m.getText();
                 default:
                     console.log(`TODO mapModifier ${m.kind}`);

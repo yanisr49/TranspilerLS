@@ -1,5 +1,5 @@
 import ts from 'typescript';
-import {typeToNode} from '../utils/utils';
+import {getKind, typeToNode} from '../utils/utils';
 
 export function variableMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, typeChecker: ts.TypeChecker) {
     if (ts.isVariableDeclarationList(node)) {
@@ -9,6 +9,13 @@ export function variableMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNo
         const initializer = node.initializer ? ` = ${visitNode(node.initializer)}` : '';
 
         return `${type} ${node.name.getText()}${initializer}`;
+    } else if (ts.isEnumDeclaration(node)) {
+        if (node.members[0].initializer) {
+            if (ts.isNumericLiteral(node.members[0].initializer)) {
+                console.log('youpi');
+            }
+            console.log('ICI', getKind(node.members[0].initializer!));
+        }
     }
 
     return undefined;

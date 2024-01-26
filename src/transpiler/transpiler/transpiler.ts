@@ -154,7 +154,7 @@ const deleteOutdatedFilesAndFolders = async (api: API, folder: Folder): Promise<
 
 const transpile = (sourceFile: ts.SourceFile, typeChecker: ts.TypeChecker) => {
     const visitNode = (node: ts.Node): string => {
-        if (node.getText().includes('const id')) {
+        if (node?.getText()?.includes('const id')) {
             // console.log(getKind(node), node.getText());
         }
 
@@ -168,7 +168,7 @@ const transpile = (sourceFile: ts.SourceFile, typeChecker: ts.TypeChecker) => {
         }
 
         if (!result) {
-            console.log(`TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`);
+            // console.log(`TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`);
         }
         return result ?? `TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`;
     };
