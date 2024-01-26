@@ -1,9 +1,26 @@
 import ts, {SyntaxKind} from 'typescript';
+import {typeToNode} from '../utils/utils';
 
 export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, typeChecker: ts.TypeChecker) {
     if (ts.isCallExpression(node)) {
         if (node.questionDotToken) {
             throw new Error("la syntax '?.' ne peut pas être utilisé en leekscript");
+        }
+
+        if (ts.isPropertyAccessExpression(node.expression)) {
+            const type = typeToNode(typeChecker.getTypeAtLocation(node.expression.expression), typeChecker);
+            if (type === 'Map' || type.startsWith('Map<')) {
+                switch (node.expression.name.getText()) {
+                    case 'get':
+                        return `mapGet(${node.expression.expression.getText()}, ${node.arguments[0].getText()})`;
+                    case 'set':
+                        return `mapPut(${node.expression.expression.getText()}, ${node.arguments[0].getText()}, ${node.arguments[1].getText()})`;
+                    case 'delete':
+                        return `mapRemove(${node.expression.expression.getText()}, ${node.arguments[0].getText()})`;
+                    default:
+                        throw new Error(`Leekscript 4 ne supporte pas la méthode ${node.expression.name.getText()} sur une map`);
+                }
+            }
         }
 
         return `${visitNode(node.expression)}(${node.arguments.map(a => visitNode(a)).join(', ')})`;

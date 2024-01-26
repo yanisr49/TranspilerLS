@@ -64,6 +64,41 @@ export function getKind(node: ts.Node) {
     return '';
 }
 
-export const typeToNode = (node: ts.Node, type: ts.Type, typechecker: ts.TypeChecker) => {
-    console.log((type as ts.TypeReference).typeArguments?.map(t => typechecker.typeToString(t)));
+export const typeToNode = (type: ts.Type, typechecker: ts.TypeChecker) => {
+    let name = type.symbol?.name ?? '';
+
+    if (type.isUnion()) {
+        return type.types.map(t => typeToNode(t, typechecker)).join(' | ');
+    }
+
+    if (!name) {
+        name = typechecker.typeToString(type);
+    }
+
+    if (name === 'undefined') {
+        return 'null';
+    }
+
+    if (name === 'number') {
+        return 'real';
+    }
+
+    if (name === 'Array') {
+        return `Array<${typeToNode((type as ts.TypeReference).typeArguments![0], typechecker)}>`;
+    }
+
+    let typeArguments = '';
+    if ((type as ts.TypeReference).typeArguments?.length) {
+        typeArguments = `<${(type as ts.TypeReference).typeArguments!.map(typeArgument => typeToNode(typeArgument, typechecker)).join(', ')}>`;
+    }
+
+    if (type.isNumberLiteral()) {
+        return 'real';
+    }
+
+    if (type.isStringLiteral()) {
+        return 'string';
+    }
+
+    return `${name}${typeArguments}`;
 };

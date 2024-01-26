@@ -5,23 +5,10 @@ export function variableMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNo
     if (ts.isVariableDeclarationList(node)) {
         return visitNode(node.declarations[0]);
     } else if (ts.isVariableDeclaration(node)) {
-        let result = '';
+        const type = node.type ? visitNode(node.type) : typeToNode(typeChecker.getTypeAtLocation(node), typeChecker);
+        const initializer = node.initializer ? ` = ${visitNode(node.initializer)}` : '';
 
-        if (node.getText().includes('idididid')) {
-            typeToNode(node, typeChecker.getTypeAtLocation(node), typeChecker);
-        }
-
-        if (node.type) {
-            result += `${visitNode(node.type)} ${node.name.getText()}`;
-        } else {
-            result += `any ${node.name.getText()}`;
-        }
-
-        if (node.initializer) {
-            result += ` = ${visitNode(node.initializer)}`;
-        }
-
-        return result;
+        return `${type} ${node.name.getText()}${initializer}`;
     }
 
     return undefined;

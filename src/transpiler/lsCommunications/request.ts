@@ -132,9 +132,6 @@ export default class API {
     }
 
     public async saveFile(ai: AI, code: string) {
-        if (ai.name.endsWith('Fight.ts')) {
-            // console.log(code);
-        }
         return this.instance
             .post('/ai/save', {
                 ai_id: ai.id,
