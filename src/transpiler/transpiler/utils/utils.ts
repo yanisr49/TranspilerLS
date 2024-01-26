@@ -47,6 +47,7 @@ export function mapModifier(modifiers: ts.NodeArray<ts.ModifierLike> | undefined
                 case SyntaxKind.ProtectedKeyword:
                     return m.getText();
                 default:
+                    console.log(`TODO mapModifier ${m.kind}`);
                     return `TODO mapModifier ${m.kind}`;
             }
         })
