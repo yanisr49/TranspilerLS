@@ -167,7 +167,9 @@ const transpile = (sourceFile: ts.SourceFile, typeChecker: ts.TypeChecker) => {
             }
         }
 
-        console.log(`TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`);
+        if (!result) {
+            console.log(`TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`);
+        }
         return result ?? `TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`;
     };
 
