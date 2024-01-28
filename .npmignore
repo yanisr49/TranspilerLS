@@ -1,0 +1,6 @@
+# Ignore everything
+/*
+# Don't ignore dist directory and package.json
+!dist/
+!package.json
+!README.md

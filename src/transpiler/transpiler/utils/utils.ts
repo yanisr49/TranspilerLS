@@ -67,8 +67,12 @@ export function getKind(node: ts.Node) {
     return '';
 }
 
-export const inferredTypeNameFromNode = (node: ts.Node, typeChecker: ts.TypeChecker) => {
-    return inferredTypeNameFromType(typeChecker.getTypeAtLocation(node), typeChecker);
+export const inferredTypeNameFromNode = (node: ts.Node, typeChecker: ts.TypeChecker, visitNode: (node: ts.Node) => string, type?: ts.TypeNode) => {
+    const result = inferredTypeNameFromType(typeChecker.getTypeAtLocation(node), typeChecker);
+    if (['__type'].includes(result) && type) {
+        return visitNode(type);
+    }
+    return result;
 };
 
 export const inferredTypeNameFromType = (type: ts.Type, typeChecker: ts.TypeChecker) => {
@@ -80,7 +84,7 @@ export const inferredTypeNameFromType = (type: ts.Type, typeChecker: ts.TypeChec
     let name = type.symbol?.name ?? '';
 
     if (type.isUnion()) {
-        return type.types.map(t => inferredTypeNameFromType(t, typeChecker)).join(' | ');
+        return [...new Set(type.types.map(t => inferredTypeNameFromType(t, typeChecker)).sort((a, b) => (a === 'null' ? 1 : b === 'null' ? -1 : a - b)))].join(' | ');
     }
 
     if (!name) {
@@ -91,26 +95,48 @@ export const inferredTypeNameFromType = (type: ts.Type, typeChecker: ts.TypeChec
         return 'null';
     }
 
+    if (name === 'unknown') {
+        return 'any';
+    }
+
     if (name === 'number') {
-        return 'real';
+        return 'any /* number */';
     }
 
     if (name === 'Array') {
         return `Array<${inferredTypeNameFromType((type as ts.TypeReference).typeArguments![0], typeChecker)}>`;
     }
 
-    let typeArguments = '';
-    if ((type as ts.TypeReference).typeArguments?.length) {
-        typeArguments = `<${(type as ts.TypeReference).typeArguments!.map(typeArgument => inferredTypeNameFromType(typeArgument, typeChecker)).join(', ')}>`;
-    }
-
     if (type.isNumberLiteral()) {
-        return 'real';
+        return 'any /* number */';
     }
 
     if (type.isStringLiteral()) {
         return 'string';
     }
 
+    if (type.isTypeParameter()) {
+        name = type.getConstraint() ? inferredTypeNameFromType(type.getConstraint()!, typeChecker) : 'any';
+    }
+
+    let typeArguments = '';
+    // Les types génériques sont seuelemtn autorisé sur les Map en LS
+    if ((type as ts.TypeReference).typeArguments?.length && type.symbol?.escapedName === 'Map') {
+        typeArguments = `<${(type as ts.TypeReference).typeArguments!.map(typeArgument => inferredTypeNameFromType(typeArgument, typeChecker)).join(', ')}>`;
+    }
+
     return `${name}${typeArguments}`;
+};
+
+export const throwError = (message: string, node: ts.Node) => {
+    const lignes = node
+        .getSourceFile()
+        .getText()
+        .slice(0, node.pos + node.getText().split('\n')[0].length)
+        .split('\n');
+    const ligneNumber = lignes.length;
+    const caracterNumber = lignes[ligneNumber - 1].indexOf(node.getText().split('\n')[0]);
+    const filepath = node.getSourceFile().fileName;
+
+    throw new Error(`${message}\n    at (${filepath}:${ligneNumber}:${caracterNumber}) : node.getText().split('\\n')[0]`);
 };

@@ -1,7 +1,17 @@
 import ts, {SyntaxKind} from 'typescript';
 import {getLeadingWhitespace, getLeadingWhitespaceInLine} from '../utils/utils';
 
-export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, typeChecker: ts.TypeChecker) {
+/**
+ * Maps TypeScript expressions to Leekscript expressions.
+ *
+ * @param {ts.Node} node - The TypeScript node to map.
+ * @param {ts.SourceFile} sourceFile - The source file containing the node.
+ * @param {Function} visitNode - A function to visit child nodes and map them to Leekscript expressions.
+ * @param {ts.TypeChecker} typeChecker - The TypeScript type checker.
+ * @returns {string|undefined} - The Leekscript expression mapped from the TypeScript expression.
+ * @throws Throws an error if an unsupported syntax is encountered.
+ */
+export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, typeChecker: ts.TypeChecker): string | undefined {
     const fullWhitespaces = getLeadingWhitespace(node, sourceFile);
     const lineWhitespaces = getLeadingWhitespaceInLine(node, sourceFile);
 
@@ -11,7 +21,7 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
         }
 
         if (ts.isPropertyAccessExpression(node.expression)) {
-            switch (typeChecker.getTypeAtLocation(node.expression.expression).symbol.escapedName) {
+            switch (typeChecker.getTypeAtLocation(node.expression.expression).symbol?.escapedName) {
                 case 'Map':
                     switch (node.expression.name.getText()) {
                         case 'get':
@@ -49,6 +59,9 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
         const constructorArguments = node.arguments?.map(visitNode).join(', ') ?? '';
 
         return `new ${visitNode(node.expression)}(${constructorArguments})`;
+    } else if (ts.isNullishCoalesce(node) && ts.isBinaryExpression(node)) {
+        const left = visitNode(node.left);
+        return `${left} != null ? ${left} : ${visitNode(node.right)}`;
     } else if (ts.isBinaryExpression(node)) {
         // a == b
         return `${visitNode(node.left)} ${visitNode(node.operatorToken)} ${visitNode(node.right)}`;
@@ -57,6 +70,11 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
         if (ts.SymbolFlags.EnumMember === typeChecker.getSymbolAtLocation(node)?.flags) {
             return `${node.expression.getText().toUpperCase()}_${node.name.getText().toUpperCase()}`;
         }
+
+        if (visitNode(node.expression) === 'console' && visitNode(node.name) === 'log') {
+            return 'debug';
+        }
+
         return `${visitNode(node.expression)}.${node.name.getText()}`;
     } else if (ts.isArrayLiteralExpression(node)) {
         // [a, b, c]
@@ -114,6 +132,8 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
             throw new Error("TODO : Type arguments d'une isExpressionWithTypeArguments à implémenter");
         }
         return visitNode(node.expression);
+    } else if (ts.isParenthesizedExpression(node)) {
+        return `(${visitNode(node.expression)})`;
     }
 
     return undefined;

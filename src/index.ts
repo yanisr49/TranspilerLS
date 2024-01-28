@@ -4,7 +4,7 @@ import {Action, checkModification, initData, updateModifications} from './transp
 import {debounce} from 'lodash';
 import chokidar from 'chokidar';
 
-const main = async () => {
+export const main = async () => {
     if (!process.env.DIR_NAME) {
         throw new Error("Veuillez spécifier un nom de dossier dans le fichier d'environment");
     }

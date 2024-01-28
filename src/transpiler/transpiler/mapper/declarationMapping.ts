@@ -9,9 +9,14 @@ export function declarationMapper(node: ts.Node, sourceFile: ts.SourceFile, visi
         return visitNode(node.declarations[0]);
     } else if (ts.isVariableDeclaration(node)) {
         // const a: TYPE = xxx
-        const type = node.type ? visitNode(node.type) : inferredTypeNameFromNode(node, typeChecker);
+        const type = inferredTypeNameFromNode(node, typeChecker, visitNode, node.type);
         const initializer = node.initializer ? ` = ${visitNode(node.initializer)}` : '';
 
+        if (node.initializer?.getText() === 'bar') {
+            const symbol = typeChecker.getSymbolAtLocation(node.name);
+            //console.log(typeChecker.getFullyQualifiedName(symbol!));
+            console.log(typeChecker.typeToString(typeChecker.getTypeOfSymbolAtLocation(symbol!, symbol!.declarations![0])));
+        }
         return `${type} ${visitNode(node.name)}${initializer}`;
     } else if (ts.isEnumDeclaration(node)) {
         if (node.members?.some(m => !m.initializer !== !node.members[0].initializer)) {
@@ -23,7 +28,7 @@ export function declarationMapper(node: ts.Node, sourceFile: ts.SourceFile, visi
         const members = node.members
             .map((m, idx) => {
                 const memberName = visitNode(m.name).toUpperCase();
-                const type = m.initializer ? inferredTypeNameFromNode(m.initializer, typeChecker) : 'real';
+                const type = m.initializer ? inferredTypeNameFromNode(m.initializer, typeChecker, visitNode) : 'any /* number */';
                 const initializer = m.initializer ? ` = ${visitNode(m.initializer)};` : ` = ${idx};`;
                 return `global ${type} ${name}_${memberName}${initializer}`;
             })
@@ -32,6 +37,16 @@ export function declarationMapper(node: ts.Node, sourceFile: ts.SourceFile, visi
         return `${fullWhitespaces}// Enum ${visitNode(node.name)} :\n${members}`;
     } else if (ts.isTypeAliasDeclaration(node)) {
         return `${fullWhitespaces}/* ${node.getText()} */`;
+    } else if (ts.isFunctionDeclaration(node)) {
+        if (node.asteriskToken) {
+            throw new Error('Les fonctions générateurs ne sont pas supportées par Leek script');
+        }
+
+        const name = node.name ? visitNode(node.name) : '';
+        const parameters = node.parameters.map(p => visitNode(p)).join(', ');
+        const body = node.body ? visitNode(node.body) : '';
+
+        return `${fullWhitespaces}function ${name}(${parameters}) {${body}\n${lineWhitespaces}}`;
     }
 
     return undefined;

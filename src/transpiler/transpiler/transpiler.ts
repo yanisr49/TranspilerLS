@@ -11,11 +11,11 @@ import API from '../lsCommunications/request';
 import path from 'path';
 import {AI, Folder} from '../lsCommunications/treeStructure';
 
-export const createTranspilerProgram = (tsconfigPath: string, sourcePath: string) => {
-    sourcePath = path.normalize(sourcePath).split('\\').slice(0, -1).join('\\');
+export const createTranspilerProgram = () => {
+    const sourcePath = path.normalize(process.env.TS_CONFIG_PATH!).split('\\').slice(0, -1).join('\\');
 
     // Read the TypeScript configuration file
-    const config = ts.readConfigFile(tsconfigPath, ts.sys.readFile).config;
+    const config = ts.readConfigFile(process.env.TS_CONFIG_PATH!, ts.sys.readFile).config;
 
     // Parse the configuration to get file names, options and project references
     const parseConfigHost: ts.ParseConfigFileHost = {
@@ -26,28 +26,23 @@ export const createTranspilerProgram = (tsconfigPath: string, sourcePath: string
         getCurrentDirectory: ts.sys.getCurrentDirectory,
         onUnRecoverableConfigFileDiagnostic: console.error,
     };
-    const parsed = ts.parseJsonConfigFileContent(config, parseConfigHost, sourcePath);
-
-    // Create the program
-    return ts.createProgram({
-        rootNames: parsed.fileNames,
-        options: parsed.options,
-        projectReferences: parsed.projectReferences,
-    });
+    return ts.parseJsonConfigFileContent(config, parseConfigHost, sourcePath);
 };
 
 export const initData = async (api: API) => {
-    const sourcesPath = path.normalize(process.env.ABSOLUTE_PATH_TO_SOURCES!);
-    const tsConfigPath = path.normalize(process.env.TS_CONFIG_PATH!);
-
-    const program = createTranspilerProgram(tsConfigPath, sourcesPath);
+    const parsedConfig = createTranspilerProgram();
+    const sourceFiles = parsedConfig.fileNames.map(p => path.normalize(p)).filter(p => !p.endsWith('\\ls.ts'));
+    const program = ts.createProgram({
+        rootNames: parsedConfig.fileNames,
+        options: parsedConfig.options,
+        projectReferences: parsedConfig.projectReferences,
+    });
     const typeChecker = program.getTypeChecker();
 
     const sourceFolder = await api.getFarmerTreeStructure(process.env.DIR_NAME!);
 
     for (const sourceFile of program.getSourceFiles()) {
-        const sourcefileName = path.normalize(sourceFile.fileName);
-        if (sourcefileName.startsWith(sourcesPath) && sourcefileName.split('\\').pop() !== 'ls.ts') {
+        if (sourceFiles.some(sf => path.normalize(sourceFile.fileName).endsWith(sf))) {
             const ai = await createFileAndFolders(api, path.relative(process.env.ABSOLUTE_PATH_TO_SOURCES!, sourceFile.fileName), sourceFolder);
 
             console.log(`Transpilation du fichier ${path.relative(process.env.ABSOLUTE_PATH_TO_SOURCES!, sourceFile.fileName)}`);
@@ -56,13 +51,13 @@ export const initData = async (api: API) => {
         }
     }
 
-    let includesFile = sourceFolder.ais.find(ai => ai.name === 'includes');
-    if (!includesFile) {
-        includesFile = await api.createFile('includes', sourceFolder);
-        sourceFolder.ais.push(includesFile);
+    let runFile = sourceFolder.ais.find(ai => ai.name === 'run');
+    if (!runFile) {
+        runFile = await api.createFile('run', sourceFolder);
+        sourceFolder.ais.push(runFile);
     }
-    includesFile.toBeDeleted = false;
-    await api.saveFile(includesFile!, constructIncludesFile(sourceFolder).join('\n'));
+    runFile.toBeDeleted = false;
+    await api.saveFile(runFile!, constructIncludesFile(sourceFolder).join('\n'));
 
     await deleteOutdatedFilesAndFolders(api, sourceFolder);
 
@@ -73,7 +68,12 @@ export const initData = async (api: API) => {
 export const transpileFile = async (filepath: string) => {
     console.log(`Transpiling file ${filepath}`);
 
-    const program = createTranspilerProgram(process.env.TS_CONFIG_PATH!, process.env.ABSOLUTE_PATH_TO_SOURCES!);
+    const parsedConfig = createTranspilerProgram();
+    const program = ts.createProgram({
+        rootNames: parsedConfig.fileNames,
+        options: parsedConfig.options,
+        projectReferences: parsedConfig.projectReferences,
+    });
     const typeChecker = program.getTypeChecker();
 
     for (const sourceFile of program.getSourceFiles()) {
@@ -82,7 +82,7 @@ export const transpileFile = async (filepath: string) => {
         }
     }
 
-    throw new Error('Un problème est survenu !!! (1)');
+    return '';
 };
 
 /**
@@ -152,9 +152,16 @@ const deleteOutdatedFilesAndFolders = async (api: API, folder: Folder): Promise<
     }
 };
 
+/**
+ * Transpiles a TypeScript source file into another format.
+ *
+ * @param sourceFile - The source file to be transpiled.
+ * @param typeChecker - The type checker for type information.
+ * @returns The transpiled code in the desired format.
+ */
 const transpile = (sourceFile: ts.SourceFile, typeChecker: ts.TypeChecker) => {
     const visitNode = (node: ts.Node): string => {
-        if (node?.getText()?.includes('extends ')) {
+        if (node?.getText()?.includes('**')) {
             // console.log(getKind(node), node.getText());
         }
 
@@ -173,7 +180,12 @@ const transpile = (sourceFile: ts.SourceFile, typeChecker: ts.TypeChecker) => {
         return result ?? `TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`;
     };
 
-    return sourceFile.statements.map(visitNode).join('');
+    try {
+        return sourceFile.statements.map(visitNode).join('');
+    } catch (e) {
+        console.error((e as Error).message);
+        return (e as Error).message;
+    }
 };
 
 export interface Action {
@@ -263,12 +275,12 @@ export const updateModifications = async (api: API, actions: Action[], sourceFol
 
         await deleteOutdatedFilesAndFolders(api, sourceFolder);
 
-        let includesFile = sourceFolder.ais.find(ai => ai.name === 'includes');
-        if (!includesFile) {
-            includesFile = await api.createFile('includes', sourceFolder);
-            sourceFolder.ais.push(includesFile);
+        let runFile = sourceFolder.ais.find(ai => ai.name === 'run');
+        if (!runFile) {
+            runFile = await api.createFile('run', sourceFolder);
+            sourceFolder.ais.push(runFile);
         }
-        await api.saveFile(includesFile, constructIncludesFile(sourceFolder).join('\n'));
+        await api.saveFile(runFile, constructIncludesFile(sourceFolder).join('\n'));
     }
 };
 

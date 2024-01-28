@@ -1,5 +1,5 @@
 import ts from 'typescript';
-import {getLeadingWhitespace, getLeadingWhitespaceInLine} from '../utils/utils';
+import {getLeadingWhitespace, getLeadingWhitespaceInLine, inferredTypeNameFromNode} from '../utils/utils';
 
 export function typeMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, typeChecker: ts.TypeChecker) {
     const fullWhitespaces = getLeadingWhitespace(node, sourceFile);
@@ -12,13 +12,11 @@ export function typeMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: 
     } else if (ts.isParenthesizedTypeNode(node)) {
         return `${visitNode(node.type)}`;
     } else if (ts.isFunctionTypeNode(node)) {
-        // Remplace les types generique sur les fonctions par any : <T> (a: T) => {}
-        const typeParameters = node.typeParameters?.map(t => t.name.getText());
-        const parameters = node.parameters.map(p => (p.type && typeParameters?.includes(p.type.getText()) ? 'any' : visitNode(p)));
+        const parameters = node.parameters.map(visitNode).join(', ');
 
-        return `Function<${parameters.join(', ')} => ${visitNode(node.type)}>`;
+        return `Function<${parameters} => ${inferredTypeNameFromNode(node.type, typeChecker, visitNode, node.type)}>`;
     } else if (ts.isParameter(node)) {
-        const type = node.type ? visitNode(node.type) : 'any';
+        const type = inferredTypeNameFromNode(node, typeChecker, visitNode, node.type);
         const name = ts.isFunctionTypeNode(node.parent) ? '' : ` ${node.name.getText()}`;
         return `${type}${name}`;
     } else if (ts.isTypeReferenceNode(node)) {

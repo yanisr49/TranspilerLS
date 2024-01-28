@@ -1,5 +1,5 @@
 import ts from 'typescript';
-import {getLeadingWhitespace, getLeadingWhitespaceInLine, inferredTypeNameFromType, mapModifier} from '../utils/utils';
+import {getLeadingWhitespace, getLeadingWhitespaceInLine, inferredTypeNameFromNode, inferredTypeNameFromType, mapModifier} from '../utils/utils';
 
 export function classMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, typeChecker: ts.TypeChecker) {
     const fullWhitespaces = getLeadingWhitespace(node, sourceFile);
@@ -11,7 +11,7 @@ export function classMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode:
 
         return `${fullWhitespaces}class ${node.name!.getText()} ${heritageClauses}{${statements}\n${lineWhitespaces}}`;
     } else if (ts.isPropertyDeclaration(node)) {
-        const type = node.type ? visitNode(node.type) : 'any';
+        const type = inferredTypeNameFromNode(node, typeChecker, visitNode, node.type);
         const initializer = node.initializer ? ` = ${visitNode(node.initializer)}` : '';
         const questionToken = node.questionToken ? ' | null' : '';
 
@@ -26,13 +26,12 @@ export function classMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode:
             throw new Error('Les fonctions générateurs ne sont pas supportées par Leek script');
         }
 
-        let returnType = node.type ? visitNode(node.type) : 'any';
-        const parameters = node.parameters.map(p => visitNode(p));
+        const signature = typeChecker.getSignatureFromDeclaration(node);
+        const returnType = signature
+            ? inferredTypeNameFromType(typeChecker.getReturnTypeOfSignature(signature), typeChecker)
+            : inferredTypeNameFromNode(node, typeChecker, visitNode, node.type);
+        const parameters = node.parameters.map(p => visitNode(p)).join(', ');
         const body = node.body ? visitNode(node.body) : '';
-
-        if (!node.type && typeChecker.getSignatureFromDeclaration(node)) {
-            returnType = inferredTypeNameFromType(typeChecker.getReturnTypeOfSignature(typeChecker.getSignatureFromDeclaration(node)!), typeChecker);
-        }
 
         return `${fullWhitespaces}${mapModifier(node.modifiers)}${returnType} ${visitNode(node.name)}(${parameters}) {${body}\n${lineWhitespaces}}`;
     } else if (ts.isHeritageClause(node)) {
