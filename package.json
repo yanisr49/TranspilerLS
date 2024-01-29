@@ -1,6 +1,6 @@
 {
     "name": "transpiler-ls",
-    "version": "0.1.0",
+    "version": "0.1.5",
     "description": "script LS",
     "main": "./dist/index.js",
     "types": "dist/index.d.ts",
@@ -14,7 +14,9 @@
         "prepare": "npm.cmd run compile",
         "pretest": "npm.cmd run compile",
         "posttest": "npm.cmd run lint",
-        "build": "tsc & npm link"
+        "tsc": "tsc",
+        "build": "tsc & npm link",
+        "transpile": "node ./node_modules/transpiler-ls/dist/index.js"
     },
     "author": "",
     "license": "ISC",

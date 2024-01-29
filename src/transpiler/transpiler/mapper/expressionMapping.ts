@@ -37,6 +37,8 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
                     switch (node.expression.name.getText()) {
                         case 'push':
                             return `push(${visitNode(node.expression.expression)}, ${visitNode(node.arguments[0])})`;
+                        case 'every':
+                            return `arrayEvery(${visitNode(node.expression.expression)}, ${visitNode(node.arguments[0])})`;
                         default:
                             throw new Error(`Leekscript 4 ne supporte pas la méthode ${node.expression.name.getText()} sur une map`);
                     }
@@ -134,6 +136,8 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
         return visitNode(node.expression);
     } else if (ts.isParenthesizedExpression(node)) {
         return `(${visitNode(node.expression)})`;
+    } else if (ts.isConditionalExpression(node)) {
+        return `${visitNode(node.condition)} ? ${visitNode(node.whenTrue)} : ${visitNode(node.whenFalse)}`;
     }
 
     return undefined;

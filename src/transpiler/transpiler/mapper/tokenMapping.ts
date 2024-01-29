@@ -27,6 +27,19 @@ const tokensReturningText = [
     SyntaxKind.ExclamationEqualsToken,
     SyntaxKind.EqualsToken,
     SyntaxKind.FirstBinaryOperator,
+    SyntaxKind.FalseKeyword,
+    SyntaxKind.TrueKeyword,
+    SyntaxKind.PercentToken,
+    SyntaxKind.GreaterThanEqualsToken,
+    SyntaxKind.LessThanEqualsToken,
+    SyntaxKind.NullKeyword,
+    SyntaxKind.AsteriskToken,
+    SyntaxKind.AmpersandAmpersandToken,
+    SyntaxKind.BarBarToken,
+    SyntaxKind.ContinueStatement,
+    SyntaxKind.GreaterThanToken,
+    SyntaxKind.LessThanToken,
+    SyntaxKind.InKeyword,
 ];
 
 export function tokenMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, typeChecker: ts.TypeChecker) {
