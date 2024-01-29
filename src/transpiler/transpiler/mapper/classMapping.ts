@@ -1,5 +1,5 @@
 import ts from 'typescript';
-import {getLeadingWhitespace, getLeadingWhitespaceInLine, inferredTypeNameFromNode, inferredTypeNameFromType, mapModifier} from '../utils/utils';
+import {getLeadingWhitespace, getLeadingWhitespaceInLine, inferredTypeNameFromNode, inferredTypeNameFromType, mapModifier, throwError} from '../utils/utils';
 
 export function classMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, typeChecker: ts.TypeChecker) {
     const fullWhitespaces = getLeadingWhitespace(node, sourceFile);
@@ -23,7 +23,7 @@ export function classMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode:
         return `${fullWhitespaces}${mapModifier(node.modifiers)}constructor(${parameters}) {${body}\n${lineWhitespaces}}`;
     } else if (ts.isMethodDeclaration(node)) {
         if (node.asteriskToken) {
-            throw new Error('Les fonctions générateurs ne sont pas supportées par Leek script');
+            throw throwError('Les fonctions générateurs ne sont pas supportées par Leek script', node);
         }
 
         const signature = typeChecker.getSignatureFromDeclaration(node);
@@ -36,7 +36,7 @@ export function classMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode:
         return `${fullWhitespaces}${mapModifier(node.modifiers)}${returnType} ${visitNode(node.name)}(${parameters}) {${body}\n${lineWhitespaces}}`;
     } else if (ts.isHeritageClause(node)) {
         if (node.token === ts.SyntaxKind.ImplementsKeyword) {
-            throw new Error("Le mot clé implements n'est pas pris en charge par leekscript");
+            throw throwError("Le mot clé implements n'est pas pris en charge par leekscript", node);
         }
 
         return `extends ${node.types.map(visitNode).join(', ')}`;

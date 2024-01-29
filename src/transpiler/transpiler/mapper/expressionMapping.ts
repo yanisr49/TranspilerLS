@@ -1,5 +1,5 @@
 import ts, {SyntaxKind} from 'typescript';
-import {getLeadingWhitespace, getLeadingWhitespaceInLine} from '../utils/utils';
+import {getLeadingWhitespace, getLeadingWhitespaceInLine, throwError} from '../utils/utils';
 
 /**
  * Maps TypeScript expressions to Leekscript expressions.
@@ -17,7 +17,7 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
 
     if (ts.isCallExpression(node)) {
         if (node.questionDotToken) {
-            throw new Error("la syntax '?.' ne peut pas être utilisé en leekscript");
+            throw throwError("la syntax '?.' ne peut pas être utilisé en leekscript", node);
         }
 
         if (ts.isPropertyAccessExpression(node.expression)) {
@@ -31,7 +31,7 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
                         case 'delete':
                             return `mapRemove(${visitNode(node.expression.expression)}, ${visitNode(node.arguments[0])})`;
                         default:
-                            throw new Error(`Leekscript 4 ne supporte pas la méthode ${node.expression.name.getText()} sur une map`);
+                            throw throwError(`Leekscript 4 ne supporte pas la méthode ${node.expression.name.getText()} sur une map`, node);
                     }
                 case 'Array':
                     switch (node.expression.name.getText()) {
@@ -40,7 +40,7 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
                         case 'every':
                             return `arrayEvery(${visitNode(node.expression.expression)}, ${visitNode(node.arguments[0])})`;
                         default:
-                            throw new Error(`Leekscript 4 ne supporte pas la méthode ${node.expression.name.getText()} sur une map`);
+                            throw throwError(`Leekscript 4 ne supporte pas la méthode ${node.expression.name.getText()} sur une liste`, node);
                     }
                 default:
                     break;
@@ -55,7 +55,7 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
         }
 
         if (node.typeArguments?.length) {
-            throw new Error('TODO type arguments (isNewExpression)');
+            throw throwError('TODO type arguments (isNewExpression)', node);
         }
 
         const constructorArguments = node.arguments?.map(visitNode).join(', ') ?? '';
@@ -111,13 +111,13 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
                 operator = '!';
                 break;
             case SyntaxKind.TildeToken:
-                throw new Error("Le token '~' n'est pas pris en charge par Leekscript");
+                throw throwError("Le token '~' n'est pas pris en charge par Leekscript", node);
         }
 
         return `${operator}${visitNode(node.operand)}`;
     } else if (ts.isElementAccessExpression(node)) {
         if (node.questionDotToken) {
-            throw new Error("la syntax '?.' ne peut pas être utilisé en leekscript");
+            throw throwError("la syntax '?.' ne peut pas être utilisé en leekscript", node);
         }
 
         return `${visitNode(node.expression)}[${visitNode(node.argumentExpression)}]`;
@@ -131,7 +131,7 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
         return visitNode(node.expression);
     } else if (ts.isExpressionWithTypeArguments(node)) {
         if (node.typeArguments?.length) {
-            throw new Error("TODO : Type arguments d'une isExpressionWithTypeArguments à implémenter");
+            throw throwError("TODO : Type arguments d'une isExpressionWithTypeArguments à implémenter", node);
         }
         return visitNode(node.expression);
     } else if (ts.isParenthesizedExpression(node)) {

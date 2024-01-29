@@ -1,5 +1,5 @@
 import ts from 'typescript';
-import {getLeadingWhitespace, getLeadingWhitespaceInLine, inferredTypeNameFromNode} from '../utils/utils';
+import {getLeadingWhitespace, getLeadingWhitespaceInLine, inferredTypeNameFromNode, throwError} from '../utils/utils';
 
 export function declarationMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: (node: ts.Node) => string, typeChecker: ts.TypeChecker) {
     const fullWhitespaces = getLeadingWhitespace(node, sourceFile);
@@ -20,7 +20,7 @@ export function declarationMapper(node: ts.Node, sourceFile: ts.SourceFile, visi
         return `${type} ${visitNode(node.name)}${initializer}`;
     } else if (ts.isEnumDeclaration(node)) {
         if (node.members?.some(m => !m.initializer !== !node.members[0].initializer)) {
-            throw new Error(`Tous les membres de l'énumération ${node.name.getText()} n'ont pas le même type`);
+            throw throwError(`Tous les membres de l'énumération ${node.name.getText()} n'ont pas le même type`, node);
         }
 
         const name = node.name.getText().toUpperCase();
@@ -39,7 +39,7 @@ export function declarationMapper(node: ts.Node, sourceFile: ts.SourceFile, visi
         return `${fullWhitespaces}/* ${node.getText()} */`;
     } else if (ts.isFunctionDeclaration(node)) {
         if (node.asteriskToken) {
-            throw new Error('Les fonctions générateurs ne sont pas supportées par Leek script');
+            throw throwError('Les fonctions générateurs ne sont pas supportées par Leek script', node);
         }
 
         const name = node.name ? visitNode(node.name) : '';

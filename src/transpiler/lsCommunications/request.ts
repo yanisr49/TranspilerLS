@@ -1,5 +1,6 @@
 import axios, {AxiosInstance} from 'axios';
-import {addChildAIs, addChildFolders, AI, Folder} from './treeStructure';
+import {AI} from './treeStructureOld';
+import {FileC, FolderC, IData, IFileFolder} from './treeStructure';
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
@@ -57,49 +58,25 @@ export default class API {
         });
     }
 
-    public async getFarmerTreeStructure(rootDirName: string): Promise<Folder> {
+    public async getTreeStructure() {
         const data = await this.instance.get('/ai/get-farmer-ais');
 
-        const rootDirAny = (data.data.folders as any[]).find(f => f.name === rootDirName);
-
-        let sourceFolder: Folder;
-        if (!rootDirAny) {
-            sourceFolder = await this.createFolder(rootDirName, 0);
-            return sourceFolder;
-        } else {
-            sourceFolder = {
-                id: rootDirAny.id,
-                name: rootDirAny.name,
-                ais: [],
-                folders: [],
-                toBeDeleted: true,
-            };
-        }
-
-        addChildFolders(sourceFolder, data.data.folders);
-        addChildAIs(sourceFolder, data.data.ais);
-
-        return sourceFolder;
+        return data.data as IData;
     }
 
-    public async createFolder(folderName: string, parentFolderId: number): Promise<Folder> {
-        return this.instance
+    public async createFolder(folder: FolderC): Promise<void> {
+        await this.instance
             .post('/ai-folder/new-name', {
-                folder_id: parentFolderId,
-                name: folderName,
+                folder_id: folder.parentFolder?.id ?? 0,
+                name: folder.name,
             })
             .then(data => {
-                return {
-                    id: data.data.id,
-                    name: folderName,
-                    ais: [],
-                    folders: [],
-                    toBeDeleted: false,
-                };
+                folder.id = data.data.id;
+                folder.toBeCreated = false;
             });
     }
 
-    public async deleteFolder(folder: Folder) {
+    public async deleteFolder(folder: FolderC) {
         return this.instance.delete('/ai-folder/delete', {
             data: {
                 folder_id: folder.id,
@@ -107,34 +84,31 @@ export default class API {
         });
     }
 
-    public async createFile(fileName: string, parentFolder: Folder): Promise<AI> {
-        return this.instance
+    public async createFile(file: FileC): Promise<void> {
+        await this.instance
             .post('/ai/new-name', {
-                folder_id: parentFolder.id,
+                folder_id: file.parentFolder?.id,
                 version: 4,
-                name: fileName,
+                name: file.name,
             })
             .then(data => {
-                return {
-                    id: data.data.ai.id,
-                    name: data.data.ai.name,
-                    toBeDeleted: false,
-                };
+                file.toBeCreated = false;
+                file.id = (data.data.ai as IFileFolder).id;
             });
     }
 
-    public async deleteFile(ai: AI) {
+    public async deleteFile(file: FileC) {
         return this.instance.delete('/ai/delete', {
             data: {
-                ai_id: ai.id,
+                ai_id: file.id,
             },
         });
     }
 
-    public async saveFile(ai: AI, code: string) {
+    public async saveFile(file: FileC, code: string) {
         return this.instance
             .post('/ai/save', {
-                ai_id: ai.id,
+                ai_id: file.id,
                 code: code,
             })
             .then(res => {

@@ -1,5 +1,5 @@
 import ts, {SyntaxKind} from 'typescript';
-import {inferredTypeNameFromNode} from '../utils/utils';
+import {inferredTypeNameFromNode, throwError} from '../utils/utils';
 
 const tokenMap: Record<number, string> = {
     [SyntaxKind.UndefinedKeyword]: 'null',
@@ -70,7 +70,7 @@ export function tokenMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode:
 
         return node.getText();
     } else if (node.kind === SyntaxKind.TildeToken) {
-        throw new Error("Le token '~' n'est pas pris en charge par Leekscript");
+        throw throwError("Le token '~' n'est pas pris en charge par Leekscript", node);
     }
 
     return undefined;

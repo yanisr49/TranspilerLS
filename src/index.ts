@@ -1,10 +1,12 @@
 import 'dotenv/config';
-import API from './transpiler/lsCommunications/request';
-import {Action, checkModification, initData, updateModifications} from './transpiler/transpiler/transpiler';
-import {debounce} from 'lodash';
-import chokidar from 'chokidar';
+import {Transpiler} from './transpiler/transpiler/transpiler';
 
 export const main = async () => {
+    const transpiler = new Transpiler();
+    await transpiler.initAPI();
+    await transpiler.initData();
+
+    /*
     if (!process.env.DIR_NAME) {
         throw new Error("Veuillez spécifier un nom de dossier dans le fichier d'environment");
     }
@@ -47,6 +49,7 @@ export const main = async () => {
             processDebouncedActions();
         }
     });
+    */
 };
 
 main().then();

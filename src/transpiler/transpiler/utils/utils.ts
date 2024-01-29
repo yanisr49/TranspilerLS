@@ -138,5 +138,5 @@ export const throwError = (message: string, node: ts.Node) => {
     const caracterNumber = lignes[ligneNumber - 1].indexOf(node.getText().split('\n')[0]);
     const filepath = node.getSourceFile().fileName;
 
-    throw new Error(`${message}\n    at (${filepath}:${ligneNumber}:${caracterNumber}) : node.getText().split('\\n')[0]`);
+    return new Error(`${message}\n    at (${filepath}:${ligneNumber}:${caracterNumber}) : node.getText().split('\\n')[0]`);
 };

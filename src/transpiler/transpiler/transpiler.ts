@@ -1,295 +1,165 @@
+import path from 'path';
 import ts from 'typescript';
+import API from '../lsCommunications/request';
+import {FileC, FolderC} from '../lsCommunications/treeStructure';
+import * as fs from 'fs';
+import {tokenMapper} from './mapper/tokenMapping';
 import {typeMapper} from './mapper/typeMapping';
 import {declarationMapper} from './mapper/declarationMapping';
-import {statementMapper} from './mapper/statementMapping';
-import {classMapper} from './mapper/classMapping';
 import {expressionMapper} from './mapper/expressionMapping';
-import {tokenMapper} from './mapper/tokenMapping';
-import {getKind} from './utils/utils';
+import {classMapper} from './mapper/classMapping';
+import {statementMapper} from './mapper/statementMapping';
 import {leftoversMapper} from './mapper/leftoversMapper';
-import API from '../lsCommunications/request';
-import path from 'path';
-import {AI, Folder} from '../lsCommunications/treeStructure';
+import {getKind} from './utils/utils';
 
-export const createTranspilerProgram = () => {
-    const sourcePath = path.normalize(process.env.TS_CONFIG_PATH!).split('\\').slice(0, -1).join('\\');
+export class Transpiler {
+    private readonly basePath: string;
+    private readonly tsconfigPath: string;
+    private readonly dirname: string = process.env.DIR_NAME!;
+    private sourcesPath!: string;
+    private sourcesFiles: string[] = [];
+    private program?: ts.Program;
+    private typeChecker?: ts.TypeChecker;
+    private api: API;
+    private sourceFolder!: FolderC;
 
-    // Read the TypeScript configuration file
-    const config = ts.readConfigFile(process.env.TS_CONFIG_PATH!, ts.sys.readFile).config;
-
-    // Parse the configuration to get file names, options and project references
-    const parseConfigHost: ts.ParseConfigFileHost = {
-        useCaseSensitiveFileNames: true,
-        readDirectory: ts.sys.readDirectory,
-        fileExists: ts.sys.fileExists,
-        readFile: ts.sys.readFile,
-        getCurrentDirectory: ts.sys.getCurrentDirectory,
-        onUnRecoverableConfigFileDiagnostic: console.error,
-    };
-    return ts.parseJsonConfigFileContent(config, parseConfigHost, sourcePath);
-};
-
-export const initData = async (api: API) => {
-    const parsedConfig = createTranspilerProgram();
-    const sourceFiles = parsedConfig.fileNames.map(p => path.normalize(p)).filter(p => !p.endsWith('\\ls.ts'));
-    const program = ts.createProgram({
-        rootNames: parsedConfig.fileNames,
-        options: parsedConfig.options,
-        projectReferences: parsedConfig.projectReferences,
-    });
-    const typeChecker = program.getTypeChecker();
-
-    const sourceFolder = await api.getFarmerTreeStructure(process.env.DIR_NAME!);
-
-    for (const sourceFile of program.getSourceFiles()) {
-        if (sourceFiles.some(sf => path.normalize(sourceFile.fileName).endsWith(sf))) {
-            const ai = await createFileAndFolders(api, path.relative(process.env.ABSOLUTE_PATH_TO_SOURCES!, sourceFile.fileName), sourceFolder);
-
-            console.log(`Transpilation du fichier ${path.relative(process.env.ABSOLUTE_PATH_TO_SOURCES!, sourceFile.fileName)}`);
-
-            await api.saveFile(ai!, transpile(sourceFile, typeChecker));
+    constructor() {
+        if (!this.dirname) {
+            throw new Error("La variable d'environment ne peut pas être vide");
         }
+
+        this.basePath = path.normalize('C:\\Users\\yanis\\IdeaProjects\\EditorLS');
+        //this.basePath = path.normalize(__dirname).split('\\node_modules')[0]; // node_modules
+        this.tsconfigPath = path.join(this.basePath, 'tsconfig.json');
+
+        this.api = new API();
     }
 
-    let runFile = sourceFolder.ais.find(ai => ai.name === 'run');
-    if (!runFile) {
-        runFile = await api.createFile('run', sourceFolder);
-        sourceFolder.ais.push(runFile);
+    public async initAPI() {
+        await this.api.login();
+        await this.api.setInterceptor();
     }
-    runFile.toBeDeleted = false;
-    await api.saveFile(runFile!, constructIncludesFile(sourceFolder).join('\n'));
 
-    await deleteOutdatedFilesAndFolders(api, sourceFolder);
+    private createTranspilerProgram() {
+        // Read the TypeScript configuration file
+        const config = ts.readConfigFile(this.tsconfigPath, ts.sys.readFile).config;
 
-    console.log('Init data over !');
-    return sourceFolder;
-};
+        // Parse the configuration to get file names, options and project references
+        const parseConfigHost: ts.ParseConfigFileHost = {
+            useCaseSensitiveFileNames: true,
+            readDirectory: ts.sys.readDirectory,
+            fileExists: ts.sys.fileExists,
+            readFile: ts.sys.readFile,
+            getCurrentDirectory: ts.sys.getCurrentDirectory,
+            onUnRecoverableConfigFileDiagnostic: console.error,
+        };
+        const parsedConfig = ts.parseJsonConfigFileContent(config, parseConfigHost, this.basePath);
 
-export const transpileFile = async (filepath: string) => {
-    console.log(`Transpiling file ${filepath}`);
-
-    const parsedConfig = createTranspilerProgram();
-    const program = ts.createProgram({
-        rootNames: parsedConfig.fileNames,
-        options: parsedConfig.options,
-        projectReferences: parsedConfig.projectReferences,
-    });
-    const typeChecker = program.getTypeChecker();
-
-    for (const sourceFile of program.getSourceFiles()) {
-        if (path.relative(process.env.ABSOLUTE_PATH_TO_SOURCES!, sourceFile.fileName) === path.normalize(filepath)) {
-            return transpile(sourceFile, typeChecker);
+        if (!config.compilerOptions.rootDir) {
+            throw new Error('le champ rootDir dans le fichier tsconfig.json doit être rempli !');
         }
+        this.sourcesPath = path.join(this.basePath, config.compilerOptions.rootDir);
+
+        this.sourcesFiles.push(...parsedConfig.fileNames.map(p => path.normalize(p).slice(this.sourcesPath.length + 1)));
+
+        this.program = ts.createProgram({
+            rootNames: parsedConfig.fileNames,
+            options: parsedConfig.options,
+            projectReferences: parsedConfig.projectReferences,
+        });
+        this.typeChecker = this.program.getTypeChecker();
     }
 
-    return '';
-};
-
-/**
- * Creates files and folders at a given destination path using the provided API.
- *
- * @param {API} api - The API used to create files and folders.
- * @param {string} filepath - The destination file or folder path.
- * @param {Folder} sourceFolder - The source folder where the file or folder will be created.
- * @returns {Promise<void>} - A promise that resolves once the files and folders are created.
- */
-const createFileAndFolders = async (api: API, filepath: string, sourceFolder: Folder): Promise<AI | undefined> => {
-    let currFolder = sourceFolder;
-    const pathSplits = filepath.split('\\');
-    let ai: AI | undefined = undefined;
-
-    while (pathSplits.length) {
-        const pathSplit: string = pathSplits.shift()!;
-
-        if (pathSplits.length) {
-            // C'est un dossier
-            let folder = currFolder.folders.find(f => f.name === pathSplit);
-            if (!folder) {
-                folder = await api.createFolder(pathSplit, currFolder.id);
-                currFolder.folders.push(folder);
+    public async initData() {
+        this.createTranspilerProgram();
+        await this.initTreeStructure();
+        this.updateTreeStructureToBeCreated(this.sourcesFiles);
+        for (const fileFolder of this.sourceFolder.getFileFolderToBeSaved()) {
+            if (fileFolder instanceof FileC) {
+                if (fileFolder.toBeCreated) {
+                    await this.api.createFile(fileFolder);
+                    fileFolder.toBeCreated = false;
+                }
+                await this.api.saveFile(fileFolder, this.transpile(fileFolder));
+                fileFolder.toBeSaved = false;
+            } else if (fileFolder instanceof FolderC) {
+                if (fileFolder.toBeCreated) {
+                    await this.api.createFolder(fileFolder);
+                    fileFolder.toBeCreated = false;
+                }
             }
+        }
 
-            folder.toBeDeleted = false;
-            currFolder = folder;
+        for (const fileFolder of this.sourceFolder.getFileFolderToBeDeleted()) {
+            if (fileFolder instanceof FileC) {
+                if (fileFolder.toBeDeleted) {
+                    await this.api.deleteFile(fileFolder);
+                    fileFolder.parentFolder!.ais = fileFolder.parentFolder!.ais.filter(ai => ai !== fileFolder);
+                }
+            } else if (fileFolder instanceof FolderC) {
+                if (fileFolder.toBeDeleted) {
+                    await this.api.deleteFolder(fileFolder);
+                    fileFolder.parentFolder!.folders = fileFolder.parentFolder!.folders.filter(folder => folder !== fileFolder);
+                }
+            }
+        }
+    }
+
+    private async initTreeStructure() {
+        const data = await this.api.getTreeStructure();
+
+        const rootDir = data.folders.find(f => f.name === this.dirname && f.folder === 0);
+
+        if (rootDir) {
+            this.sourceFolder = new FolderC(rootDir.id, rootDir.name, false, false, undefined);
+            this.sourceFolder.constructTree(data);
         } else {
-            // C'est un fichier
-            ai = currFolder.ais.find(ai => ai.name === pathSplit);
+            this.sourceFolder = new FolderC(undefined, this.dirname, true, false, undefined);
+        }
+    }
 
-            if (!ai) {
-                ai = await api.createFile(pathSplit, currFolder);
-                currFolder.ais.push(ai);
+    private updateTreeStructureToBeCreated(fileFolderToBeCreated: string[]) {
+        fileFolderToBeCreated.forEach(sourceFile => {
+            const pathParts = sourceFile.split('\\');
+
+            if (fs.statSync(this.getFullPath(sourceFile)).isFile()) {
+                this.sourceFolder.updateTreeStructureFileToBeSaved(pathParts);
+            } else if (fs.statSync(this.getFullPath(sourceFile)).isDirectory()) {
+                this.sourceFolder.updateTreeStructureDirToBeSaved(pathParts);
+            }
+        });
+    }
+
+    private getFullPath(sourcefilePath: string) {
+        return path.join(this.sourcesPath, sourcefilePath);
+    }
+
+    private transpile(file: FileC) {
+        const absolutePath = path.join(this.sourcesPath, file.getPath());
+        const sourceFile = this.program!.getSourceFiles().find(sf => path.normalize(sf.fileName) === absolutePath);
+
+        console.log(sourceFile?.fileName);
+
+        const visitNode = (node: ts.Node): string => {
+            if (node?.getText()?.includes('**')) {
+                // console.log(getKind(node), node.getText());
             }
 
-            ai.toBeDeleted = false;
-        }
-    }
+            let result: string | undefined;
 
-    return ai;
-};
-
-/**
- * Deletes outdated files and folders recursively within the given folder using the provided API.
- * @param {API} api - The API object used to delete files and folders.
- * @param {Folder} folder - The root folder from which to start deleting.
- * @returns {Promise} - A promise that resolves when all outdated files and folders have been deleted.
- */
-const deleteOutdatedFilesAndFolders = async (api: API, folder: Folder): Promise<any> => {
-    for (const f of folder.folders.filter(f => f.toBeDeleted)) {
-        await api.deleteFolder(f);
-        folder.folders = folder.folders.filter(folder => folder !== f);
-    }
-    folder.folders = folder.folders.filter(f => !f.toBeDeleted);
-
-    for (const f of folder.folders) {
-        await deleteOutdatedFilesAndFolders(api, f);
-    }
-
-    for (const ai of folder.ais) {
-        if (ai.toBeDeleted) {
-            await api.deleteFile(ai);
-            folder.ais = folder.ais.filter(aiNode => aiNode !== ai);
-        }
-    }
-};
-
-/**
- * Transpiles a TypeScript source file into another format.
- *
- * @param sourceFile - The source file to be transpiled.
- * @param typeChecker - The type checker for type information.
- * @returns The transpiled code in the desired format.
- */
-const transpile = (sourceFile: ts.SourceFile, typeChecker: ts.TypeChecker) => {
-    const visitNode = (node: ts.Node): string => {
-        if (node?.getText()?.includes('**')) {
-            // console.log(getKind(node), node.getText());
-        }
-
-        let result: string | undefined;
-
-        for (const func of [tokenMapper, typeMapper, declarationMapper, expressionMapper, classMapper, statementMapper, leftoversMapper]) {
-            result = func(node, sourceFile, visitNode, typeChecker);
-            if (result !== undefined) {
-                break;
+            for (const func of [tokenMapper, typeMapper, declarationMapper, expressionMapper, classMapper, statementMapper, leftoversMapper]) {
+                result = func(node, sourceFile!, visitNode, this.typeChecker!);
+                if (result !== undefined) {
+                    break;
+                }
             }
-        }
 
-        if (result === undefined) {
-            console.log(`TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`);
-        }
-        return result ?? `TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`;
-    };
+            if (result === undefined) {
+                // console.log(`TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`);
+            }
+            return result ?? `TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`;
+        };
 
-    try {
-        return sourceFile.statements.map(visitNode).join('');
-    } catch (e) {
-        console.error((e as Error).message);
-        return (e as Error).message;
+        return sourceFile!.statements.map(visitNode).join('');
     }
-};
-
-export interface Action {
-    filename: string;
-    action: 'save' | 'unlink' | 'unlinkDir';
 }
-export const checkModification = (event: any, path: string, actions: Action[]) => {
-    let action: Action | undefined;
-    switch (event) {
-        case 'add':
-        case 'change':
-            action = actions.find(a => a.filename === path);
-            if (action) {
-                action.action = 'save';
-            } else {
-                actions.push({filename: path, action: 'save'});
-            }
-            break;
-        case 'unlink':
-            if (actions.some(a => path.startsWith(a.filename) && path !== a.filename)) {
-                break;
-            }
-            action = actions.find(a => a.filename === path);
-            if (action) {
-                action.action = 'unlink';
-            } else {
-                actions.push({filename: path, action: 'unlink'});
-            }
-            break;
-        case 'unlinkDir':
-            actions = actions.filter(a => !a.filename.startsWith(path));
-
-            action = actions.find(a => a.filename === path);
-            if (action) {
-                action.action = 'unlinkDir';
-            } else {
-                actions.push({filename: path, action: 'unlinkDir'});
-            }
-            break;
-    }
-
-    return actions;
-};
-
-export const updateModifications = async (api: API, actions: Action[], sourceFolder: Folder) => {
-    for (const action of actions) {
-        let currFolder: Folder | undefined = sourceFolder;
-        const relativePath = path.relative(process.env.ABSOLUTE_PATH_TO_SOURCES!, action.filename);
-        const pathSplits = relativePath.split('\\');
-
-        while (pathSplits.length) {
-            const pathSplit = pathSplits.shift();
-
-            if (action.action === 'unlinkDir') {
-                if (pathSplits.length) {
-                    currFolder = currFolder.folders.find(f => f.name === pathSplit);
-
-                    if (!currFolder) {
-                        break;
-                    }
-                } else {
-                    currFolder.toBeDeleted = true;
-                }
-            } else {
-                if (pathSplits.length) {
-                    currFolder = currFolder.folders.find(f => f.name === pathSplit);
-
-                    if (!currFolder) {
-                        throw new Error(`Le dossier ${pathSplit} est introuvable`);
-                    }
-                } else {
-                    let ai = currFolder.ais.find(ai => ai.name === pathSplit);
-
-                    if (action.action === 'unlink' && ai) {
-                        ai.toBeDeleted = true;
-                    } else if (action.action === 'save') {
-                        if (!ai) {
-                            ai = await api.createFile(pathSplit!, currFolder);
-                            currFolder.ais.push(ai);
-                        }
-
-                        await api.saveFile(ai, await transpileFile(relativePath));
-                    }
-                }
-            }
-        }
-
-        await deleteOutdatedFilesAndFolders(api, sourceFolder);
-
-        let runFile = sourceFolder.ais.find(ai => ai.name === 'run');
-        if (!runFile) {
-            runFile = await api.createFile('run', sourceFolder);
-            sourceFolder.ais.push(runFile);
-        }
-        await api.saveFile(runFile, constructIncludesFile(sourceFolder).join('\n'));
-    }
-};
-
-const constructIncludesFile = (sourceFolder: Folder, filePath = '', includes: string[] = []) => {
-    if (sourceFolder.folders.length) {
-        includes.push(...sourceFolder.folders.filter(folder => !folder.toBeDeleted).flatMap(folder => constructIncludesFile(folder, `${folder.name}/`)));
-    }
-
-    sourceFolder.ais.filter(ai => !ai.toBeDeleted && (filePath !== '' || ai.name !== 'includes')).forEach(ai => includes.push(`include('${filePath}${ai.name}');`));
-
-    return includes;
-};

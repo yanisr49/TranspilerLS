@@ -1,61 +1,150 @@
-export interface AI {
+import path from 'path';
+
+export interface IFileFolder {
     id: number;
     name: string;
-    valid?: number;
-    version?: number;
-    strict?: false;
-    total_lines?: number;
-    total_chars?: number;
-    entrypoint?: false;
-    toBeDeleted: boolean;
+    folder: number;
 }
 
-export interface Folder {
-    id: number;
-    name: string;
-    ais: AI[];
-    folders: Folder[];
-    toBeDeleted: boolean;
+export interface IData {
+    ais: IFileFolder[];
+    folders: IFileFolder[];
 }
 
-export const isFolder = (folder): folder is Folder => {
-    return 'ais' in folder;
-};
+export class FileFolder {
+    public id?: number;
+    public name: string;
+    public toBeCreated: boolean;
+    public toBeDeleted: boolean;
+    public parentFolder?: FolderC;
 
-export const addChildFolders = (folder: Folder, folders: any) => {
-    (folders as any[]).forEach(f => {
-        if (f.folder === folder.id) {
-            const newFolder: Folder = {
-                id: f.id,
-                name: f.name,
-                ais: [],
-                folders: [],
-                toBeDeleted: true,
-            };
+    constructor(id: number | undefined, name: string, toBeCreated: boolean, toBeDeleted: boolean, parentFolder?: FolderC) {
+        this.id = id;
+        this.name = name;
+        this.toBeCreated = toBeCreated;
+        this.toBeDeleted = toBeDeleted;
+        this.parentFolder = parentFolder;
+    }
 
-            folder.folders.push(newFolder);
-            addChildFolders(newFolder, folders);
+    public getPath(p = '') {
+        if (!this.parentFolder) {
+            return p;
         }
-    });
-};
 
-export const addChildAIs = (folder: Folder, ais: any) => {
-    (ais as any[]).forEach(ai => {
-        if (ai.folder === folder.id && !folder.ais.some(a => a.id === ai.id)) {
-            const newAI: AI = {
-                id: ai.id,
-                name: ai.name,
-                valid: ai.valid,
-                version: ai.version,
-                strict: ai.strict,
-                total_lines: ai.total_lines,
-                total_chars: ai.total_chars,
-                entrypoint: ai.entrypoint,
-                toBeDeleted: true,
-            };
+        return this.parentFolder.getPath(path.join(this.name, p));
+    }
+}
 
-            folder.ais.push(newAI);
-            folder.folders.forEach(f => addChildAIs(f, ais));
+export class FileC extends FileFolder {
+    public toBeSaved: boolean;
+    constructor(id: number | undefined, name: string, toBeCreated: boolean, toBeDeleted: boolean, toBeSaved: boolean, parentFolder?: FolderC) {
+        super(id, name, toBeCreated, toBeDeleted, parentFolder);
+        this.toBeSaved = toBeSaved;
+    }
+}
+
+export class FolderC extends FileFolder {
+    folders: FolderC[] = [];
+    ais: FileC[] = [];
+
+    constructor(id: number | undefined, name: string, toBeCreated: boolean, toBeDeleted: boolean, parentFolder?: FolderC) {
+        super(id, name, toBeCreated, toBeDeleted, parentFolder);
+    }
+
+    public constructTree(data: IData) {
+        data.ais.forEach(ai => {
+            if (ai.folder === this.id) {
+                this.ais.push(new FileC(ai.id, ai.name, false, true, false, this));
+            }
+        });
+
+        data.folders.forEach(folder => {
+            if (folder.folder === this.id) {
+                const newFolder = new FolderC(folder.id, folder.name, false, true, this);
+                newFolder.constructTree(data);
+                this.folders.push(newFolder);
+            }
+        });
+    }
+
+    public updateTreeStructureFileToBeSaved(pathParts: string[]) {
+        this.toBeDeleted = false;
+
+        if (pathParts.length === 1) {
+            const newAI = this.ais.find(ai => ai.name === pathParts[0]);
+            if (newAI) {
+                newAI.toBeSaved = true;
+                newAI.toBeDeleted = false;
+            } else {
+                const newAI = new FileC(undefined, pathParts[0], true, false, true, this);
+                this.ais.push(newAI);
+            }
+        } else {
+            const newFolder = this.folders.find(folder => folder.name === pathParts[0]);
+            if (newFolder) {
+                newFolder.updateTreeStructureFileToBeSaved(pathParts.slice(1));
+            } else {
+                const newFolder = new FolderC(undefined, pathParts[0], true, false, this);
+                this.folders.push(newFolder);
+                newFolder.updateTreeStructureFileToBeSaved(pathParts.slice(1));
+            }
         }
-    });
-};
+    }
+
+    public updateTreeStructureDirToBeSaved(pathParts: string[]) {
+        this.toBeDeleted = false;
+
+        if (pathParts.length === 1) {
+            if (!this.folders.some(folder => folder.name === pathParts[0])) {
+                const newFolder = new FolderC(undefined, pathParts[0], true, false, this);
+                this.folders.push(newFolder);
+            }
+        } else {
+            const newFolder = this.folders.find(folder => folder.name === pathParts[0]);
+            if (newFolder) {
+                newFolder.updateTreeStructureDirToBeSaved(pathParts.slice(1));
+            } else {
+                const newFolder = new FolderC(undefined, pathParts[0], true, false, this);
+                this.folders.push(newFolder);
+                newFolder.updateTreeStructureDirToBeSaved(pathParts.slice(1));
+            }
+        }
+    }
+
+    public getFileFolderToBeSaved(fileFolder: FileFolder[] = []) {
+        if (this.toBeCreated) {
+            fileFolder.push(this);
+        }
+
+        this.folders.forEach(folder => {
+            folder.getFileFolderToBeSaved(fileFolder);
+        });
+
+        this.ais.forEach(ai => {
+            if (ai.toBeSaved) {
+                fileFolder.push(ai);
+            }
+        });
+
+        return fileFolder;
+    }
+
+    public getFileFolderToBeDeleted(fileFolder: FileFolder[] = []) {
+        this.folders.forEach(folder => {
+            if (folder.toBeDeleted) {
+                console.log(folder.getPath());
+                fileFolder.push(folder);
+            } else {
+                folder.getFileFolderToBeSaved(fileFolder);
+            }
+        });
+
+        this.ais.forEach(ai => {
+            if (ai.toBeDeleted) {
+                fileFolder.push(ai);
+            }
+        });
+
+        return fileFolder;
+    }
+}
