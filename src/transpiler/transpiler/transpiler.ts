@@ -1,7 +1,7 @@
 import path from 'path';
 import ts from 'typescript';
 import API from '../lsCommunications/request';
-import {FileC, FolderC} from '../lsCommunications/treeStructure';
+import {File, Folder} from '../lsCommunications/treeStructure';
 import * as fs from 'fs';
 import {tokenMapper} from './mapper/tokenMapping';
 import {typeMapper} from './mapper/typeMapping';
@@ -11,6 +11,13 @@ import {classMapper} from './mapper/classMapping';
 import {statementMapper} from './mapper/statementMapping';
 import {leftoversMapper} from './mapper/leftoversMapper';
 import {getKind} from './utils/utils';
+import chokidar from 'chokidar';
+import {debounce} from 'lodash';
+
+interface Action {
+    filename: string;
+    action: 'save' | 'unlink' | 'unlinkDir';
+}
 
 export class Transpiler {
     private readonly basePath: string;
@@ -21,7 +28,8 @@ export class Transpiler {
     private program?: ts.Program;
     private typeChecker?: ts.TypeChecker;
     private api: API;
-    private sourceFolder!: FolderC;
+    private sourceFolder!: Folder;
+    private actions: Action[] = [];
 
     constructor() {
         if (!this.dirname) {
@@ -74,15 +82,20 @@ export class Transpiler {
         this.createTranspilerProgram();
         await this.initTreeStructure();
         this.updateTreeStructureToBeCreated(this.sourcesFiles);
+        await this.updateTreeStructure();
+        await this.generateRunFile();
+    }
+
+    private async updateTreeStructure() {
         for (const fileFolder of this.sourceFolder.getFileFolderToBeSaved()) {
-            if (fileFolder instanceof FileC) {
+            if (fileFolder instanceof File) {
                 if (fileFolder.toBeCreated) {
                     await this.api.createFile(fileFolder);
                     fileFolder.toBeCreated = false;
                 }
                 await this.api.saveFile(fileFolder, this.transpile(fileFolder));
                 fileFolder.toBeSaved = false;
-            } else if (fileFolder instanceof FolderC) {
+            } else if (fileFolder instanceof Folder) {
                 if (fileFolder.toBeCreated) {
                     await this.api.createFolder(fileFolder);
                     fileFolder.toBeCreated = false;
@@ -91,12 +104,12 @@ export class Transpiler {
         }
 
         for (const fileFolder of this.sourceFolder.getFileFolderToBeDeleted()) {
-            if (fileFolder instanceof FileC) {
+            if (fileFolder instanceof File) {
                 if (fileFolder.toBeDeleted) {
                     await this.api.deleteFile(fileFolder);
                     fileFolder.parentFolder!.ais = fileFolder.parentFolder!.ais.filter(ai => ai !== fileFolder);
                 }
-            } else if (fileFolder instanceof FolderC) {
+            } else if (fileFolder instanceof Folder) {
                 if (fileFolder.toBeDeleted) {
                     await this.api.deleteFolder(fileFolder);
                     fileFolder.parentFolder!.folders = fileFolder.parentFolder!.folders.filter(folder => folder !== fileFolder);
@@ -111,10 +124,10 @@ export class Transpiler {
         const rootDir = data.folders.find(f => f.name === this.dirname && f.folder === 0);
 
         if (rootDir) {
-            this.sourceFolder = new FolderC(rootDir.id, rootDir.name, false, false, undefined);
+            this.sourceFolder = new Folder(rootDir.id, rootDir.name, false, false, undefined);
             this.sourceFolder.constructTree(data);
         } else {
-            this.sourceFolder = new FolderC(undefined, this.dirname, true, false, undefined);
+            this.sourceFolder = new Folder(undefined, this.dirname, true, false, undefined);
         }
     }
 
@@ -130,13 +143,25 @@ export class Transpiler {
         });
     }
 
+    private updateTreeStructureToBeDeleted(fileFolderToBeDeleted: string[]) {
+        fileFolderToBeDeleted.forEach(sourceFile => {
+            const pathParts = sourceFile.split('\\');
+            this.sourceFolder.updateTreeStructureFolderFileToBeDeleted(pathParts);
+        });
+    }
+
     private getFullPath(sourcefilePath: string) {
         return path.join(this.sourcesPath, sourcefilePath);
     }
 
-    private transpile(file: FileC) {
+    private transpile(file: File) {
         const absolutePath = path.join(this.sourcesPath, file.getPath());
         const sourceFile = this.program!.getSourceFiles().find(sf => path.normalize(sf.fileName) === absolutePath);
+
+        if (!sourceFile) {
+            console.log('empty file !');
+            return '';
+        }
 
         console.log(sourceFile?.fileName);
 
@@ -161,5 +186,99 @@ export class Transpiler {
         };
 
         return sourceFile!.statements.map(visitNode).join('');
+    }
+
+    public watch() {
+        const watcher = chokidar.watch(this.sourcesPath, {
+            ignored: /(^|[/\\])\../, // ignore dotfiles
+            persistent: true,
+        });
+
+        let isInitialScan = true;
+
+        console.log('Wait half a second !');
+        setTimeout(() => {
+            isInitialScan = false;
+        }, 500);
+        console.log("I'm listening !");
+
+        watcher.on('all', (event, path) => {
+            if (!isInitialScan) {
+                this.checkModification(event, path, this.actions);
+                this.processDebouncedActions();
+            }
+        });
+    }
+
+    private processDebouncedActions = debounce(async () => {
+        await this.updateModifications();
+        this.actions = [];
+    }, 250);
+
+    private checkModification(event: any, path: string, actions: Action[]) {
+        let action: Action | undefined;
+        switch (event) {
+            case 'add':
+            case 'change':
+                action = actions.find(a => a.filename === path);
+                if (action) {
+                    action.action = 'save';
+                } else {
+                    actions.push({filename: path, action: 'save'});
+                }
+                break;
+            case 'unlink':
+                if (actions.some(a => path.startsWith(a.filename) && path !== a.filename)) {
+                    break;
+                }
+                action = actions.find(a => a.filename === path);
+                if (action) {
+                    action.action = 'unlink';
+                } else {
+                    actions.push({filename: path, action: 'unlink'});
+                }
+                break;
+            case 'unlinkDir':
+                actions = actions.filter(a => !a.filename.startsWith(path));
+
+                action = actions.find(a => a.filename === path);
+                if (action) {
+                    action.action = 'unlinkDir';
+                } else {
+                    actions.push({filename: path, action: 'unlinkDir'});
+                }
+                break;
+        }
+
+        return actions;
+    }
+
+    private async updateModifications() {
+        const pathToBeSaved = this.actions.filter(action => action.action === 'save').map(action => action.filename.slice(this.sourcesPath.length + 1));
+        this.updateTreeStructureToBeCreated(pathToBeSaved);
+
+        const pathToBeDeleted = this.actions.filter(action => action.action !== 'save').map(action => action.filename.slice(this.sourcesPath.length + 1));
+        this.updateTreeStructureToBeDeleted(pathToBeDeleted);
+
+        await this.updateTreeStructure();
+
+        await this.generateRunFile();
+    }
+
+    private async generateRunFile() {
+        let runFile = this.sourceFolder.ais.find(ai => ai.name === 'run');
+        if (!runFile) {
+            runFile = new File(undefined, 'run', true, false, false, this.sourceFolder);
+            await this.api.createFile(runFile);
+            this.sourceFolder.ais.push(runFile);
+        }
+
+        const code = this.sourceFolder
+            .getAllFilesPath()
+            .filter(fp => fp !== 'run')
+            .map(fp => `includes('${fp}');`)
+            .join('\n');
+
+        await this.api.saveFile(runFile, code);
     }
 }

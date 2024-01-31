@@ -1,6 +1,5 @@
 import axios, {AxiosInstance} from 'axios';
-import {AI} from './treeStructureOld';
-import {FileC, FolderC, IData, IFileFolder} from './treeStructure';
+import {File, Folder, IData, IFileFolder} from './treeStructure';
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
@@ -12,11 +11,6 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
  */
 export function sleep(time: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, time));
-}
-
-interface File {
-    id: number;
-    name: string;
 }
 
 export default class API {
@@ -64,7 +58,7 @@ export default class API {
         return data.data as IData;
     }
 
-    public async createFolder(folder: FolderC): Promise<void> {
+    public async createFolder(folder: Folder): Promise<void> {
         await this.instance
             .post('/ai-folder/new-name', {
                 folder_id: folder.parentFolder?.id ?? 0,
@@ -76,7 +70,7 @@ export default class API {
             });
     }
 
-    public async deleteFolder(folder: FolderC) {
+    public async deleteFolder(folder: Folder) {
         return this.instance.delete('/ai-folder/delete', {
             data: {
                 folder_id: folder.id,
@@ -84,7 +78,7 @@ export default class API {
         });
     }
 
-    public async createFile(file: FileC): Promise<void> {
+    public async createFile(file: File): Promise<void> {
         await this.instance
             .post('/ai/new-name', {
                 folder_id: file.parentFolder?.id,
@@ -97,7 +91,7 @@ export default class API {
             });
     }
 
-    public async deleteFile(file: FileC) {
+    public async deleteFile(file: File) {
         return this.instance.delete('/ai/delete', {
             data: {
                 ai_id: file.id,
@@ -105,7 +99,7 @@ export default class API {
         });
     }
 
-    public async saveFile(file: FileC, code: string) {
+    public async saveFile(file: File, code: string) {
         return this.instance
             .post('/ai/save', {
                 ai_id: file.id,
@@ -114,9 +108,5 @@ export default class API {
             .then(res => {
                 // console.log(res.data);
             });
-    }
-
-    public async getCode(ai: AI): Promise<string> {
-        return this.instance.get(`ai/get/${ai.id}`).then(res => res.data.ai.code);
     }
 }
