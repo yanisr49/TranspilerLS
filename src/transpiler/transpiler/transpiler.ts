@@ -36,8 +36,8 @@ export class Transpiler {
             throw new Error("La variable d'environment ne peut pas être vide");
         }
 
-        this.basePath = path.normalize('C:\\Users\\yanis\\IdeaProjects\\EditorLS');
-        //this.basePath = path.normalize(__dirname).split('\\node_modules')[0]; // node_modules
+        // this.basePath = path.normalize('C:\\Users\\yanis\\IdeaProjects\\EditorLS');
+        this.basePath = path.normalize(__dirname).split('\\node_modules')[0]; // node_modules
         this.tsconfigPath = path.join(this.basePath, 'tsconfig.json');
 
         this.api = new API();
@@ -105,7 +105,7 @@ export class Transpiler {
 
         for (const fileFolder of this.sourceFolder.getFileFolderToBeDeleted()) {
             if (fileFolder instanceof File) {
-                if (fileFolder.toBeDeleted) {
+                if (fileFolder.toBeDeleted && (fileFolder.parentFolder !== this.sourceFolder || fileFolder.name !== 'run')) {
                     await this.api.deleteFile(fileFolder);
                     fileFolder.parentFolder!.ais = fileFolder.parentFolder!.ais.filter(ai => ai !== fileFolder);
                 }
@@ -132,7 +132,10 @@ export class Transpiler {
     }
 
     private updateTreeStructureToBeCreated(fileFolderToBeCreated: string[]) {
-        fileFolderToBeCreated.forEach(sourceFile => {
+        for (const sourceFile of fileFolderToBeCreated) {
+            if (sourceFile.endsWith('\\ls.ts')) {
+                continue;
+            }
             const pathParts = sourceFile.split('\\');
 
             if (fs.statSync(this.getFullPath(sourceFile)).isFile()) {
@@ -140,7 +143,7 @@ export class Transpiler {
             } else if (fs.statSync(this.getFullPath(sourceFile)).isDirectory()) {
                 this.sourceFolder.updateTreeStructureDirToBeSaved(pathParts);
             }
-        });
+        }
     }
 
     private updateTreeStructureToBeDeleted(fileFolderToBeDeleted: string[]) {
@@ -166,8 +169,8 @@ export class Transpiler {
         console.log(sourceFile?.fileName);
 
         const visitNode = (node: ts.Node): string => {
-            if (node?.getText()?.includes('**')) {
-                // console.log(getKind(node), node.getText());
+            if (node?.getText()?.includes("ole.log(fieldName, 'izizi")) {
+                //console.log(getKind(node), node.getText());
             }
 
             let result: string | undefined;
@@ -180,7 +183,7 @@ export class Transpiler {
             }
 
             if (result === undefined) {
-                // console.log(`TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`);
+                console.log(`TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`);
             }
             return result ?? `TODO\n\t${getKind(node)} ===> ${node.getText()}\nFIN TODO`;
         };
@@ -260,6 +263,7 @@ export class Transpiler {
         const pathToBeDeleted = this.actions.filter(action => action.action !== 'save').map(action => action.filename.slice(this.sourcesPath.length + 1));
         this.updateTreeStructureToBeDeleted(pathToBeDeleted);
 
+        this.createTranspilerProgram();
         await this.updateTreeStructure();
 
         await this.generateRunFile();
@@ -268,7 +272,7 @@ export class Transpiler {
     private async generateRunFile() {
         let runFile = this.sourceFolder.ais.find(ai => ai.name === 'run');
         if (!runFile) {
-            runFile = new File(undefined, 'run', true, false, false, this.sourceFolder);
+            runFile = new File(undefined, 'run', false, false, false, this.sourceFolder);
             await this.api.createFile(runFile);
             this.sourceFolder.ais.push(runFile);
         }
@@ -276,7 +280,7 @@ export class Transpiler {
         const code = this.sourceFolder
             .getAllFilesPath()
             .filter(fp => fp !== 'run')
-            .map(fp => `includes('${fp}');`)
+            .map(fp => `include('${fp.replaceAll('\\', '/')}');`)
             .join('\n');
 
         await this.api.saveFile(runFile, code);

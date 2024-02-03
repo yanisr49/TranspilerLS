@@ -19,9 +19,12 @@ export function getLeadingWhitespaceInLine(node: ts.Node, sourceFile: ts.SourceF
     const fullText = sourceFile.getFullText();
     // Find the start of the line where the node begins
     const startOfLine = fullText.lastIndexOf('\n', start);
-    const leadingTrivia = fullText.substring(startOfLine + 1, start);
+    let leadingTrivia = fullText.substring(startOfLine + 1, start);
+    if (leadingTrivia.includes('else')) {
+        leadingTrivia = leadingTrivia.split('else').join('');
+    }
     // Use regex to get only whitespace. This will remove any comments in the trivia
-    return leadingTrivia.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '');
+    return leadingTrivia.replace(/[^\s\t]+/gm, '');
 }
 
 export function mapModifier(modifiers: ts.NodeArray<ts.ModifierLike> | undefined): string {

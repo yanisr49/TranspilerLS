@@ -71,6 +71,14 @@ export function tokenMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode:
         return node.getText();
     } else if (node.kind === SyntaxKind.TildeToken) {
         throw throwError("Le token '~' n'est pas pris en charge par Leekscript", node);
+    } else if (ts.isTemplateSpan(node)) {
+        return `${visitNode(node.expression)}${visitNode(node.literal)}`;
+    } else if (ts.isTemplateHead(node)) {
+        return `"${node.rawText}" + `;
+    } else if (ts.isTemplateMiddle(node)) {
+        return ` + "${node.rawText}" + `;
+    } else if (ts.isTemplateTail(node)) {
+        return ` + "${node.rawText}"`;
     }
 
     return undefined;

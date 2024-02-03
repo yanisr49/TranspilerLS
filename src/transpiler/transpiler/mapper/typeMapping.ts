@@ -18,7 +18,8 @@ export function typeMapper(node: ts.Node, sourceFile: ts.SourceFile, visitNode: 
     } else if (ts.isParameter(node)) {
         const type = inferredTypeNameFromNode(node, typeChecker, visitNode, node.type);
         const name = ts.isFunctionTypeNode(node.parent) ? '' : ` ${node.name.getText()}`;
-        return `${type}${name}`;
+        const initializer = node.initializer ? ` = ${visitNode(node.initializer)}` : '';
+        return `${type}${name}${initializer}`;
     } else if (ts.isTypeReferenceNode(node)) {
         const typeArguments = node.typeArguments ? `<${node.typeArguments?.map(t => visitNode(t)).join(', ')}>` : '';
         return `${visitNode(node.typeName)}${typeArguments}`;

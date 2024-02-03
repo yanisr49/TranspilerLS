@@ -12,11 +12,6 @@ export function declarationMapper(node: ts.Node, sourceFile: ts.SourceFile, visi
         const type = inferredTypeNameFromNode(node, typeChecker, visitNode, node.type);
         const initializer = node.initializer ? ` = ${visitNode(node.initializer)}` : '';
 
-        if (node.initializer?.getText() === 'bar') {
-            const symbol = typeChecker.getSymbolAtLocation(node.name);
-            //console.log(typeChecker.getFullyQualifiedName(symbol!));
-            console.log(typeChecker.typeToString(typeChecker.getTypeOfSymbolAtLocation(symbol!, symbol!.declarations![0])));
-        }
         return `${type} ${visitNode(node.name)}${initializer}`;
     } else if (ts.isEnumDeclaration(node)) {
         if (node.members?.some(m => !m.initializer !== !node.members[0].initializer)) {

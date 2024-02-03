@@ -1,5 +1,5 @@
 import ts, {SyntaxKind} from 'typescript';
-import {getLeadingWhitespace, getLeadingWhitespaceInLine, throwError} from '../utils/utils';
+import {getLeadingWhitespace, getLeadingWhitespaceInLine, inferredTypeNameFromNode, throwError} from '../utils/utils';
 
 /**
  * Maps TypeScript expressions to Leekscript expressions.
@@ -39,12 +39,40 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
                             return `push(${visitNode(node.expression.expression)}, ${visitNode(node.arguments[0])})`;
                         case 'every':
                             return `arrayEvery(${visitNode(node.expression.expression)}, ${visitNode(node.arguments[0])})`;
+                        case 'includes':
+                            return `search(${visitNode(node.expression.expression)}, ${visitNode(node.arguments[0])})`;
                         default:
                             throw throwError(`Leekscript 4 ne supporte pas la méthode ${node.expression.name.getText()} sur une liste`, node);
                     }
                 default:
                     break;
             }
+
+            if (inferredTypeNameFromNode(node.expression.expression, typeChecker, visitNode) === 'string') {
+                switch (node.expression.name.getText()) {
+                    case 'includes':
+                        return `contains(${visitNode(node.expression.expression)}, ${visitNode(node.arguments[0])})`;
+                    case 'slice':
+                        const stringCalled = visitNode(node.expression).slice(0, -6);
+                        if (node.arguments.length === 1) {
+                            return `substring(${stringCalled}, ${visitNode(node.arguments[0])})`;
+                        } else if (node.arguments.length === 2) {
+                            if (node.arguments[1].getText().startsWith('-')) {
+                                return `substring(${stringCalled}, ${visitNode(node.arguments[0])}, length(${stringCalled}) - ${visitNode(node.arguments[0])} ${visitNode(
+                                    node.arguments[1]
+                                )})`;
+                            }
+                            return `substring(${stringCalled}, ${visitNode(node.arguments[0])}, ${visitNode(node.arguments[1])} - ${visitNode(node.arguments[0])})`;
+                        }
+                        throw throwError(`Leekscript 4 ne supporte pas la méthode ${node.expression.name.getText()} sur un string avec autant d'argument`, node);
+                    default:
+                        throw throwError(`Leekscript 4 ne supporte pas la méthode ${node.expression.name.getText()} sur un string`, node);
+                }
+            }
+        }
+
+        if (node.expression.getText() === 'console.log') {
+            return `debug(${node.arguments.map(a => visitNode(a)).join(' + " " + ')})`;
         }
 
         return `${visitNode(node.expression)}(${node.arguments.map(a => visitNode(a)).join(', ')})`;
@@ -71,10 +99,6 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
         // a.b
         if (ts.SymbolFlags.EnumMember === typeChecker.getSymbolAtLocation(node)?.flags) {
             return `${node.expression.getText().toUpperCase()}_${node.name.getText().toUpperCase()}`;
-        }
-
-        if (visitNode(node.expression) === 'console' && visitNode(node.name) === 'log') {
-            return 'debug';
         }
 
         return `${visitNode(node.expression)}.${node.name.getText()}`;
@@ -138,6 +162,10 @@ export function expressionMapper(node: ts.Node, sourceFile: ts.SourceFile, visit
         return `(${visitNode(node.expression)})`;
     } else if (ts.isConditionalExpression(node)) {
         return `${visitNode(node.condition)} ? ${visitNode(node.whenTrue)} : ${visitNode(node.whenFalse)}`;
+    } else if (ts.isTemplateExpression(node)) {
+        return `${visitNode(node.head)}${node.templateSpans.map(visitNode).join('')}`;
+    } else if (ts.isTypeOfExpression(node)) {
+        return `${visitNode(node.expression)}.class`;
     }
 
     return undefined;

@@ -11,12 +11,21 @@ export function statementMapper(node: ts.Node, sourceFile: ts.SourceFile, visitN
         )}\n${lineWhitespaces}}`;
     } else if (ts.isForOfStatement(node)) {
         return `${fullWhitespaces}for (${visitNode(node.initializer)} in ${visitNode(node.expression)}) {${visitNode(node.statement)}\n${lineWhitespaces}}`;
+    } else if (ts.isForInStatement(node)) {
+        return `${fullWhitespaces}for (${visitNode(node.initializer)} in ${visitNode(node.expression)}.class.fields) {${visitNode(node.statement)}\n${lineWhitespaces}}`;
     } else if (ts.isDoStatement(node)) {
         return `${fullWhitespaces}do {${visitNode(node.statement)}\n${lineWhitespaces}} while(${visitNode(node.expression)});`;
     } else if (ts.isIfStatement(node)) {
-        const elseStatement = node.elseStatement ? ` else {${visitNode(node.elseStatement)}\n${lineWhitespaces}}` : '';
+        let elseStatement = '';
+        if (node.elseStatement && ts.isIfStatement(node.elseStatement)) {
+            elseStatement = `\n${lineWhitespaces}} else${visitNode(node.elseStatement)}`;
+        } else if (node.elseStatement) {
+            elseStatement = `\n${lineWhitespaces}} else {${visitNode(node.elseStatement)}\n${lineWhitespaces}}`;
+        } else {
+            elseStatement = `\n${lineWhitespaces}}`;
+        }
 
-        return `${fullWhitespaces}if(${visitNode(node.expression)}) {${visitNode(node.thenStatement)}\n${lineWhitespaces}}${elseStatement}`;
+        return `${fullWhitespaces}if(${visitNode(node.expression)}) {${visitNode(node.thenStatement)}${elseStatement}`;
     } else if (ts.isReturnStatement(node)) {
         const expression = node.expression ? ` ${visitNode(node.expression)}` : '';
         return `${fullWhitespaces}return${expression};`;
