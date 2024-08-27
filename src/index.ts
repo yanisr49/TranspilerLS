@@ -10,3 +10,5 @@ export const main = async () => {
 };
 
 main().then();
+
+export * from './ressources/ls';
